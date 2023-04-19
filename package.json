@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "addPackage": "cd packages && mkdir $PACKAGE && cd $PACKAGE && npm init -y && npx -p typescript tsc --init",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
