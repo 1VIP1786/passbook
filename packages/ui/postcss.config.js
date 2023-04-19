@@ -1,1 +1,1 @@
-module.exports = require("eslint-config-custom/postcss.config")
+module.exports = require("config/postcss.config")

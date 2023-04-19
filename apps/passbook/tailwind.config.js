@@ -1,1 +1,1 @@
-module.exports = require("eslint-config-custom/tailwind.config")
+module.exports = require("config/tailwind.config")
