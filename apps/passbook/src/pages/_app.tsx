@@ -3,8 +3,7 @@ import Web from ".";
 import "../styles/tailwind.css";
 import "../styles/global.css";
 
-const Index = () => {
-  return <Web />;
+const MyApp = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
 };
-
-export default Index;
+export default MyApp;

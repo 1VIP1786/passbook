@@ -1,10 +1,18 @@
-import * as React from "react";
+interface ButtonProps {
+  className: string;
+  onClick: (event: any) => void;
+  text: string;
+}
 
-export const Button = () => {
+export const Button = (props: ButtonProps) => {
+  const { className, onClick, text } = props;
   return (
     <>
-      <button className="rounded bg-[#DB6027] py-2 px-10 font-bold text-white hover:bg-[#c0440b]">
-        Login
+      <button
+        className={`${className} rounded bg-[#DB6027] py-2 px-10 text-white hover:bg-[#c0440b]`}
+        onClick={onClick}
+      >
+        {text}
       </button>
     </>
   );

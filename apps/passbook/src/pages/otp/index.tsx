@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import { Button } from "ui";
 
-export default function Index() {
-  const router = useRouter();
+export default function Otp() {
   const [loginId, setloginId] = useState(null);
   const handleClick = (event: any) => {
-    console.log(loginId);
-    if (loginId) router.push("/otp");
-    else alert("Enter the login ID");
+    console.log(event.type);    
   };
   return (
     <div className="py-6 px-5">
@@ -20,8 +16,8 @@ export default function Index() {
         <img src="./images/logo.png" />
       </div>
       <div className="flex justify-center mt-5 flex-col">
-        <h1 className="text-center text-gray-500 text-[1.5rem] tracking-[.06em] font-medium">
-          Enter Family ID
+        <h1 className="text-center text-gray-500 text-[1.3rem] tracking-[.06em] font-medium">
+          Enter 4 digit OTP
         </h1>
         <input
           type="text"
@@ -32,7 +28,7 @@ export default function Index() {
         />
       </div>
       <div className="flex justify-center mt-10">
-        <Button className="font-medium" onClick={handleClick} text="Login" />
+        <Button className="font-medium" onClick={handleClick} text="Submit"/>
       </div>
     </div>
   );
