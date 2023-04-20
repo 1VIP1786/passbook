@@ -4,7 +4,7 @@ import { Button } from "ui";
 export default function Otp() {
   const [loginId, setloginId] = useState(null);
   const handleClick = (event: any) => {
-    console.log(event.type);    
+    console.log(event.type);
   };
   return (
     <div className="py-6 px-5">
@@ -28,7 +28,7 @@ export default function Otp() {
         />
       </div>
       <div className="flex justify-center mt-10">
-        <Button className="font-medium" onClick={handleClick} text="Submit"/>
+        <Button className="font-medium" onClick={handleClick} text="Submit" />
       </div>
     </div>
   );
