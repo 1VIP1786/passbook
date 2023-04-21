@@ -1,10 +1,15 @@
 body {
-  background-color: rgba(219, 96, 39, 0.104);
+  max-width: 768px;
+  margin: auto;
 }
 
 :root {
   --primary: #db6027;
   --tertiary: rgba(219, 96, 39, 0.104);
+}
+
+.bg-tertiary {
+  background-color: var(--tertiary);
 }
 
 @font-face {

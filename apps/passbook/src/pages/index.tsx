@@ -11,7 +11,7 @@ export default function Index() {
     else alert("Enter the login ID");
   };
   return (
-    <div className="py-6 px-5">
+    <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
       <div className="flex justify-between">
         <img src="./images/govtLogo.png" />
         <img src="./images/cm.png" />
@@ -20,7 +20,7 @@ export default function Index() {
         <img src="./images/logo.png" />
       </div>
       <div className="flex justify-center mt-5 flex-col">
-        <h1 className="text-center text-gray-500 text-[1.5rem] tracking-[.06em] font-medium">
+        <h1 className="text-center text-gray-500 text-[1.5rem] font-medium">
           Enter Family ID
         </h1>
         <input
