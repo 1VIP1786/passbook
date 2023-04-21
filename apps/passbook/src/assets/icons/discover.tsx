@@ -1,6 +1,4 @@
-import React from "react";
-
-const Discover = () => {
+export const Discover = () => {
   return (
     <svg
       className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]"
@@ -14,5 +12,3 @@ const Discover = () => {
     </svg>
   );
 };
-
-export default Discover;

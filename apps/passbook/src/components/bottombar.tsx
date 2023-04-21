@@ -1,8 +1,5 @@
 import React from "react";
-import Test from "../assets/icons/home";
-import Family from "../assets/icons/family";
-import Benefits from "../assets/icons/benefits";
-import Discover from "../assets/icons/discover";
+import { Test, Family, Benefits, Discover } from "../assets/icons";
 import Link from "next/link";
 
 const Bottombar = () => {

@@ -1,4 +1,4 @@
-const Benefits = () => {
+export const Benefits = () => {
   return (
     <svg
       className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]"
@@ -12,5 +12,3 @@ const Benefits = () => {
     </svg>
   );
 };
-
-export default Benefits;
