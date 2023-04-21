@@ -45,3 +45,7 @@ body {
 .font-regular {
   font-family: Mulish-regular !important;
 }
+
+a{
+  margin-top: 9px;
+}

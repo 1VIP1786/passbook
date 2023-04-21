@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import OtpInput from "react-otp-input";
+import { useRouter } from "next/router";
 import { Button } from "ui";
 
 export default function Otp() {
+  const router = useRouter();
   const [otp, setOtp] = useState("");
   const handleClick = (event: any) => {
     console.log(event.type);
+    router.push("/home");
   };
   return (
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
