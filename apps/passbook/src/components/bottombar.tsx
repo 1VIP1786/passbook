@@ -1,5 +1,10 @@
 import React from "react";
-import { HomeIcon, Family, Benefits, Discover } from "../assets/icons";
+import {
+  HomeIcon,
+  FamilyIcon,
+  BenefitsIcon,
+  DiscoverIcon,
+} from "../assets/icons";
 import Link from "next/link";
 
 const Bottombar = () => {
@@ -23,7 +28,7 @@ const Bottombar = () => {
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
             >
-              <Family />
+              <FamilyIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
                 Family
               </span>
@@ -34,7 +39,7 @@ const Bottombar = () => {
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
             >
-              <Benefits />
+              <BenefitsIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
                 Benefits
               </span>
@@ -45,7 +50,7 @@ const Bottombar = () => {
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
             >
-              <Discover />
+              <DiscoverIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
                 Discover
               </span>
