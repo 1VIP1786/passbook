@@ -1,4 +1,3 @@
-import React from "react";
 import { NavbarIcon, NotificationIcon } from "../assets/icons";
 
 const Navbar = () => {
