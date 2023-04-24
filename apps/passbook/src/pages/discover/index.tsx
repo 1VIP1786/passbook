@@ -6,7 +6,7 @@ import { ComingSoon } from "../../assets/icons";
 
 const Discover = () => {
   return (
-    <div className="bg-tertiary min-h-screen flex justify-center items-center px-32">
+    <div className="bg-tertiary min-h-screen flex justify-center items-center px-32 lg:px-72">
       <Navbar />
       <Header />
       <ComingSoon />
