@@ -28,9 +28,7 @@ const Home = () => {
         </div>
       </div>
       <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-schemes-availed font-regular uppercase">
-        <span className="text-secondary font-bold text-[24px]">
-          23
-        </span>{" "}
+        <span className="text-secondary font-bold text-[24px]">23</span>{" "}
         <span className="align-text-bottom">Schemes Availed</span>
       </div>
       <Bottombar />
