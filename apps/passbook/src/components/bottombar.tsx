@@ -1,5 +1,5 @@
 import React from "react";
-import { Test, Family, Benefits, Discover } from "../assets/icons";
+import { HomeIcon, Family, Benefits, Discover } from "../assets/icons";
 import Link from "next/link";
 
 const Bottombar = () => {
@@ -12,7 +12,7 @@ const Bottombar = () => {
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
             >
-              <Test />
+              <HomeIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
                 Home
               </span>
