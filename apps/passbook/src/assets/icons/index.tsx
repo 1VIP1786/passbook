@@ -5,3 +5,6 @@ export * from "./discover";
 export * from "./navbar";
 export * from "./notification";
 export * from "./comingSoon";
+export * from "./femaleAvatar";
+export * from "./maleAvatar";
+export * from "./info";

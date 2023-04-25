@@ -1,0 +1,92 @@
+export const familyMembers: any = [
+  {
+    id: 1,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 2,
+    name: "Daya",
+    relation: "Husband",
+    gender: "male",
+  },
+  {
+    id: 3,
+    name: "Manju",
+    relation: "Daughter in law",
+    gender: "female",
+  },
+  {
+    id: 4,
+    name: "Ram Nayan yadav",
+    relation: "Son",
+    gender: "male",
+  },
+  {
+    id: 5,
+    name: "Shailendra yadav",
+    relation: "Grand son",
+    gender: "male",
+  },
+  {
+    id: 6,
+    name: "Satyam yadav",
+    relation: "Grand son",
+    gender: "male",
+  },
+  {
+    id: 7,
+    name: "Anisha",
+    relation: "Grand daughter",
+    gender: "female",
+  },
+  {
+    id: 8,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 9,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 10,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 11,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 12,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 13,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 14,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+  {
+    id: 15,
+    name: "Narajiya",
+    relation: "Self",
+    gender: "female",
+  },
+];
