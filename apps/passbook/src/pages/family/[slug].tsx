@@ -10,7 +10,7 @@ const FamilyMemberDetails = () => {
   const { slug } = router.query;
   console.log(slug);
   return (
-    <div>
+    <div className="mb-28">
       <Navbar />
       <Header />
       {familyMembers.map(
