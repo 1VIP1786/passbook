@@ -15,7 +15,7 @@ const Bottombar = () => {
           <Link href="/home">
             <button
               type="button"
-              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group"
             >
               <HomeIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
@@ -26,7 +26,7 @@ const Bottombar = () => {
           <Link href="/family">
             <button
               type="button"
-              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group"
             >
               <FamilyIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
@@ -37,7 +37,7 @@ const Bottombar = () => {
           <Link href="/benefits">
             <button
               type="button"
-              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group"
             >
               <BenefitsIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">
@@ -48,7 +48,7 @@ const Bottombar = () => {
           <Link href="/discover">
             <button
               type="button"
-              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+              className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group"
             >
               <DiscoverIcon />
               <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]">

@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar";
 import Header from "../../components/header";
 import { FemaleAvatar, InfoIcon, MaleAvatar } from "../../assets/icons";
 import { familyMembers } from "../../config/family";
+import Link from "next/link";
 
 const Family = () => {
   return (
@@ -15,13 +16,16 @@ const Family = () => {
           My family
         </div>
         {familyMembers.map((familyMember: any) => (
-          <div className="bg-white px-3 py-3 rounded-md mt-5">
+          <div
+            className="bg-white px-3 py-3 rounded-md mt-5"
+            key={familyMember?.id}
+          >
             <div className="flex">
               <div className="mr-4 flex items-center">
                 {familyMember?.gender == "female" ? (
-                  <FemaleAvatar />
+                  <FemaleAvatar size="" />
                 ) : (
-                  <MaleAvatar />
+                  <MaleAvatar size="" />
                 )}
               </div>
               <div className="flex justify-between w-full uppercase">
@@ -32,7 +36,9 @@ const Family = () => {
                   </div>
                 </div>
                 <div className="ml-4 flex items-center">
-                  <InfoIcon />
+                  <Link href={`/family/${familyMember?.id}`}>
+                    <InfoIcon />
+                  </Link>
                 </div>
               </div>
             </div>

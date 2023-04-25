@@ -1,8 +1,12 @@
-export const FemaleAvatar = () => {
+interface AvatarProps {
+  size: string;
+}
+
+export const FemaleAvatar = (props: AvatarProps) => {
   return (
     <svg
-      width="26"
-      height="25"
+      width={props?.size == "large" ? "60" : "26"}
+      height={props?.size == "large" ? "60" : "26"}
       viewBox="0 0 26 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
