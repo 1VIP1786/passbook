@@ -2,7 +2,9 @@ import React from "react";
 import Bottombar from "../../components/bottombar";
 import Navbar from "../../components/navbar";
 import Header from "../../components/header";
-import { CheveronIcon } from "../../assets/icons";
+import { CheveronIcon, SchemesAvailed, SchemesIcon } from "../../assets/icons";
+import { RupeeIcon } from "../../assets/icons/rupee";
+import { schemes } from "../../config/schemes";
 
 const Benefits = () => {
   return (
@@ -39,7 +41,7 @@ const Benefits = () => {
             </div>
           </div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 pb-3">
           <div className="dropdown dropdown-bottom">
             <label
               tabIndex={0}
@@ -63,7 +65,50 @@ const Benefits = () => {
               </li>
             </ul>
           </div>
+          <div className="dropdown dropdown-bottom ml-2">
+            <label
+              tabIndex={0}
+              className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
+            >
+              Beneficiary&nbsp;&nbsp;
+              <CheveronIcon />
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
+            >
+              <li className="text-[#313144]">
+                <a>Cash</a>
+              </li>
+              <li className="text-[#313144]">
+                <a>In Kind</a>
+              </li>
+              <li className="text-[#313144]">
+                <a>Certificates</a>
+              </li>
+            </ul>
+          </div>
         </div>
+        {schemes?.map((scheme: any) => (
+          <div
+            className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
+            key={scheme?.id}
+          >
+            <div className="group flex items-center">
+              <SchemesIcon />
+            </div>
+            <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+              {scheme?.name}
+            </div>
+            <div className="flex items-center justify-end text-[12px] text-appGray ml-3">
+              <div>{scheme?.beneficiaries}</div>
+              <SchemesAvailed />
+            </div>
+            <div className="flex items-center justify-end text-[12px] text-appGray">
+              <RupeeIcon />
+            </div>
+          </div>
+        ))}
       </div>
       <Bottombar />
     </div>

@@ -9,3 +9,5 @@ export * from "./femaleAvatar";
 export * from "./maleAvatar";
 export * from "./info";
 export * from "./cheveron";
+export * from "./schemes";
+export * from "./schemesAvailed";
