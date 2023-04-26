@@ -7,6 +7,7 @@ body {
   --primary: #db6027;
   --secondary: #35d3cf;
   --tertiary: rgba(219, 96, 39, 0.104);
+  --fontColor: #525252;
 }
 
 .bg-tertiary {
@@ -19,6 +20,10 @@ body {
 
 .text-primary {
   color: var(--primary);
+}
+
+.text-appGray{
+  color: var(--fontColor);
 }
 
 .text-secondary {

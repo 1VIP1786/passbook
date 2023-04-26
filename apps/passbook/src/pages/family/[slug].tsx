@@ -18,7 +18,7 @@ const FamilyMemberDetails = () => {
           familyMember?.id == slug && (
             <>
               <div className="bg-tertiary mt-40 rounded-xl px-4 py-6 mx-3">
-                <div className="font-bold text-center underline text-[20px] uppercase">
+                <div className="font-bold text-center underline text-[20px] uppercase text-appGray">
                   {familyMember?.name}
                 </div>
                 <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-4 py-7 mt-6">
@@ -32,7 +32,7 @@ const FamilyMemberDetails = () => {
                   <table className="table-auto mt-6 font-regular">
                     <tbody>
                       <tr>
-                        <td className="pt-2">Relation</td>
+                        <td className="pt-2 text-appGray">Relation</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
@@ -41,7 +41,7 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">Gender</td>
+                        <td className="pt-2 text-appGray">Gender</td>
                         <td className="text-primary font-demi pt-2 capitalize">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
@@ -50,7 +50,7 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">Age</td>
+                        <td className="pt-2 text-appGray">Age</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
@@ -59,7 +59,7 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">Date of Birth</td>
+                        <td className="pt-2 text-appGray">Date of Birth</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
@@ -68,7 +68,7 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">Occupation</td>
+                        <td className="pt-2 text-appGray">Occupation</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
@@ -77,7 +77,9 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">Schemes Availed&nbsp;</td>
+                        <td className="pt-2 text-appGray">
+                          Schemes Availed&nbsp;
+                        </td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;

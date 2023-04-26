@@ -9,7 +9,7 @@ const Benefits = () => {
     <div className="mb-28">
       <Navbar />
       <Header />
-      <div className="bg-tertiary mt-40 rounded-xl px-4 py-5 mx-3">
+      <div className="bg-tertiary mt-40 sm:mt-52 rounded-xl px-4 py-5 mx-3">
         <div className="form-control">
           <label className="flex justify-evenly cursor-pointer">
             <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
@@ -43,63 +43,26 @@ const Benefits = () => {
           <div className="dropdown dropdown-bottom">
             <label
               tabIndex={0}
-              className="text-[12px] font-regular bg-white rounded px-3 py-2 text-black"
+              className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
             >
               Benefit Type&nbsp;&nbsp;
               <CheveronIcon />
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
             >
-              <li>
-                <a>Item 1</a>
+              <li className="text-[#313144]">
+                <a>Cash</a>
               </li>
-              <li>
-                <a>Item 2</a>
+              <li className="text-[#313144]">
+                <a>In Kind</a>
+              </li>
+              <li className="text-[#313144]">
+                <a>Certificates</a>
               </li>
             </ul>
           </div>
-          {/* <div className="dropdown dropdown-bottom">
-            <label
-              tabIndex={0}
-              className="text-[12px] font-regular bg-white rounded px-3 py-2 text-black"
-            >
-              Beneficiary&nbsp;&nbsp;
-              <CheveronIcon />
-            </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
-            </ul>
-          </div> */}
-          {/* <div className="dropdown dropdown-bottom">
-            <label
-              tabIndex={0}
-              className="text-[12px] font-regular bg-white rounded px-3 py-2 text-black"
-            >
-              FY&nbsp;&nbsp;
-              <CheveronIcon />
-            </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
-            </ul>
-          </div> */}
         </div>
       </div>
       <Bottombar />
