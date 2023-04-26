@@ -35,7 +35,7 @@ const FamilyMemberDetails = () => {
                         <td className="pt-2">Relation</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           {familyMember?.relation}
                         </td>
@@ -44,7 +44,7 @@ const FamilyMemberDetails = () => {
                         <td className="pt-2">Gender</td>
                         <td className="text-primary font-demi pt-2 capitalize">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           {familyMember?.gender}
                         </td>
@@ -53,7 +53,7 @@ const FamilyMemberDetails = () => {
                         <td className="pt-2">Age</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           {familyMember?.age}
                         </td>
@@ -62,7 +62,7 @@ const FamilyMemberDetails = () => {
                         <td className="pt-2">Date of Birth</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           30-04-1986
                         </td>
@@ -71,18 +71,18 @@ const FamilyMemberDetails = () => {
                         <td className="pt-2">Occupation</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           {familyMember?.occupation}
                         </td>
                       </tr>
                       <tr>
                         <td className="pt-2">
-                          Schemes Availed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Schemes Availed&nbsp;
                         </td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
-                            : &nbsp;&nbsp;&nbsp;
+                            : &nbsp;&nbsp;
                           </span>
                           {familyMember?.schemesAvailed}
                         </td>
