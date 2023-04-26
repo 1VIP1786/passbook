@@ -1,7 +1,7 @@
 export const BenefitsIcon = () => {
   return (
     <svg
-      className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-[#db6027] dark:group-hover:text-[#db6027]"
+      className="w-6 h-6 mb-1"
       fill="currentColor"
       width="31"
       height="23"
