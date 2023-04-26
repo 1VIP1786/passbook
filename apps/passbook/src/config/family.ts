@@ -64,8 +64,8 @@ export const familyMembers: any = [
   },
   {
     id: 8,
-    name: "Narajiya",
-    relation: "Self",
+    name: "Nitya Tiwari",
+    relation: "Grand daughter",
     gender: "female",
     age: 36,
     occupation: "Farmer",
@@ -73,9 +73,9 @@ export const familyMembers: any = [
   },
   {
     id: 9,
-    name: "Narajiya",
-    relation: "Self",
-    gender: "female",
+    name: "Manas Malhotra",
+    relation: "Grand son",
+    gender: "male",
     age: 36,
     occupation: "Farmer",
     schemesAvailed: 7,
