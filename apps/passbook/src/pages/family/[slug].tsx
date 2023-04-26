@@ -2,8 +2,14 @@ import { useRouter } from "next/router";
 import Bottombar from "../../components/bottombar";
 import Navbar from "../../components/navbar";
 import Header from "../../components/header";
-import { FemaleAvatar, InfoIcon, MaleAvatar } from "../../assets/icons";
+import {
+  BackIcon,
+  FemaleAvatar,
+  InfoIcon,
+  MaleAvatar,
+} from "../../assets/icons";
 import { familyMembers } from "../../config/family";
+import Link from "next/link";
 
 const FamilyMemberDetails = () => {
   const router = useRouter();
@@ -21,8 +27,13 @@ const FamilyMemberDetails = () => {
                 <div className="font-bold text-center underline text-[20px] uppercase text-appGray">
                   {familyMember?.name}
                 </div>
-                <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-4 py-7 mt-6">
-                  <div className="flex justify-center">
+                <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-7 mt-6">
+                  <div className="mt-3">
+                    <Link href="/family">
+                      <BackIcon />
+                    </Link>
+                  </div>
+                  <div className="flex justify-center mt-4">
                     {familyMember?.gender == "male" ? (
                       <MaleAvatar size="large" />
                     ) : (
