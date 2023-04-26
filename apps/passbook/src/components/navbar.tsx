@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { NavbarIcon, NotificationIcon } from "../assets/icons";
 
 const Navbar = () => {
@@ -10,7 +11,9 @@ const Navbar = () => {
           </div>
           <div></div>
           <div className="inline-flex flex-col items-end justify-center px-5 group">
-            <NotificationIcon />
+            <Link href="/notifications">
+              <NotificationIcon />
+            </Link>
           </div>
         </div>
       </div>
