@@ -31,5 +31,8 @@
     "hooks": {
       "pre-commit": "echo \"[Husky] pre-commit\""
     }
+  },
+  "dependencies": {
+    "daisyui": "^2.51.6"
   }
 }

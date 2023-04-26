@@ -8,3 +8,4 @@ export * from "./comingSoon";
 export * from "./femaleAvatar";
 export * from "./maleAvatar";
 export * from "./info";
+export * from "./cheveron";

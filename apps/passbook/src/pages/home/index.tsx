@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="mb-28">
       <Navbar />
       <Header />
       <div className="bg-primary py-4 px-3 mt-44 mx-5 rounded-lg text-white">
