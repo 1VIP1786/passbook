@@ -77,9 +77,7 @@ const FamilyMemberDetails = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="pt-2">
-                          Schemes Availed&nbsp;
-                        </td>
+                        <td className="pt-2">Schemes Availed&nbsp;</td>
                         <td className="text-primary font-demi pt-2">
                           <span className="text-black font-regular">
                             : &nbsp;&nbsp;
