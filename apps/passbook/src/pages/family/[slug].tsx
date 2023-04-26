@@ -24,7 +24,7 @@ const FamilyMemberDetails = () => {
           familyMember?.id == slug && (
             <>
               <div className="bg-tertiary mt-40 rounded-xl px-4 py-6 mx-3">
-                <div className="font-bold text-center underline text-[20px] uppercase text-appGray">
+                <div className="font-bold text-center underline text-[20px] uppercase text-black">
                   {familyMember?.name}
                 </div>
                 <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-7 mt-6">
