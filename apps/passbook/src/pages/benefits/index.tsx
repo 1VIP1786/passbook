@@ -100,8 +100,8 @@ const Benefits = () => {
             <div className="group text-[12px] text-appGray col-span-4 flex items-center">
               {scheme?.name}
             </div>
-            <div className="flex items-center justify-end text-[12px] text-appGray ml-3">
-              <div>{scheme?.beneficiaries}</div>
+            <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
+              <div className="flex items-center">{scheme?.beneficiaries}</div>
               <SchemesAvailed />
             </div>
             <div className="flex items-center justify-end text-[12px] text-appGray">

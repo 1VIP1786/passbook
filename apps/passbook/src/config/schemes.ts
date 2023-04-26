@@ -29,4 +29,9 @@ export const schemes: any = [
     name: "National Food Security Mission",
     beneficiaries: 3,
   },
+  {
+    id: 7,
+    name: "Indira Gandhi National Old Age Pension Scheme",
+    beneficiaries: 3,
+  },
 ];
