@@ -7,7 +7,7 @@ const Home = () => {
     <div className="mb-28">
       <Navbar />
       <Header />
-      <div className="bg-primary py-4 px-3 mt-44 mx-5 rounded-lg text-white">
+      <div className="bg-primary py-4 px-3 mt-40 sm:mt-48 mx-5 rounded-lg text-white">
         <h1 className="font-demi text-[20px]">XXXXXXXXX8734</h1>
         <div className="font-regular text-[11px]">FAMILY ID</div>
 
