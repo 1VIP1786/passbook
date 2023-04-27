@@ -23,7 +23,7 @@ const FamilyMemberDetails = () => {
         (familyMember: any) =>
           familyMember?.id == slug && (
             <>
-              <div className="bg-tertiary mt-40 rounded-xl px-4 py-6 mx-3">
+              <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-6 lg:py-10 mx-3">
                 <div className="font-bold text-center underline text-[20px] uppercase text-black">
                   {familyMember?.name}
                 </div>

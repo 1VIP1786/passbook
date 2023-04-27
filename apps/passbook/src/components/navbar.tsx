@@ -5,7 +5,7 @@ import HamburgerMenu from "./Menu";
 const Navbar = () => {
   return (
     <>
-      <div className="fixed top-0 md:w-[500px] w-full z-50 h-12 bg-white border-t border-gray-200 ">
+      <div className="fixed top-0 md:w-[470px] w-full z-50 h-12 bg-white border-t border-gray-200 ">
         <div className="flex h-full max-w-lg justify-between mx-auto font-medium">
           <div className="inline-flex flex-col items-start justify-center px-5 group">
             {/* <HamburgerMenu /> */}
