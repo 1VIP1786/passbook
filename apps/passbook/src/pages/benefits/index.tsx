@@ -11,7 +11,7 @@ const Benefits = () => {
     <div className="mb-28">
       <Navbar />
       <Header />
-      <div className="bg-tertiary mt-40 sm:mt-52 rounded-xl px-4 py-5 mx-3">
+      <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-5 mx-3">
         <div className="form-control">
           <label className="flex justify-evenly cursor-pointer">
             <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">

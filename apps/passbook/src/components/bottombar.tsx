@@ -15,7 +15,7 @@ const Bottombar = () => {
   return (
     <>
       {pathname && (
-        <div className="fixed bottom-0 md:w-[768px] w-full h-16 bg-white border-t border-gray-200 ">
+        <div className="fixed bottom-0 md:w-[500px] w-full h-16 bg-white border-t border-gray-200 ">
           <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
             <Link href="/home">
               <button

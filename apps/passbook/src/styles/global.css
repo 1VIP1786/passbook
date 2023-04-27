@@ -1,5 +1,5 @@
 body {
-  max-width: 768px;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -22,7 +22,7 @@ body {
   color: var(--primary);
 }
 
-.text-appGray{
+.text-appGray {
   color: var(--fontColor);
 }
 

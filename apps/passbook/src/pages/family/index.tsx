@@ -11,7 +11,7 @@ const Family = () => {
     <div className="min-h-screen mb-28">
       <Navbar />
       <Header />
-      <div className="bg-tertiary mt-40 rounded-xl px-4 py-5 mx-3">
+      <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-5 mx-3">
         <div className="text-primary font-bold text-center underline text-[20px] uppercase">
           My family
         </div>
