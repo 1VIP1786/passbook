@@ -77,3 +77,7 @@ body {
   border: 1px solid #b4b0b0;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+input {
+  color: var(--fontColor);
+}

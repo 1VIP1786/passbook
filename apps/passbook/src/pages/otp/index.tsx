@@ -2,13 +2,34 @@ import React, { useState } from "react";
 import OtpInput from "react-otp-input";
 import { useRouter } from "next/router";
 import { Button } from "ui";
+import { verifyOtp } from "../../api";
+import swal from "sweetalert";
 
 export default function Otp() {
   const router = useRouter();
+  const { familyId } = router?.query;
   const [otp, setOtp] = useState("");
-  const handleClick = (event: any) => {
-    console.log(event.type);
-    router.push("/home");
+  const handleClick = async (event: any) => {
+    if (otp) {
+      const response = await verifyOtp(otp, familyId);
+      if (response?.status == 201) {
+        swal({
+          text: response.data?.result?.responseMsg,
+          icon: "success",
+        });
+        router.push("/home");
+      } else {
+        swal({
+          text: response?.data?.message,
+          icon: "error",
+        });
+      }
+    } else {
+      swal({
+        text: "Please enter the OTP",
+        icon: "warning",
+      });
+    }
   };
   return (
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">

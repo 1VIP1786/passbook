@@ -15,7 +15,7 @@ export default function Index() {
           text: response.data,
           icon: "success",
         });
-        router.push("/otp");
+        router.push(`/otp?familyId=${loginId}`);
       }
     } else {
       swal({
