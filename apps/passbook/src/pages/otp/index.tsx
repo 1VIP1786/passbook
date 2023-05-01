@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Button } from "ui";
 import { verifyOtp } from "../../api";
 import swal from "sweetalert";
+import Timer from "../../components/timer";
 
 export default function Otp() {
   const router = useRouter();
@@ -63,6 +64,9 @@ export default function Otp() {
       </div>
       <div className="flex justify-center mt-10">
         <Button className="font-medium" onClick={handleClick} text="Submit" />
+      </div>
+      <div className="mt-6 text-appGray font-regular text-center">
+        <Timer />
       </div>
     </div>
   );

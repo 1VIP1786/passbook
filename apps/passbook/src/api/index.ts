@@ -14,3 +14,5 @@ export const verifyOtp = async (otp: string, familyId: any) => {
     return error?.response;
   }
 };
+
+export const resendOtp = async (otp: string, familyId: any) => {};
