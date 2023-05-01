@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "ui";
+import swal from "sweetalert";
+import { login } from "../api";
 
 export default function Index() {
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
-  const handleClick = (event: any) => {
-    console.log(loginId);
-    if (loginId) router.push("/otp");
-    else alert("Enter the login ID");
+  const handleClick = async (event: any) => {
+    if (loginId) {
+      const response = await login(loginId);
+      if (response.status == 201) {
+        swal({
+          text: response.data,
+          icon: "success",
+        });
+        router.push("/otp");
+      }
+    } else {
+      swal({
+        text: "Please enter the Family ID",
+        icon: "warning",
+      });
+    }
   };
   return (
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
