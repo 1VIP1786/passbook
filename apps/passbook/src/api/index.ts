@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setCookie } from "cookies-next";
+import { setCookie, getCookie } from "cookies-next";
 
 const baseUrl = "http://128.199.21.16:3000";
 
@@ -18,11 +18,23 @@ export const verifyOtp = async (otp: string, familyId: any) => {
       response?.data?.result?.data?.user?.refreshToken
     );
     setCookie("token", response?.data?.result?.data?.user?.token);
-    setCookie("username", response?.data?.result?.data?.user?.user?.name);
+    setCookie("username", response?.data?.result?.data?.user?.user?.username);
     return response;
   } catch (error) {
     return error?.response;
   }
+};
+
+export const getDataSummary = async () => {
+  const response = await axios.get(
+    `${baseUrl}/family/${getCookie("username")}/summary`,
+    {
+      headers: {
+        Authorization: `Bearer ${getCookie("token")}`,
+      },
+    }
+  );
+  return response?.data;
 };
 
 // export const resendOtp = async (otp: string, familyId: any) => {};
