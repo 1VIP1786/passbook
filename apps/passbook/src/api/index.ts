@@ -26,15 +26,35 @@ export const verifyOtp = async (otp: string, familyId: any) => {
 };
 
 export const getFamilySummary = async () => {
-  const response = await axios.get(
-    `${baseUrl}/family/${getCookie("username")}/summary`,
-    {
-      headers: {
-        Authorization: `Bearer ${getCookie("token")}`,
-      },
-    }
-  );
-  return response?.data;
+  try {
+    const response = await axios.get(
+      `${baseUrl}/family/${getCookie("username")}/summary`,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
+export const getFamilyData = async () => {
+  try {
+    const response = await axios.get(
+      `${baseUrl}/family/${getCookie("username")}`,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
 };
 
 // export const resendOtp = async (otp: string, familyId: any) => {};
