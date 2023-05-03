@@ -25,7 +25,7 @@ export const verifyOtp = async (otp: string, familyId: any) => {
   }
 };
 
-export const getDataSummary = async () => {
+export const getFamilySummary = async () => {
   const response = await axios.get(
     `${baseUrl}/family/${getCookie("username")}/summary`,
     {

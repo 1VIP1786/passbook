@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Bottombar from "../../components/bottombar";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
-import { getDataSummary } from "../../api";
+import { getFamilySummary } from "../../api";
 
 const Home: React.FC = () => {
   const [summary, setSummary]: any = useState();
   useEffect(() => {
     const getData = async () => {
-      const res: any = await getDataSummary();
+      const res: any = await getFamilySummary();
       setSummary(res);
     };
     getData();
