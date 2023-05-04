@@ -99,7 +99,28 @@ const Benefits: React.FC = () => {
                 </li>
               </ul>
             </div>
+            <div className="dropdown dropdown-bottom ml-2">
+              <label
+                tabIndex={0}
+                className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
+              >
+                FY&nbsp;&nbsp;
+                <CheveronIcon />
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
+              >
+                <li className="text-[#313144]">
+                  <a>2022-2023</a>
+                </li>
+                <li className="text-[#313144]">
+                  <a>2021-2022</a>
+                </li>
+              </ul>
+            </div>
           </div>
+
           {data &&
             data?.schemes &&
             data?.schemes?.map((scheme: any) => (
@@ -126,7 +147,6 @@ const Benefits: React.FC = () => {
             ))}
         </div>
       </div>
-
       <Bottombar />
     </div>
   );
