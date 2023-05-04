@@ -6,7 +6,7 @@ import { verifyOtp } from "../../api";
 import swal from "sweetalert";
 import Timer from "../../components/timer";
 
-export default function Otp() {
+const Otp: React.FC = () => {
   const router = useRouter();
   const { familyId } = router?.query;
   const [otp, setOtp] = useState("");
@@ -70,4 +70,6 @@ export default function Otp() {
       </div>
     </div>
   );
-}
+};
+
+export default Otp;

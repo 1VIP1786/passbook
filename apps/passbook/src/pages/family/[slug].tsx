@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getFamilyData } from "../../api";
 
-const FamilyMemberDetails = () => {
+const FamilyMemberDetails: React.FC = () => {
   const [data, setData]: any = useState();
   const router = useRouter();
   const { slug } = router.query;

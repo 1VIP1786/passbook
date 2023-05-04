@@ -5,7 +5,7 @@ import { ComingSoon } from "../../assets/icons";
 import { Button } from "ui";
 import { useRouter } from "next/router";
 
-const Discover = () => {
+const Discover: React.FC = () => {
   const router = useRouter();
   const handleClick = async (event: any) => {
     router.push(`/home`);

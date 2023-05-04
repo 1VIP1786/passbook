@@ -5,7 +5,7 @@ import { CheveronIcon, SchemesAvailed, SchemesIcon } from "../../assets/icons";
 import { RupeeIcon } from "../../assets/icons/rupee";
 import { schemes } from "../../config/schemes";
 
-const Benefits = () => {
+const Benefits: React.FC = () => {
   return (
     <div className="mb-20">
       <Navbar />
