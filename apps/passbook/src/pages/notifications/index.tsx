@@ -1,4 +1,3 @@
-import React from "react";
 import Bottombar from "../../components/bottombar";
 import Navbar from "../../components/navbar";
 import Header from "../../components/header";
