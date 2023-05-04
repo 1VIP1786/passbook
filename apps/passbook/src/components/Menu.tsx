@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavbarIcon } from "../assets/icons";
+import { Button } from "ui";
 
 const HamburgerMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,17 +17,18 @@ const HamburgerMenu = (props) => {
 
   const fullPage = isOpen ? "fixed z-20 h-screen w-full" : hide;
 
-  console.log("OPEN:", isOpen);
+  const handleClick = (event: any) => {};
   return (
-    <>
-      <label
-        htmlFor="my-drawer"
-        className="drawer-button w-5"
-        onClick={clickHandler}
-      >
-        <NavbarIcon />
-      </label>
-
+    <div className="fixed top-0 md:w-[470px] z-[1] bg-white w-full">
+      <div className="p-4">
+        <label
+          htmlFor="my-drawer"
+          className="drawer-button w-5"
+          onClick={clickHandler}
+        >
+          <NavbarIcon />
+        </label>
+      </div>
       <div className={`drawer fixed h-screen w-full ${fullPage} `}>
         <input
           id="my-drawer"
@@ -40,47 +42,39 @@ const HamburgerMenu = (props) => {
             className="drawer-overlay"
             onClick={clickHandler}
           ></label>
-          <ul className="p-6 pt-16 overflow-y-auto w-64 bg-base-100 flex-col ">
+          <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100 flex-col ">
             <li>
-              <a
-                href="#section-projects"
-                className="btn w-full mb-5"
-                onClick={clickHandler}
-              >
-                Projects
-              </a>{" "}
+              <Button
+                className="font-demi w-full"
+                onClick={handleClick}
+                text="About Us"
+              />
             </li>
             <li>
-              <a
-                href="#section-blog-posts"
-                className="btn w-full mb-5"
-                onClick={clickHandler}
-              >
-                Blog<span className="hidden sm:inline sm:ml-2">Posts</span>
-              </a>{" "}
+              <Button
+                className="font-demi w-full mt-5"
+                onClick={handleClick}
+                text="Help/FAQs"
+              />
             </li>
             <li>
-              <a
-                href="#section-about"
-                className="btn w-full mb-5"
-                onClick={clickHandler}
-              >
-                About
-              </a>{" "}
+              <Button
+                className="font-demi w-full mt-5"
+                onClick={handleClick}
+                text="Feedback"
+              />
             </li>
             <li>
-              <a
-                href="#section-contact"
-                className="btn w-full mb-5"
-                onClick={clickHandler}
-              >
-                Contact
-              </a>{" "}
+              <Button
+                className="font-demi w-full mt-5"
+                onClick={handleClick}
+                text="Update Family"
+              />
             </li>
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

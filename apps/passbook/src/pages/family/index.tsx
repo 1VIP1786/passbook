@@ -16,7 +16,7 @@ const Family: React.FC = () => {
     getData();
   }, []);
   return (
-    <div className="min-h-screen mb-28">
+    <div className="min-h-screen mb-16">
       <Navbar />
       <Header />
       <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-5 mx-3">
