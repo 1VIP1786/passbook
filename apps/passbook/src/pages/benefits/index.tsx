@@ -1,13 +1,23 @@
 import { Navbar, Header, Bottombar } from "components";
 import { CheveronIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
 import { RupeeIcon } from "assets/icons/rupee";
-import { schemes } from "../../config/schemes";
+import { useEffect, useState } from "react";
+import { getFamilySchemes } from "api";
 
 const Benefits: React.FC = () => {
+  const [data, setData]: any = useState();
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getFamilySchemes();
+      setData(res);
+    };
+    getData();
+  }, []);
   return (
     <div className="mb-20">
       <Navbar />
       <Header />
+
       <div className="pt-40 sm:pt-48">
         <div className="bg-tertiary rounded-xl px-4 py-5 mx-3">
           <div className="form-control">
@@ -21,24 +31,27 @@ const Benefits: React.FC = () => {
               </span>
             </label>
           </div>
-          <div className="bg-primary py-4 px-5 mt-5 rounded-md">
-            <div className="flex justify-between">
-              <div className="flex flex-col">
-                <div className="text-white font-medium text-[12px]">
-                  Total Family Benefits
+          {data && (
+            <div className="bg-primary py-4 px-5 mt-5 rounded-md">
+              <div className="flex justify-between">
+                <div className="flex flex-col">
+                  <div className="text-white font-medium text-[12px]">
+                    Total Family Benefits
+                  </div>
+                  <div className="text-white font-bold">Rs 92,227 /-</div>
                 </div>
-                <div className="text-white font-bold">Rs 92,227 /-</div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <div className="text-white font-bold text-[12px]">
-                  Schemes: 23
-                </div>
-                <div className="text-white font-bold text-[12px]">
-                  Services: 0
+                <div className="flex flex-col justify-center">
+                  <div className="text-white font-bold text-[12px]">
+                    Schemes: {data?.schemeCount}
+                  </div>
+                  <div className="text-white font-bold text-[12px]">
+                    Services: 0
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+
           <div className="mt-5 pb-3">
             <div className="dropdown dropdown-bottom">
               <label
@@ -87,26 +100,30 @@ const Benefits: React.FC = () => {
               </ul>
             </div>
           </div>
-          {schemes?.map((scheme: any) => (
-            <div
-              className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
-              key={scheme?.id}
-            >
-              <div className="group flex items-center">
-                <SchemesIcon />
+          {data &&
+            data?.schemes &&
+            data?.schemes?.map((scheme: any) => (
+              <div
+                className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
+                key={scheme?.code}
+              >
+                <div className="group flex items-center">
+                  <SchemesIcon />
+                </div>
+                <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+                  {scheme?.schemeName}
+                </div>
+                <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
+                  <div className="flex items-center">
+                    {scheme?.totalBeneficiary}
+                  </div>
+                  <SchemesAvailed />
+                </div>
+                <div className="flex items-center justify-end text-[12px] text-appGray">
+                  <RupeeIcon />
+                </div>
               </div>
-              <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                {scheme?.name}
-              </div>
-              <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
-                <div className="flex items-center">{scheme?.beneficiaries}</div>
-                <SchemesAvailed />
-              </div>
-              <div className="flex items-center justify-end text-[12px] text-appGray">
-                <RupeeIcon />
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 
