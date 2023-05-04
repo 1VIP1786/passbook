@@ -1,6 +1,6 @@
-import { Navbar, Header, Bottombar } from "../../components";
-import { CheveronIcon, SchemesAvailed, SchemesIcon } from "../../assets/icons";
-import { RupeeIcon } from "../../assets/icons/rupee";
+import { Navbar, Header, Bottombar } from "components";
+import { CheveronIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
+import { RupeeIcon } from "assets/icons/rupee";
 import { schemes } from "../../config/schemes";
 
 const Benefits: React.FC = () => {

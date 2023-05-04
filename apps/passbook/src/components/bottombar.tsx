@@ -1,9 +1,4 @@
-import {
-  HomeIcon,
-  FamilyIcon,
-  BenefitsIcon,
-  DiscoverIcon,
-} from "../assets/icons";
+import { HomeIcon, FamilyIcon, BenefitsIcon, DiscoverIcon } from "assets/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

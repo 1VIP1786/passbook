@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavbarIcon, NotificationIcon } from "../assets/icons";
+import { NavbarIcon, NotificationIcon } from "assets/icons";
 import { Button } from "ui";
 import Link from "next/link";
 

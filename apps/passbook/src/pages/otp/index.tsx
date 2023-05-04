@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Button } from "ui";
 import { verifyOtp } from "../../api";
 import swal from "sweetalert";
-import { Timer } from "../../components";
+import { Timer } from "components";
 
 const Otp: React.FC = () => {
   const router = useRouter();

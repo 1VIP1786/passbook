@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Navbar, Header, Bottombar } from "../../components";
-import { getFamilySummary } from "../../api";
+import { Navbar, Header, Bottombar } from "components";
+import { getFamilySummary } from "api";
 
 const Home: React.FC = () => {
   const [summary, setSummary]: any = useState();

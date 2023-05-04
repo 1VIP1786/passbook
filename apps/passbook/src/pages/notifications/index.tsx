@@ -1,5 +1,5 @@
-import { Navbar, Header, Bottombar } from "../../components";
-import { ComingSoon } from "../../assets/icons";
+import { Navbar, Header, Bottombar } from "components";
+import { ComingSoon } from "assets/icons";
 import { Button } from "ui";
 import { useRouter } from "next/router";
 

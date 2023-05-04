@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { Navbar, Header, Bottombar } from "../../components";
-import { BackIcon, FemaleAvatar, MaleAvatar } from "../../assets/icons";
+import { Navbar, Header, Bottombar } from "components";
+import { BackIcon, FemaleAvatar, MaleAvatar } from "assets/icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getFamilyData } from "../../api";

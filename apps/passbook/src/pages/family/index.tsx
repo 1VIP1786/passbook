@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Navbar, Header, Bottombar } from "../../components";
-import { FemaleAvatar, InfoIcon, MaleAvatar } from "../../assets/icons";
+import { Navbar, Header, Bottombar } from "components";
+import { FemaleAvatar, InfoIcon, MaleAvatar } from "assets/icons";
 import Link from "next/link";
 import { getFamilyData } from "../../api";
 
