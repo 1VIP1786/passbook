@@ -14,12 +14,12 @@ const Home: React.FC = () => {
     getData();
   }, []);
   return (
-    <div className="mb-12">
+    <div className="mb-20">
       <Navbar />
       <Header />
       {summary && (
-        <>
-          <div className="bg-primary py-4 px-3 mt-40 sm:mt-48 mx-5 rounded-lg text-white">
+        <div className="pt-40 sm:pt-48">
+          <div className="bg-primary py-4 px-3 mx-5 rounded-lg text-white">
             <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>
             <div className="font-regular text-[11px]">FAMILY ID</div>
 
@@ -55,9 +55,9 @@ const Home: React.FC = () => {
               Schemes Availed
             </span>
           </div>
-          <Bottombar />
-        </>
+        </div>
       )}
+      <Bottombar />
     </div>
   );
 };

@@ -3,7 +3,6 @@ import Bottombar from "../../components/bottombar";
 import Navbar from "../../components/navbar";
 import Header from "../../components/header";
 import { BackIcon, FemaleAvatar, MaleAvatar } from "../../assets/icons";
-import { familyMembers } from "../../config/family";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getFamilyData } from "../../api";
@@ -21,18 +20,16 @@ const FamilyMemberDetails = () => {
   }, []);
   console.log(slug);
   return (
-    <div className="mb-12">
+    <div className="mb-20">
       <Navbar />
       <Header />
-      {console.log(data)}
       {data &&
         data?.familyMembers &&
         data?.familyMembers.map(
           (familyMember: any) =>
             familyMember?.familyMemberId == slug && (
-              <>
-                {console.log(familyMember)}
-                <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-6 lg:py-10 mx-3">
+              <div className="pt-40 sm:pt-48">
+                <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
                   <div className="font-bold text-center underline text-[20px] uppercase text-black">
                     {familyMember?.namee}
                   </div>
@@ -124,7 +121,7 @@ const FamilyMemberDetails = () => {
                     </table>
                   </div>
                 </div>
-              </>
+              </div>
             )
         )}
       <Bottombar />
