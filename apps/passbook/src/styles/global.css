@@ -82,3 +82,7 @@ body {
 input {
   color: var(--fontColor);
 }
+
+.z-20{
+  z-index: 20;
+}

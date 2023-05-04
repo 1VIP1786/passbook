@@ -9,7 +9,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <>
       <button
-        className={`${className} rounded bg-[#DB6027] py-3 px-10 text-white hover:bg-[#c0440b]`}
+        className={`${className} rounded bg-[#DB6027] py-2 px-10 text-white hover:bg-[#c0440b]`}
         onClick={onClick}
       >
         {text}

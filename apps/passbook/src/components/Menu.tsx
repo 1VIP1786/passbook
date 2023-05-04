@@ -12,11 +12,11 @@ const HamburgerMenu = (props) => {
 
     // // I'm still testing this part:
     setTimeout(() => {
-      setHide("z-n1 absolute");
+      setHide("absolute");
     }, 1000);
   };
 
-  const fullPage = isOpen ? "fixed z-20 h-screen w-full" : hide;
+  const fullPage = isOpen ? "z-20 h-screen w-full" : hide;
 
   const handleClick = (event: any) => {};
   return (
@@ -37,7 +37,7 @@ const HamburgerMenu = (props) => {
           </div>
         </div>
       </div>
-      <div className={`drawer fixed min-h-screen w-full ${fullPage} `}>
+      <div className={`${fullPage} drawer fixed min-h-screen w-full z-[-1]`}>
         <input
           id="my-drawer"
           type="checkbox"

@@ -6,7 +6,7 @@ import { ComingSoon } from "../../assets/icons";
 import { Button } from "ui";
 import { useRouter } from "next/router";
 
-const Discover = () => {
+const Notifications = () => {
   const router = useRouter();
   const handleClick = async (event: any) => {
     router.push(`/home`);
@@ -26,4 +26,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export default Notifications;
