@@ -1,6 +1,4 @@
-import Bottombar from "../../components/bottombar";
-import Navbar from "../../components/navbar";
-import Header from "../../components/header";
+import { Navbar, Header, Bottombar } from "../../components";
 import { CheveronIcon, SchemesAvailed, SchemesIcon } from "../../assets/icons";
 import { RupeeIcon } from "../../assets/icons/rupee";
 import { schemes } from "../../config/schemes";

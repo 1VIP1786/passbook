@@ -1,4 +1,4 @@
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <div className="fixed top-12 md:w-[470px] w-full h-auto bg-white border-t border-gray-200">
@@ -17,5 +17,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;

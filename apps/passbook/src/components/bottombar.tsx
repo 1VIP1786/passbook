@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Bottombar = () => {
+export const Bottombar = () => {
   const router = useRouter();
   const { pathname } = router;
   console.log(pathname);
@@ -106,5 +106,3 @@ const Bottombar = () => {
     </>
   );
 };
-
-export default Bottombar;

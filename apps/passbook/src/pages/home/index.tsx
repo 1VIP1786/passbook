@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Bottombar from "../../components/bottombar";
-import Header from "../../components/header";
-import Navbar from "../../components/navbar";
+import { Navbar, Header, Bottombar } from "../../components";
 import { getFamilySummary } from "../../api";
 
 const Home: React.FC = () => {

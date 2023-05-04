@@ -3,7 +3,7 @@ import { NavbarIcon, NotificationIcon } from "../assets/icons";
 import { Button } from "ui";
 import Link from "next/link";
 
-const HamburgerMenu = (props) => {
+const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hide, setHide] = useState("");
 

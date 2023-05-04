@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Timer = (props: any) => {
+export const Timer = (props: any) => {
   const resendOTP = () => {
     setMinutes(0);
     setSeconds(30);
@@ -50,5 +50,3 @@ const Timer = (props: any) => {
     </>
   );
 };
-
-export default Timer;

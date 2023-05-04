@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { NavbarIcon, NotificationIcon } from "../assets/icons";
-import HamburgerMenu from "./Menu";
+import HamburgerMenu from "./menu";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <>
       <HamburgerMenu />
