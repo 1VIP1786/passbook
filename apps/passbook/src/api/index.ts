@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setCookie, getCookie } from "cookies-next";
 
-const baseUrl = "http://128.199.21.16:3000";
+const baseUrl = "https://passbook.backend.familyid.samagra.io";
 
 export const login = async (familyId: string) => {
   const response = await axios.post(`${baseUrl}/auth/login/${familyId}`);
