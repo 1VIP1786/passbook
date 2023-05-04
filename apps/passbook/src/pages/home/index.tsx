@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     getData();
   }, []);
   return (
-    <div className="mb-28">
+    <div className="mb-12">
       <Navbar />
       <Header />
       {summary && (

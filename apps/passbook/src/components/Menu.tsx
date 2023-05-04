@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { NavbarIcon } from "../assets/icons";
+import { NavbarIcon, NotificationIcon } from "../assets/icons";
 import { Button } from "ui";
+import Link from "next/link";
 
 const HamburgerMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +20,24 @@ const HamburgerMenu = (props) => {
 
   const handleClick = (event: any) => {};
   return (
-    <div className="fixed top-0 md:w-[470px] z-[1] bg-white w-full">
-      <div className="p-4">
-        <label
-          htmlFor="my-drawer"
-          className="drawer-button w-5"
-          onClick={clickHandler}
-        >
-          <NavbarIcon />
-        </label>
+    <>
+      <div className="fixed top-0 md:w-[470px] bg-white w-full border-t border-gray-200">
+        <div className="flex h-full max-w-lg justify-between mx-auto font-medium p-4">
+          <label
+            htmlFor="my-drawer"
+            className="drawer-button w-5"
+            onClick={clickHandler}
+          >
+            <NavbarIcon />
+          </label>
+          <div className="inline-flex flex-col items-end justify-center group">
+            <Link href="/notifications">
+              <NotificationIcon />
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className={`drawer fixed h-screen w-full ${fullPage} `}>
+      <div className={`drawer fixed min-h-screen w-full ${fullPage} `}>
         <input
           id="my-drawer"
           type="checkbox"
@@ -74,7 +82,7 @@ const HamburgerMenu = (props) => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

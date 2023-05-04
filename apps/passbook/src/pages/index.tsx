@@ -3,8 +3,17 @@ import { useRouter } from "next/router";
 import { Button } from "ui";
 import swal from "sweetalert";
 import { login } from "../api";
+import { useTranslation } from "next-i18next";
+import type { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+type Props = {
+  // Add custom props here
+};
 
 export default function Index() {
+  const { t } = useTranslation("common");
+
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
   const handleClick = async (event: any) => {
@@ -35,7 +44,7 @@ export default function Index() {
       </div>
       <div className="flex justify-center mt-5 flex-col">
         <h1 className="text-center text-gray-500 text-[1.5rem] font-medium">
-          Enter Family ID
+          {t("enter_family_id")}
         </h1>
         <input
           type="text"
@@ -46,8 +55,18 @@ export default function Index() {
         />
       </div>
       <div className="flex justify-center mt-10">
-        <Button className="font-medium" onClick={handleClick} text="Login" />
+        <Button
+          className="font-medium"
+          onClick={handleClick}
+          text={t("login")}
+        />
       </div>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? "en", ["common"])),
+  },
+});

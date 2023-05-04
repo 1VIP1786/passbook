@@ -1,6 +1,7 @@
 body {
   max-width: 470px;
   margin: auto;
+  overflow-x: hidden;
 }
 
 :root {

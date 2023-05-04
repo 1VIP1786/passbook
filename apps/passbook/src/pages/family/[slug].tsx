@@ -21,7 +21,7 @@ const FamilyMemberDetails = () => {
   }, []);
   console.log(slug);
   return (
-    <div className="mb-28">
+    <div className="mb-12">
       <Navbar />
       <Header />
       {console.log(data)}

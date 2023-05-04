@@ -8,7 +8,7 @@ import { schemes } from "../../config/schemes";
 
 const Benefits = () => {
   return (
-    <div className="mb-28">
+    <div className="mb-12">
       <Navbar />
       <Header />
       <div className="bg-tertiary mt-40 sm:mt-48 rounded-xl px-4 py-5 mx-3">
