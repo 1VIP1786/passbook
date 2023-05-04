@@ -52,25 +52,31 @@ const HamburgerMenu: React.FC = () => {
           ></label>
           <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100 flex-col ">
             <li>
-              <Button
-                className="font-demi w-full"
-                onClick={handleClick}
-                text="About Us"
-              />
+              <Link href="/about">
+                <Button
+                  className="font-demi w-full"
+                  onClick={handleClick}
+                  text="About Us"
+                />
+              </Link>
             </li>
             <li>
-              <Button
-                className="font-demi w-full mt-5"
-                onClick={handleClick}
-                text="Help/FAQs"
-              />
+              <Link href="/help">
+                <Button
+                  className="font-demi w-full mt-5"
+                  onClick={handleClick}
+                  text="Help/FAQs"
+                />
+              </Link>
             </li>
             <li>
-              <Button
-                className="font-demi w-full mt-5"
-                onClick={handleClick}
-                text="Feedback"
-              />
+              <Link href="/feedback">
+                <Button
+                  className="font-demi w-full mt-5"
+                  onClick={handleClick}
+                  text="Feedback"
+                />
+              </Link>
             </li>
             <li>
               <Button
