@@ -2,14 +2,24 @@ import { Navbar, Header, Bottombar } from "components";
 import { CheveronIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
 import { RupeeIcon } from "assets/icons/rupee";
 import { useEffect, useState } from "react";
-import { getFamilySchemes } from "api";
+import { getFamilyData, getFamilySchemes } from "api";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
+  const [beneficiaryData, setBeneficiaryData]: any = useState();
+
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilySchemes();
       setData(res);
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getFamilyData();
+      setBeneficiaryData(res);
     };
     getData();
   }, []);
@@ -88,15 +98,16 @@ const Benefits: React.FC = () => {
                 tabIndex={0}
                 className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
               >
-                <li className="text-[#313144]">
-                  <a>Cash</a>
-                </li>
-                <li className="text-[#313144]">
-                  <a>In Kind</a>
-                </li>
-                <li className="text-[#313144]">
-                  <a>Certificates</a>
-                </li>
+                {beneficiaryData &&
+                  beneficiaryData?.familyMembers &&
+                  beneficiaryData?.familyMembers?.map((familyMember: any) => (
+                    <li
+                      className="text-[#313144]"
+                      key={familyMember?.familyMemberId}
+                    >
+                      <a>{familyMember?.namee}</a>
+                    </li>
+                  ))}
               </ul>
             </div>
             <div className="dropdown dropdown-bottom ml-2">
