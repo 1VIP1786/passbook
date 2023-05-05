@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       <Navbar />
       <Header />
       {summary ? (
-        summary?.status !== 500 || summary?.status !== 403 ? (
+        summary?.status != 500 && summary?.status != 403 ? (
           <div className="pt-40 sm:pt-48">
             <div className="bg-primary py-4 px-3 mx-5 rounded-lg text-white">
               <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>

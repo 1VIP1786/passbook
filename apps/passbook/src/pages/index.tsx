@@ -44,7 +44,7 @@ export default function Index() {
       </div>
       <div className="flex justify-center mt-5 flex-col">
         <h1 className="text-center text-gray-500 text-[1.5rem] font-medium">
-          {t("enter_family_id")}
+          Enter Family ID
         </h1>
         <input
           type="text"
