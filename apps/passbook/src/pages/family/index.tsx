@@ -22,7 +22,7 @@ const Family: React.FC = () => {
       <Navbar />
       <Header />
       {familyData ? (
-        familyData?.status !== 500 ? (
+        familyData?.status !== 500 || familyData?.status !== 403 ? (
           <div className="pt-40 sm:pt-48">
             <div className="bg-tertiary rounded-xl px-4 py-5 mx-3">
               <div className="text-primary font-bold text-center underline text-[20px] uppercase">

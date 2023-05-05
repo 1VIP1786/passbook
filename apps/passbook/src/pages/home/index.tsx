@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       <Navbar />
       <Header />
       {summary ? (
-        summary?.status !== 500 ? (
+        summary?.status !== 500 || summary?.status !== 403 ? (
           <div className="pt-40 sm:pt-48">
             <div className="bg-primary py-4 px-3 mx-5 rounded-lg text-white">
               <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>
@@ -27,13 +27,13 @@ const Home: React.FC = () => {
 
               <h1 className="font-demi text-[20px] mt-2">{summary?.namee}</h1>
               <div className="font-regular text-[11px]">
-                Bilariaganj, Azamgarh
+                {summary?.districtNamee}, {summary?.blockName}
               </div>
               <div className="flex justify-between mt-3">
                 <div className="font-medium text-[11px]">
                   #{summary?.numberOfMembers} members
                 </div>
-                <div className="font-regular text-[11px]">FY 2022-23</div>
+                <div className="font-regular text-[11px]">FY {summary?.fy}</div>
               </div>
             </div>
             <div className="text-primary font-demi mt-4 text-center underline text-[18px]">

@@ -30,7 +30,7 @@ const Benefits: React.FC = () => {
       <Navbar />
       <Header />
       {data ? (
-        data?.status !== 500 ? (
+        data?.status !== 500 || data?.status !== 403 ? (
           <>
             <div className="pt-40 sm:pt-48">
               <div className="bg-tertiary rounded-xl px-4 py-5 mx-3">
