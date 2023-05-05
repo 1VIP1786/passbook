@@ -3,27 +3,21 @@ import { Navbar, Header, Bottombar } from "components";
 import { BackIcon, FemaleAvatar, MaleAvatar } from "assets/icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getFamilyData } from "../../api";
+import { getFamilyData } from "api";
+import { useStateContext } from "context";
 
 const FamilyMemberDetails: React.FC = () => {
-  const [data, setData]: any = useState();
   const router = useRouter();
+  const { familyData } = useStateContext();
   const { slug } = router.query;
-  useEffect(() => {
-    const getData = async () => {
-      const res: any = await getFamilyData();
-      setData(res);
-    };
-    getData();
-  }, []);
-  console.log(slug);
+
   return (
     <div className="mb-20">
       <Navbar />
       <Header />
-      {data &&
-        data?.familyMembers &&
-        data?.familyMembers.map(
+      {familyData &&
+        familyData?.familyMembers &&
+        familyData?.familyMembers.map(
           (familyMember: any) =>
             familyMember?.familyMemberId == slug && (
               <div className="pt-40 sm:pt-48">

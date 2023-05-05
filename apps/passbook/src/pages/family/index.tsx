@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { Navbar, Header, Bottombar } from "components";
 import { FemaleAvatar, InfoIcon, MaleAvatar } from "assets/icons";
 import Link from "next/link";
-import { getFamilyData } from "../../api";
+import { getFamilyData } from "api";
+import { useStateContext } from "context";
 
 const Family: React.FC = () => {
-  const [data, setData]: any = useState();
+  // const [data, setData]: any = useState();
+  const { familyData, setFamilyData } = useStateContext();
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilyData();
-      setData(res);
+      setFamilyData(res);
     };
     getData();
   }, []);
@@ -22,9 +24,9 @@ const Family: React.FC = () => {
           <div className="text-primary font-bold text-center underline text-[20px] uppercase">
             My family
           </div>
-          {data &&
-            data?.familyMembers &&
-            data?.familyMembers.map((familyMember: any) => (
+          {familyData &&
+            familyData?.familyMembers &&
+            familyData?.familyMembers.map((familyMember: any) => (
               <div
                 className="bg-white px-3 py-3 rounded-md mt-5"
                 key={familyMember?.familyMemberId}
