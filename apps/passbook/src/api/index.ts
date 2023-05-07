@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setCookie, getCookie } from "cookies-next";
 
-const baseUrl = "https://passbook.backend.familyid.samagra.io";
+const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const login = async (familyId: string) => {
   try {
