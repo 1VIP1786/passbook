@@ -4,8 +4,12 @@ import { setCookie, getCookie } from "cookies-next";
 const baseUrl = "https://passbook.backend.familyid.samagra.io";
 
 export const login = async (familyId: string) => {
-  const response = await axios.post(`${baseUrl}/auth/login/${familyId}`);
-  return response;
+  try {
+    const response = await axios.post(`${baseUrl}/auth/login/${familyId}`);
+    return response;
+  } catch (error) {
+    return error?.response;
+  }
 };
 
 export const verifyOtp = async (otp: string, familyId: any) => {

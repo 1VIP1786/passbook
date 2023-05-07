@@ -19,7 +19,13 @@ export default function Index() {
   const handleClick = async (event: any) => {
     if (loginId) {
       const response = await login(loginId);
-      if (response.status == 201) {
+      if (response?.status == 403) {
+        swal({
+          text: "Not a valid Family ID",
+          icon: "warning",
+        });
+      }
+      if (response?.status == 201) {
         swal({
           text: response.data,
           icon: "success",
