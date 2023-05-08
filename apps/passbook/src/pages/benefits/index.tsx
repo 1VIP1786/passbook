@@ -66,7 +66,7 @@ const Benefits: React.FC = () => {
         data?.status !== 500 && data?.status !== 403 ? (
           <>
             <div className="pt-40 sm:pt-48">
-              <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-screen">
+              <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-[70vh]">
                 <div className="form-control">
                   <label className="flex justify-evenly cursor-pointer">
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">

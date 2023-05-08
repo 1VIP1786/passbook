@@ -1,6 +1,12 @@
 import { useRouter } from "next/router";
 import { Navbar, Header, Bottombar } from "components";
-import { BackIcon, FemaleAvatar, MaleAvatar } from "assets/icons";
+import {
+  AddIcon,
+  BackIcon,
+  CasteCertiInfo,
+  FemaleAvatar,
+  MaleAvatar,
+} from "assets/icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getFamilyData } from "api";
@@ -39,7 +45,7 @@ const FamilyMemberDetails: React.FC = () => {
                         <FemaleAvatar size="large" />
                       )}
                     </div>
-                    <table className="table-auto mt-6 font-regular">
+                    <table className="table-auto mt-4 font-regular">
                       <tbody>
                         <tr>
                           <td className="pt-2 text-appGray">Relation</td>
@@ -112,6 +118,48 @@ const FamilyMemberDetails: React.FC = () => {
                         )}
                       </tbody>
                     </table>
+                    <div className="mt-9">
+                      <h1 className="uppercase text-appGray text-[15px] font-bold text-center">
+                        Issued Documents
+                      </h1>
+                      <div className="flex justify-around mt-4">
+                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                          <CasteCertiInfo />
+                          <p className="mt-2">
+                            Caste <br />
+                            Certificate
+                          </p>
+                        </div>
+                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                          <CasteCertiInfo />
+                          <p className="mt-2">
+                            Domicile <br />
+                            Certificate
+                          </p>
+                        </div>
+                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                          <CasteCertiInfo />
+                          <p className="mt-2">
+                            Income <br />
+                            Certificate
+                          </p>
+                        </div>
+                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                          <CasteCertiInfo />
+                          <p className="mt-2">
+                            Birth <br />
+                            Certificate
+                          </p>
+                        </div>
+                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                          <AddIcon />
+                          <p className="mt-2">
+                            Add <br />
+                            More
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

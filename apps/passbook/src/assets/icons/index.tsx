@@ -13,3 +13,5 @@ export * from "./schemes";
 export * from "./schemesAvailed";
 export * from "./back";
 export * from "./lock";
+export * from "./casteCerti";
+export * from "./add";
