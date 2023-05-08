@@ -9,10 +9,11 @@ import Dropdown from "components/dropdown";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
+  const [checked, setChecked] = useState(true);
   const [beneficiaryData, setBeneficiaryData]: any = useState();
-  const [benefitType, setBenefitType] = useState("C");
-  const [fy, setFy] = useState("2021-22");
-  const [beneficiary, setBeneficiary] = useState("");
+  const [benefitType, setBenefitType]: any = useState("C");
+  const [fy, setFy]: any = useState("2022-23");
+  const [beneficiary, setBeneficiary]: any = useState("");
 
   const benefitTypeOptions = [
     { value: "C", label: "Cash" },
@@ -72,7 +73,11 @@ const Benefits: React.FC = () => {
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
                       Schemes
                     </span>
-                    <input type="checkbox" className="toggle toggle-primary" />
+                    <input
+                      type="checkbox"
+                      className="toggle toggle-primary"
+                      onChange={() => setChecked(!checked)}
+                    />
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
                       Transactions
                     </span>
@@ -122,34 +127,58 @@ const Benefits: React.FC = () => {
                   />
                 </div>
 
-                {data && data?.schemes && data?.schemes?.length > 0 ? (
-                  data?.schemes?.map((scheme: any) => (
-                    <div
-                      className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
-                      key={scheme?.code}
-                    >
-                      <div className="group flex items-center">
-                        <SchemesIcon />
-                      </div>
-                      <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                        {scheme?.schemeName}
-                      </div>
-                      <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
-                        <div className="flex items-center">
-                          {scheme?.totalBeneficiary}
+                {checked ? (
+                  data && data?.schemes && data?.schemes?.length > 0 ? (
+                    data?.schemes?.map((scheme: any) => (
+                      <div
+                        className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
+                        key={scheme?.code}
+                      >
+                        <div className="group flex items-center">
+                          <SchemesIcon />
                         </div>
-                        <SchemesAvailed />
+                        <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+                          {scheme?.schemeName}
+                        </div>
+                        <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
+                          <div className="flex items-center">
+                            {scheme?.totalBeneficiary}
+                          </div>
+                          <SchemesAvailed />
+                        </div>
+                        <div className="flex items-center justify-end text-[12px] text-appGray">
+                          <RupeeIcon />
+                        </div>
                       </div>
-                      <div className="flex items-center justify-end text-[12px] text-appGray">
-                        <RupeeIcon />
+                    ))
+                  ) : (
+                    <div className="font-medium py-5 text-primary">
+                      No schemes available for the selected filter.
+                    </div>
+                  )
+                ) : (
+                  <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
+                    <div className="group flex items-center">
+                      <SchemesIcon />
+                    </div>
+                    <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+                      Integrated Development of Horticulture (MIDH) CSS
+                    </div>
+                    <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
+                      <div className="flex items-center">
+                        <div className="text-[#23C96F] uppercase text-[11px] font-demi">
+                          IN KIND
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="text-appGray uppercase text-[11px] font-demi">
+                          NarAAjiya
+                        </div>
                       </div>
                     </div>
-                  ))
-                ) : (
-                  <div className="font-medium py-5 text-primary">
-                    No schemes available for the selected filter.
                   </div>
                 )}
+                {}
               </div>
             </div>
           </>

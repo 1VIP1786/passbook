@@ -83,4 +83,26 @@ export const getFamilySchemes = async (
   }
 };
 
+export const getFamilyTransactions = async (
+  benefitType: any,
+  beneficiary: any,
+  fy: any
+) => {
+  try {
+    const response = await axios.get(
+      `${baseUrl}/family/${getCookie(
+        "username"
+      )}/transactions?financialYear=${fy}&benefitType=${benefitType}&beneficiary=${beneficiary}`,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
 // export const resendOtp = async (otp: string, familyId: any) => {};
