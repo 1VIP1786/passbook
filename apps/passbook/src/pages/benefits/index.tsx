@@ -5,23 +5,56 @@ import { useEffect, useState } from "react";
 import { getFamilyData, getFamilySchemes } from "api";
 import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
+import Dropdown from "components/dropdown";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
   const [beneficiaryData, setBeneficiaryData]: any = useState();
+  const [benefitType, setBenefitType] = useState("C");
+  const [fy, setFy] = useState("2021-22");
+  const [beneficiary, setBeneficiary] = useState("");
+
+  const benefitTypeOptions = [
+    { value: "C", label: "Cash" },
+    { value: "IK", label: "In Kind" },
+    { value: "CE", label: "Certificates" },
+  ];
+  const fyOptions = [
+    { value: "2021-22", label: "2021-22" },
+    { value: "2022-23", label: "2022-23" },
+  ];
+  const handleBenefitTypeChange = (event: any) => {
+    const attributeValue = event.target.getAttribute("value");
+    setBenefitType(attributeValue);
+  };
+  const handleFyChange = (event: any) => {
+    const attributeValue = event.target.getAttribute("value");
+    setFy(attributeValue);
+  };
+  const handleBeneficiaryChange = (event: any) => {
+    const attributeValue = event.target.getAttribute("value");
+    setBeneficiary(attributeValue);
+  };
 
   useEffect(() => {
     const getData = async () => {
-      const res: any = await getFamilySchemes();
+      const res: any = await getFamilySchemes(benefitType, beneficiary, fy);
       setData(res);
     };
     getData();
-  }, []);
+  }, [benefitType, beneficiary, fy]);
 
   useEffect(() => {
     const getData = async () => {
+      const beneficiaryOptions = [];
       const res: any = await getFamilyData();
-      setBeneficiaryData(res);
+      res?.familyMembers?.forEach((familyMember: any) => {
+        beneficiaryOptions.push({
+          value: familyMember?.familyMemberId,
+          label: familyMember?.namee,
+        });
+      });
+      setBeneficiaryData(beneficiaryOptions);
     };
     getData();
   }, []);
@@ -52,7 +85,7 @@ const Benefits: React.FC = () => {
                         <div className="text-white font-medium text-[12px]">
                           Total Family Benefits
                         </div>
-                        <div className="text-white font-bold">Rs 92,227 /-</div>
+                        <div className="text-white font-bold">Rs 92,227</div>
                       </div>
                       <div className="flex flex-col justify-center">
                         <div className="text-white font-bold text-[12px]">
@@ -67,75 +100,26 @@ const Benefits: React.FC = () => {
                 )}
 
                 <div className="mt-5 pb-3">
-                  <div className="dropdown dropdown-bottom">
-                    <label
-                      tabIndex={0}
-                      className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
-                    >
-                      Benefit Type&nbsp;&nbsp;
-                      <CheveronIcon />
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
-                    >
-                      <li className="text-[#313144]">
-                        <a>Cash</a>
-                      </li>
-                      <li className="text-[#313144]">
-                        <a>In Kind</a>
-                      </li>
-                      <li className="text-[#313144]">
-                        <a>Certificates</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="dropdown dropdown-bottom ml-2">
-                    <label
-                      tabIndex={0}
-                      className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
-                    >
-                      Beneficiary&nbsp;&nbsp;
-                      <CheveronIcon />
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
-                    >
-                      {beneficiaryData &&
-                        beneficiaryData?.familyMembers &&
-                        beneficiaryData?.familyMembers?.map(
-                          (familyMember: any) => (
-                            <li
-                              className="text-[#313144]"
-                              key={familyMember?.familyMemberId}
-                            >
-                              <a>{familyMember?.namee}</a>
-                            </li>
-                          )
-                        )}
-                    </ul>
-                  </div>
-                  <div className="dropdown dropdown-bottom ml-2">
-                    <label
-                      tabIndex={0}
-                      className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
-                    >
-                      FY&nbsp;&nbsp;
-                      <CheveronIcon />
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
-                    >
-                      <li className="text-[#313144]">
-                        <a>2022-2023</a>
-                      </li>
-                      <li className="text-[#313144]">
-                        <a>2021-2022</a>
-                      </li>
-                    </ul>
-                  </div>
+                  <Dropdown
+                    heading="Benefit Type"
+                    options={benefitTypeOptions}
+                    handleChange={handleBenefitTypeChange}
+                    value={benefitType}
+                  />
+                  <Dropdown
+                    heading="Beneficiary"
+                    options={beneficiaryData}
+                    handleChange={handleBeneficiaryChange}
+                    value={beneficiary}
+                    className="ml-2"
+                  />
+                  <Dropdown
+                    heading="FY"
+                    options={fyOptions}
+                    handleChange={handleFyChange}
+                    value={fy}
+                    className="ml-2"
+                  />
                 </div>
 
                 {data &&

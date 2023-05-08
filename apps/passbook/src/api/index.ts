@@ -61,12 +61,16 @@ export const getFamilyData = async () => {
   }
 };
 
-export const getFamilySchemes = async () => {
+export const getFamilySchemes = async (
+  benefitType: any,
+  beneficiary: any,
+  fy: any
+) => {
   try {
     const response = await axios.get(
       `${baseUrl}/family/${getCookie(
         "username"
-      )}/schemes?financialYear=2022-2023&benefitType=CASH&beneficiary=782200145`,
+      )}/schemes?financialYear=${fy}&benefitType=${benefitType}&beneficiary=${beneficiary}`,
       {
         headers: {
           Authorization: `Bearer ${getCookie("token")}`,
