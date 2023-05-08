@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       {summary ? (
         summary?.status != 500 && summary?.status != 403 ? (
           <div className="pt-40 sm:pt-48">
-            <div className="bg-primary py-4 px-3 mx-5 rounded-lg text-white">
+            <div className="bg-summary-card py-4 px-3 mx-5 rounded-lg text-white">
               <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>
               <div className="font-regular text-[11px]">FAMILY ID</div>
 
@@ -35,10 +35,7 @@ const Home: React.FC = () => {
                 <div className="font-regular text-[11px]">FY {summary?.fy}</div>
               </div>
             </div>
-            <div className="text-primary font-demi mt-4 text-center text-[18px]">
-              Availed
-            </div>
-            <div className="bg-linear-gradient py-4 px-3 mt-4 mx-5 rounded-lg text-white text-center">
+            <div className="bg-linear-gradient py-4 px-3 mt-4 mx-5 rounded-lg text-appGray text-center">
               <h1 className="font-bold text-[24px]">
                 {summary?.amountAvailed
                   ? `Rs ${summary?.amountAvailed}`
@@ -48,11 +45,11 @@ const Home: React.FC = () => {
                 Benefits availed from the government schemes{" "}
               </div>
             </div>
-            <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-schemes-availed font-regular uppercase">
-              <span className="text-secondary font-bold text-[24px]">
+            <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-schemes-card font-regular uppercase text-appGray">
+              <span className="font-bold text-[24px]">
                 {summary?.schemesAvailed}
               </span>{" "}
-              <span className="align-text-bottom text-appGray">
+              <span className="align-text-bottom font-medium text-[15px]">
                 Schemes Availed
               </span>
             </div>
