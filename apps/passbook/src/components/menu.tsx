@@ -2,10 +2,12 @@ import { useState } from "react";
 import { NavbarIcon, NotificationIcon } from "assets/icons";
 import { Button } from "ui";
 import Link from "next/link";
+import { useFlags } from "flagsmith/react";
 
 const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hide, setHide] = useState("");
+  const flags = useFlags(["notifications"]);
 
   const clickHandler = () => {
     setIsOpen(!isOpen);
@@ -30,11 +32,13 @@ const HamburgerMenu: React.FC = () => {
           >
             <NavbarIcon />
           </label>
-          <div className="inline-flex flex-col items-end justify-center group">
-            <Link href="/notifications">
-              <NotificationIcon />
-            </Link>
-          </div>
+          {flags?.notifications.enabled && (
+            <div className="inline-flex flex-col items-end justify-center group">
+              <Link href="/notifications">
+                <NotificationIcon />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div className={`${fullPage} drawer fixed min-h-screen w-full z-[-1]`}>
