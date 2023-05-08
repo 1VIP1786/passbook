@@ -23,7 +23,7 @@ const FamilyMemberDetails: React.FC = () => {
             familyMember?.familyMemberId == slug && (
               <div className="pt-40 sm:pt-48">
                 <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
-                  <div className="font-bold text-center underline text-[20px] uppercase text-black">
+                  <div className="font-bold text-center text-[20px] uppercase text-primary">
                     {familyMember?.namee}
                   </div>
                   <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-7 mt-6">

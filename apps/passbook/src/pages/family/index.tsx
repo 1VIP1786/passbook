@@ -24,8 +24,8 @@ const Family: React.FC = () => {
       {familyData ? (
         familyData?.status !== 500 && familyData?.status !== 403 ? (
           <div className="pt-40 sm:pt-48">
-            <div className="bg-tertiary rounded-xl px-4 py-5 mx-3">
-              <div className="text-primary font-bold text-center underline text-[20px] uppercase">
+            <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-screen">
+              <div className="text-primary font-bold text-center text-[20px] uppercase">
                 My family
               </div>
               {familyData &&

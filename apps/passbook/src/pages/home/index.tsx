@@ -36,7 +36,7 @@ const Home: React.FC = () => {
                 <div className="font-regular text-[11px]">FY {summary?.fy}</div>
               </div>
             </div>
-            <div className="text-primary font-demi mt-4 text-center underline text-[18px]">
+            <div className="text-primary font-demi mt-4 text-center text-[18px]">
               Availed
             </div>
             <div className="bg-linear-gradient py-4 px-3 mt-4 mx-5 rounded-lg text-white text-center">
