@@ -9,7 +9,6 @@ const Home: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilySummary();
-      console.log({ res });
       setSummary(res);
     };
     getData();

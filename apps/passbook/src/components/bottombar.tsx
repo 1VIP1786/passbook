@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 export const Bottombar = () => {
   const router = useRouter();
   const { pathname } = router;
-  console.log(pathname);
   return (
     <>
       {pathname && (

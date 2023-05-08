@@ -8,15 +8,12 @@ import {
   MaleAvatar,
 } from "assets/icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getFamilyData } from "api";
 import { useStateContext } from "context";
 
 const FamilyMemberDetails: React.FC = () => {
   const router = useRouter();
   const { familyData } = useStateContext();
   const { slug } = router.query;
-  console.log(familyData);
 
   return (
     <div className="mb-20">
