@@ -122,8 +122,7 @@ const Benefits: React.FC = () => {
                   />
                 </div>
 
-                {data &&
-                  data?.schemes &&
+                {data && data?.schemes && data?.schemes?.length > 0 ? (
                   data?.schemes?.map((scheme: any) => (
                     <div
                       className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
@@ -145,7 +144,12 @@ const Benefits: React.FC = () => {
                         <RupeeIcon />
                       </div>
                     </div>
-                  ))}
+                  ))
+                ) : (
+                  <div className="font-medium py-5 text-primary">
+                    No schemes available for the selected filter.
+                  </div>
+                )}
               </div>
             </div>
           </>
