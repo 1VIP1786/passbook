@@ -14,4 +14,7 @@ export * from "./schemesAvailed";
 export * from "./back";
 export * from "./lock";
 export * from "./casteCerti";
+export * from "./incomeCerti";
+export * from "./birthCerti";
+export * from "./domicileCerti";
 export * from "./add";

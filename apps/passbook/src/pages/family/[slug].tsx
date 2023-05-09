@@ -3,8 +3,11 @@ import { Navbar, Header, Bottombar } from "components";
 import {
   AddIcon,
   BackIcon,
-  CasteCertiInfo,
+  BirthCertiIcon,
+  CasteCertiIcon,
+  DomicileCertiIcon,
   FemaleAvatar,
+  IncomeCertiIcon,
   MaleAvatar,
 } from "assets/icons";
 import Link from "next/link";
@@ -121,28 +124,28 @@ const FamilyMemberDetails: React.FC = () => {
                       </h1>
                       <div className="flex justify-around mt-4">
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
-                          <CasteCertiInfo />
+                          <CasteCertiIcon />
                           <p className="mt-2">
                             Caste <br />
                             Certificate
                           </p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
-                          <CasteCertiInfo />
+                          <DomicileCertiIcon />
                           <p className="mt-2">
                             Domicile <br />
                             Certificate
                           </p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
-                          <CasteCertiInfo />
+                          <IncomeCertiIcon />
                           <p className="mt-2">
                             Income <br />
                             Certificate
                           </p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
-                          <CasteCertiInfo />
+                          <BirthCertiIcon />
                           <p className="mt-2">
                             Birth <br />
                             Certificate

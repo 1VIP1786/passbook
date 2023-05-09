@@ -1,4 +1,4 @@
-export const CasteCertiInfo = () => {
+export const CasteCertiIcon = () => {
   return (
     <svg
       width="31"
