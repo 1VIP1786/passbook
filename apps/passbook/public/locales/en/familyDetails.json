@@ -1,0 +1,15 @@
+{
+    "relation": "Relation",
+    "dob": "Date of Birth",
+    "age": "Age",
+    "gender": "Gender",
+    "occupation": "Occupation",
+    "caste": "Caste",
+    "issued_documents": "Issued Documents",
+    "caste_certificate": "Caste Certificate",
+    "domicile_certificate": "Domicile Certificate",
+    "birth_certificate": "Birth Certificate",
+    "income_certificate": "Income Certificate",
+    "add_more": "Add More",
+    "family_data_updated": "Please keep your family data updated."
+}

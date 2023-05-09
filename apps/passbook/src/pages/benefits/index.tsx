@@ -1,11 +1,12 @@
 import { Navbar, Header, Bottombar } from "components";
-import { CheveronIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
+import { SchemesAvailed, SchemesIcon } from "assets/icons";
 import { RupeeIcon } from "assets/icons/rupee";
 import { useEffect, useState } from "react";
 import { getFamilyData, getFamilySchemes, getFamilyTransactions } from "api";
 import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
 import Dropdown from "components/dropdown";
+import { useTranslation } from "react-i18next";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
@@ -16,10 +17,12 @@ const Benefits: React.FC = () => {
   const [fy, setFy]: any = useState("2022-23");
   const [beneficiary, setBeneficiary]: any = useState("");
 
+  const { t } = useTranslation("benefits");
+
   const benefitTypeOptions = [
-    { value: "C", label: "Cash" },
-    { value: "IK", label: "In Kind" },
-    { value: "CE", label: "Certificates" },
+    { value: "C", label: t("cash") },
+    { value: "IK", label: t("in_kind") },
+    { value: "CE", label: t("certificates") },
   ];
   const fyOptions = [
     { value: "2021-22", label: "2021-22" },
@@ -79,7 +82,7 @@ const Benefits: React.FC = () => {
                 <div className="form-control">
                   <label className="flex justify-evenly cursor-pointer">
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
-                      Schemes
+                      {t("schemes")}
                     </span>
                     <input
                       type="checkbox"
@@ -87,7 +90,7 @@ const Benefits: React.FC = () => {
                       onChange={() => setChecked(!checked)}
                     />
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
-                      Transactions
+                      {t("transactions")}
                     </span>
                   </label>
                 </div>
@@ -96,16 +99,18 @@ const Benefits: React.FC = () => {
                     <div className="flex justify-between">
                       <div className="flex flex-col">
                         <div className="text-white font-medium text-[12px]">
-                          Total Family Benefits
+                          {t("total_family_benefits")}
                         </div>
-                        <div className="text-white font-bold">Rs 92,227</div>
+                        <div className="text-white font-bold">
+                          {t("Rs")} 92,227
+                        </div>
                       </div>
                       <div className="flex flex-col justify-center">
                         <div className="text-white font-bold text-[12px]">
-                          Schemes: {data?.schemeCount}
+                          {t("schemes")}: {data?.schemeCount}
                         </div>
                         <div className="text-white font-bold text-[12px]">
-                          Services: 0
+                          {t("services")}: 0
                         </div>
                       </div>
                     </div>
@@ -114,20 +119,20 @@ const Benefits: React.FC = () => {
 
                 <div className="mt-5 pb-3">
                   <Dropdown
-                    heading="Benefit Type"
+                    heading={t("benefit_type")}
                     options={benefitTypeOptions}
                     handleChange={handleBenefitTypeChange}
                     value={benefitType}
                   />
                   <Dropdown
-                    heading="Beneficiary"
+                    heading={t("beneficiary")}
                     options={beneficiaryData}
                     handleChange={handleBeneficiaryChange}
                     value={beneficiary}
                     className="ml-2"
                   />
                   <Dropdown
-                    heading="FY"
+                    heading={t("fy")}
                     options={fyOptions}
                     handleChange={handleFyChange}
                     value={fy}
@@ -161,7 +166,7 @@ const Benefits: React.FC = () => {
                     ))
                   ) : (
                     <div className="font-medium py-5 text-primary">
-                      No schemes available for the selected filter.
+                      {t("no_schemes_available")}
                     </div>
                   )
                 ) : (

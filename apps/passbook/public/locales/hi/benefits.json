@@ -1,10 +1,10 @@
 {
-    "schemes": "Schemes",
-    "transactions": "Transactions",
+    "schemes": "योजनाओं",
+    "transactions": "लेनदेन",
     "total_family_benefits": "Total family benefits",
     "services": "Services",
     "Rs": "Rs",
-    "benefit_type": "Benefit Type",
+    "benefit_type": "लाभ का प्रकार",
     "beneficiary": "Beneficiary",
     "fy": "FY",
     "no_schemes_available": "No schemes available for the selected filter.",

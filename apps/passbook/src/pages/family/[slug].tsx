@@ -12,8 +12,10 @@ import {
 } from "assets/icons";
 import Link from "next/link";
 import { useStateContext } from "context";
+import { useTranslation } from "react-i18next";
 
 const FamilyMemberDetails: React.FC = () => {
+  const { t } = useTranslation("familyDetails");
   const router = useRouter();
   const { familyData } = useStateContext();
   const { slug } = router.query;
@@ -48,7 +50,7 @@ const FamilyMemberDetails: React.FC = () => {
                     <table className="table-auto mt-3 font-regular mx-3">
                       <tbody>
                         <tr>
-                          <td className="pt-2 text-appGray">Relation</td>
+                          <td className="pt-2 text-appGray">{t("relation")}</td>
                           <td className="text-primary font-demi pt-2">
                             <span className="text-black font-regular">
                               : &nbsp;&nbsp;
@@ -57,7 +59,7 @@ const FamilyMemberDetails: React.FC = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className="pt-2 text-appGray">Gender</td>
+                          <td className="pt-2 text-appGray">{t("gender")}</td>
                           <td className="text-primary font-demi pt-2 capitalize">
                             <span className="text-black font-regular">
                               : &nbsp;&nbsp;
@@ -66,7 +68,7 @@ const FamilyMemberDetails: React.FC = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className="pt-2 text-appGray">Age</td>
+                          <td className="pt-2 text-appGray">{t("age")}</td>
                           <td className="text-primary font-demi pt-2">
                             <span className="text-black font-regular">
                               : &nbsp;&nbsp;
@@ -76,7 +78,7 @@ const FamilyMemberDetails: React.FC = () => {
                         </tr>
                         <tr>
                           <td className="pt-2 text-appGray">
-                            Date of Birth&nbsp;&nbsp;&nbsp;
+                            {t("dob")}&nbsp;&nbsp;&nbsp;
                           </td>
                           <td className="text-primary font-demi pt-2">
                             <span className="text-black font-regular">
@@ -87,7 +89,9 @@ const FamilyMemberDetails: React.FC = () => {
                         </tr>
                         {familyMember?.occupation && (
                           <tr>
-                            <td className="pt-2 text-appGray">Occupation</td>
+                            <td className="pt-2 text-appGray">
+                              {t("occupation")}
+                            </td>
                             <td className="text-primary font-demi pt-2">
                               <span className="text-black font-regular">
                                 : &nbsp;&nbsp;
@@ -124,48 +128,33 @@ const FamilyMemberDetails: React.FC = () => {
                     </table>
                     <div className="mt-11">
                       <h1 className="uppercase text-appGray text-[15px] font-bold text-center">
-                        Issued Documents
+                        {t("issued_documents")}
                       </h1>
                       <div className="flex justify-around mt-3">
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <CasteCertiIcon />
-                          <p className="mt-2">
-                            Caste <br />
-                            Certificate
-                          </p>
+                          <p className="mt-2">{t("caste_certificate")}</p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <DomicileCertiIcon />
-                          <p className="mt-2">
-                            Domicile <br />
-                            Certificate
-                          </p>
+                          <p className="mt-2">{t("domicile_certificate")}</p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <IncomeCertiIcon />
-                          <p className="mt-2">
-                            Income <br />
-                            Certificate
-                          </p>
+                          <p className="mt-2">{t("income_certificate")}</p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <BirthCertiIcon />
-                          <p className="mt-2">
-                            Birth <br />
-                            Certificate
-                          </p>
+                          <p className="mt-2">{t("birth_certificate")}</p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <AddIcon />
-                          <p className="mt-2">
-                            Add <br />
-                            More
-                          </p>
+                          <p className="mt-2">{t("add_more")}</p>
                         </div>
                       </div>
                     </div>
                     <div className="mt-6 text-appGray text-[10px] text-center font-regular">
-                      Please keep your family data updated.
+                      {t("family_data_updated")}
                     </div>
                   </div>
                 </div>
