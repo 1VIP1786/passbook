@@ -3,13 +3,7 @@ import { useRouter } from "next/router";
 import { Button } from "ui";
 import swal from "sweetalert";
 import { login } from "api";
-import { useTranslation } from "next-i18next";
-import type { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-type Props = {
-  // Add custom props here
-};
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
   const { t } = useTranslation("common");
@@ -70,9 +64,3 @@ export default function Index() {
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? "en", ["common"])),
-  },
-});
