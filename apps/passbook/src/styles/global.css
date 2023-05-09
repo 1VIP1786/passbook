@@ -12,7 +12,7 @@ body {
 }
 
 .bg-tertiary {
-  background-color: var(--tertiary);
+  background: linear-gradient(76.3deg, rgba(205, 141, 95, 0.29) 19.68%, rgba(227, 201, 183, 0.29) 43.96%, #E0BCA1 104.8%);
 }
 
 .bg-primary {
