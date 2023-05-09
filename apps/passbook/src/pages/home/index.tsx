@@ -3,8 +3,10 @@ import { Navbar, Header, Bottombar } from "components";
 import { getFamilySummary } from "api";
 import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
+import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
+  const { t } = useTranslation("home");
   const [summary, setSummary]: any = useState();
   useEffect(() => {
     const getData = async () => {
@@ -22,7 +24,9 @@ const Home: React.FC = () => {
           <div className="pt-40 sm:pt-48">
             <div className="bg-summary-card py-6 px-3 mx-5 rounded-lg text-white">
               <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>
-              <div className="font-regular text-[11px]">FAMILY ID</div>
+              <div className="font-regular text-[11px] uppercase">
+                {t("family_id")}
+              </div>
 
               <h1 className="font-demi text-[20px] mt-2">{summary?.namee}</h1>
               <div className="font-regular text-[11px]">
@@ -30,19 +34,21 @@ const Home: React.FC = () => {
               </div>
               <div className="flex justify-between mt-3">
                 <div className="font-medium text-[11px]">
-                  #{summary?.numberOfMembers} members
+                  #{summary?.numberOfMembers} {t("members")}
                 </div>
-                <div className="font-regular text-[11px]">FY {summary?.fy}</div>
+                <div className="font-regular text-[11px]">
+                  {t("fy")} {summary?.fy}
+                </div>
               </div>
             </div>
             <div className="bg-linear-gradient py-4 px-3 mt-4 mx-5 rounded-lg text-appGray text-center">
               <h1 className="font-bold text-[24px]">
                 {summary?.amountAvailed
-                  ? `Rs ${summary?.amountAvailed}`
-                  : "Rs 96,937"}
+                  ? `${t("Rs")} ${summary?.amountAvailed}`
+                  : `${t("Rs")} 96,937`}
               </h1>
               <div className="font-regular text-[11px]">
-                Benefits availed from the government schemes{" "}
+                {t("benefits_availed")}
               </div>
             </div>
             <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-linear-gradient font-regular uppercase text-appGray">
@@ -50,7 +56,7 @@ const Home: React.FC = () => {
                 {summary?.schemesAvailed}
               </span>{" "}
               <span className="align-text-bottom font-medium text-[15px]">
-                Schemes Availed
+                {t("schemes_availed")}
               </span>
             </div>
           </div>

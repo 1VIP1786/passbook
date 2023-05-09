@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Timer = (props: any) => {
+  const { t } = useTranslation("otp");
   const resendOTP = () => {
     setMinutes(0);
     setSeconds(30);
@@ -33,7 +35,8 @@ export const Timer = (props: any) => {
       <div className="font-regular text-center text-appGray">
         {minutes === 0 && seconds === 0 ? null : (
           <>
-            Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+            {t("time_remaining")}: {minutes}:
+            {seconds < 10 ? `0${seconds}` : seconds}
           </>
         )}
       </div>
@@ -45,7 +48,7 @@ export const Timer = (props: any) => {
         }}
         onClick={resendOTP}
       >
-        Resend OTP
+        {t("resend_otp")}
       </button>
     </>
   );

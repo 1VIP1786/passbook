@@ -1,4 +1,5 @@
-import { appWithTranslation } from "next-i18next";
+import { appWithI18Next, useSyncLanguage } from "ni18n";
+import { ni18nConfig } from "../../ni18n.config";
 import "styles/tailwind.css";
 import "styles/global.css";
 import { StateProvider } from "context";
@@ -7,6 +8,9 @@ import flagsmith from "flagsmith/isomorphic";
 import { FlagsmithProvider } from "flagsmith/react";
 
 const MyApp = ({ Component, pageProps, flagsmithState }) => {
+  const locale = "hi";
+  useSyncLanguage(locale);
+
   return (
     <StateProvider>
       <FlagsmithProvider serverState={flagsmithState} flagsmith={flagsmith}>
@@ -26,4 +30,4 @@ MyApp.getInitialProps = async () => {
 };
 
 // @ts-ignore
-export default appWithTranslation(MyApp);
+export default appWithI18Next(MyApp, ni18nConfig);

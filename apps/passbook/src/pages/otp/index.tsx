@@ -5,11 +5,14 @@ import { Button } from "ui";
 import { verifyOtp } from "../../api";
 import swal from "sweetalert";
 import { Timer } from "components";
+import { useTranslation } from "react-i18next";
 
 const Otp: React.FC = () => {
   const router = useRouter();
+  const { t } = useTranslation("otp");
   const { familyId } = router?.query;
   const [otp, setOtp] = useState("");
+
   const handleClick = async (event: any) => {
     if (otp) {
       const response = await verifyOtp(otp, familyId);
@@ -43,7 +46,7 @@ const Otp: React.FC = () => {
       </div>
       <div className="flex justify-center mt-5 flex-col">
         <h1 className="text-center text-gray-500 text-[1.3rem] font-medium">
-          Enter 4 digit OTP
+          {t("enter_otp")}
         </h1>
         <div className="mt-5 justify-center flex">
           <OtpInput
@@ -63,7 +66,11 @@ const Otp: React.FC = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <Button className="font-medium" onClick={handleClick} text="Submit" />
+        <Button
+          className="font-medium"
+          onClick={handleClick}
+          text={t("submit")}
+        />
       </div>
       <div className="mt-6 text-appGray font-regular text-center">
         <Timer />
