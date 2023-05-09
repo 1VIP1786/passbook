@@ -32,7 +32,7 @@ const FamilyMemberDetails: React.FC = () => {
                   <div className="font-bold text-center text-[20px] uppercase text-primary">
                     {familyMember?.namee}
                   </div>
-                  <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-7 mt-6">
+                  <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-1 mt-4">
                     <div className="mt-3">
                       <Link href="/family">
                         <BackIcon />
@@ -45,7 +45,7 @@ const FamilyMemberDetails: React.FC = () => {
                         <FemaleAvatar size="large" />
                       )}
                     </div>
-                    <table className="table-auto mt-4 font-regular">
+                    <table className="table-auto mt-3 font-regular mx-3">
                       <tbody>
                         <tr>
                           <td className="pt-2 text-appGray">Relation</td>
@@ -75,23 +75,27 @@ const FamilyMemberDetails: React.FC = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className="pt-2 text-appGray">Date of Birth</td>
+                          <td className="pt-2 text-appGray">
+                            Date of Birth&nbsp;&nbsp;&nbsp;
+                          </td>
                           <td className="text-primary font-demi pt-2">
                             <span className="text-black font-regular">
                               : &nbsp;&nbsp;
                             </span>
-                            {familyMember?.dob}
+                            {familyMember?.dob?.split("T")[0]}
                           </td>
                         </tr>
-                        <tr>
-                          <td className="pt-2 text-appGray">Occupation</td>
-                          <td className="text-primary font-demi pt-2">
-                            <span className="text-black font-regular">
-                              : &nbsp;&nbsp;
-                            </span>
-                            {familyMember?.occupation}
-                          </td>
-                        </tr>
+                        {familyMember?.occupation && (
+                          <tr>
+                            <td className="pt-2 text-appGray">Occupation</td>
+                            <td className="text-primary font-demi pt-2">
+                              <span className="text-black font-regular">
+                                : &nbsp;&nbsp;
+                              </span>
+                              {familyMember?.occupation}
+                            </td>
+                          </tr>
+                        )}
                         {familyMember?.schemesAvailed && (
                           <tr>
                             <td className="pt-2 text-appGray">
@@ -118,11 +122,11 @@ const FamilyMemberDetails: React.FC = () => {
                         )}
                       </tbody>
                     </table>
-                    <div className="mt-9">
+                    <div className="mt-11">
                       <h1 className="uppercase text-appGray text-[15px] font-bold text-center">
                         Issued Documents
                       </h1>
-                      <div className="flex justify-around mt-4">
+                      <div className="flex justify-around mt-3">
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <CasteCertiIcon />
                           <p className="mt-2">
@@ -159,6 +163,9 @@ const FamilyMemberDetails: React.FC = () => {
                           </p>
                         </div>
                       </div>
+                    </div>
+                    <div className="mt-6 text-appGray text-[10px] text-center font-regular">
+                      Please keep your family data updated.
                     </div>
                   </div>
                 </div>

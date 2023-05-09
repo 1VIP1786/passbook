@@ -2,13 +2,14 @@ import { Navbar, Header, Bottombar } from "components";
 import { CheveronIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
 import { RupeeIcon } from "assets/icons/rupee";
 import { useEffect, useState } from "react";
-import { getFamilyData, getFamilySchemes } from "api";
+import { getFamilyData, getFamilySchemes, getFamilyTransactions } from "api";
 import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
 import Dropdown from "components/dropdown";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
+  const [transactons, setTransactions]: any = useState();
   const [checked, setChecked] = useState(true);
   const [beneficiaryData, setBeneficiaryData]: any = useState();
   const [benefitType, setBenefitType]: any = useState("C");
@@ -40,7 +41,14 @@ const Benefits: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilySchemes(benefitType, beneficiary, fy);
+      // const transactions: any = await getFamilyTransactions(
+      //   benefitType,
+      //   beneficiary,
+      //   fy
+      // );
+      // console.log({transactions});
       setData(res);
+      // setTransactions(transactions);
     };
     getData();
   }, [benefitType, beneficiary, fy]);
