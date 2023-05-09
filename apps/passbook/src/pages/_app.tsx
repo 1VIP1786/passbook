@@ -25,4 +25,5 @@ MyApp.getInitialProps = async () => {
   return { flagsmithState: flagsmith.getState() };
 };
 
-export default MyApp;
+// @ts-ignore
+export default appWithTranslation(MyApp);
