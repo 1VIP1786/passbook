@@ -1,19 +1,13 @@
-import { appWithI18Next, useSyncLanguage } from "ni18n";
+import { appWithI18Next } from "ni18n";
 import { ni18nConfig } from "../../ni18n.config";
 import "styles/tailwind.css";
 import "styles/global.css";
 import { StateProvider } from "context";
 import { RouteGuard } from "components/routeGuard";
 import flagsmith from "flagsmith/isomorphic";
-import { useStateContext } from "context";
 import { FlagsmithProvider } from "flagsmith/react";
 
 const MyApp = ({ Component, pageProps, flagsmithState }) => {
-  const state = useStateContext();
-  console.log(state);
-  const locale = "en";
-  useSyncLanguage(locale);
-
   return (
     <StateProvider>
       <FlagsmithProvider serverState={flagsmithState} flagsmith={flagsmith}>

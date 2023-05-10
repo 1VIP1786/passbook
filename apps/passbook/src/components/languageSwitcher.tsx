@@ -1,28 +1,31 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useSyncLanguage } from "ni18n";
+import { useStateContext } from "context";
 
 export const LanguageSwitcher = () => {
-  const [isEngActive, setIsEngActive] = useState("");
+  const { locale, setLocale } = useStateContext();
+  useSyncLanguage(locale);
   return (
     <div>
       <button
         id="hindi"
         className={`${
-          isEngActive ? "active-language" : ""
+          locale == "hi" ? "active-language" : ""
         } language-switcher font-medium`}
         style={{ borderRadius: "5px 0px 0px 5px" }}
-        // onClick={toggleLanguage("en")}
+        onClick={() => setLocale("hi")}
       >
         हिंदी
       </button>
       <button
         id="eng"
         className={`${
-          !isEngActive
+          locale == "en"
             ? "language-switcher active-language"
             : "language-switcher"
         } language-switcher font-medium`}
         style={{ borderRadius: "0px 5px 5px 0px" }}
-        // onClick={toggleLanguage("or")}
+        onClick={() => setLocale("en")}
       >
         English
       </button>
