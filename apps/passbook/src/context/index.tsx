@@ -4,8 +4,9 @@ export const Context = createContext<any>(null);
 
 export function StateProvider({ children }) {
   const [familyData, setFamilyData] = useState();
+  const [locale, setLocale] = useState("en");
   return (
-    <Context.Provider value={{ familyData, setFamilyData }}>
+    <Context.Provider value={{ familyData, setFamilyData, locale, setLocale }}>
       {children}
     </Context.Provider>
   );

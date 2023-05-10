@@ -5,10 +5,13 @@ import "styles/global.css";
 import { StateProvider } from "context";
 import { RouteGuard } from "components/routeGuard";
 import flagsmith from "flagsmith/isomorphic";
+import { useStateContext } from "context";
 import { FlagsmithProvider } from "flagsmith/react";
 
 const MyApp = ({ Component, pageProps, flagsmithState }) => {
-  const locale = "hi";
+  const state = useStateContext();
+  console.log(state);
+  const locale = "en";
   useSyncLanguage(locale);
 
   return (

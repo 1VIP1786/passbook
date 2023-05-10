@@ -14,7 +14,7 @@ const HamburgerMenu: React.FC = () => {
   const clickHandler = () => {
     setIsOpen(!isOpen);
 
-    // // I'm still testing this part:
+    // I'm still testing this part:
     setTimeout(() => {
       setHide("absolute");
     }, 1000);
@@ -34,6 +34,7 @@ const HamburgerMenu: React.FC = () => {
           >
             <NavbarIcon />
           </label>
+          <div className="inline-flex flex-col items-end justify-center group"></div>
           <div className="inline-flex flex-col items-end justify-center group">
             <Link href="/notifications">
               <NotificationIcon />
