@@ -4,9 +4,13 @@ import { Button } from "ui";
 import swal from "sweetalert";
 import { login } from "api";
 import { useTranslation } from "react-i18next";
+import { useStateContext } from "context";
+import { useSyncLanguage } from "ni18n";
 
 export default function Index() {
   const { t } = useTranslation("common");
+  const { locale } = useStateContext();
+  useSyncLanguage(locale);
 
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
