@@ -1,14 +1,14 @@
 {
     "schemes": "योजनाओं",
     "transactions": "लेनदेन",
-    "total_family_benefits": "Total family benefits",
-    "services": "Services",
-    "Rs": "Rs",
+    "total_family_benefits": "कुल पारिवारिक लाभ",
+    "services": "सेवाएँ",
+    "Rs": "₹",
     "benefit_type": "लाभ का प्रकार",
-    "beneficiary": "Beneficiary",
-    "fy": "FY",
-    "no_schemes_available": "No schemes available for the selected filter.",
-    "cash": "Cash",
+    "beneficiary": "लाभार्थी",
+    "fy": "वित्तीय वर्ष",
+    "no_schemes_available": "चयनित फ़िल्टर के लिए कोई योजना उपलब्ध नहीं है।",
+    "cash": "नक़द",
     "in_kind": "In Kind",
-    "certificates": "Certificates"
+    "certificates": "प्रमाणपत्र"
 }
