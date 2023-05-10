@@ -1,4 +1,7 @@
 {
     "enter_family_id": "Enter Family ID",
-    "login": "Login"
+    "login": "Login",
+    "please_enter_the_family_id": "Please enter the Family ID",
+    "not_valid_family_id": "Not a valid Family ID",
+    "otp_sent_successfully": "Otp sent successfully"
 }

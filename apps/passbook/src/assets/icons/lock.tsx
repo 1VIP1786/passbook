@@ -1,7 +1,7 @@
 export const Lock = () => {
   return (
     <svg
-      fill="#db6027"
+      fill="#E1703B"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="100px"

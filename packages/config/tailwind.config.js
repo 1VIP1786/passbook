@@ -11,7 +11,7 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: "#db6027",
+          primary: "#E1703B",
         },
       },
     ],

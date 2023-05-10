@@ -44,7 +44,7 @@ export const Timer = (props: any) => {
         disabled={seconds > 0 || minutes > 0}
         className="font-regular"
         style={{
-          color: seconds > 0 || minutes > 0 ? "#9e9e9e" : "#525252",
+          color: seconds > 0 || minutes > 0 ? "#9e9e9e" : "#626161",
         }}
         onClick={resendOTP}
       >

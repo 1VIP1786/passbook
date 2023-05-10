@@ -31,7 +31,7 @@ const FamilyMemberDetails: React.FC = () => {
             familyMember?.familyMemberId == slug && (
               <div className="pt-40 sm:pt-48">
                 <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
-                  <div className="font-bold text-center text-[20px] uppercase text-primary">
+                  <div className="font-bold text-center text-[20px] uppercase text-appGray">
                     {familyMember?.namee}
                   </div>
                   <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-1 mt-4">
@@ -52,7 +52,7 @@ const FamilyMemberDetails: React.FC = () => {
                         <tr>
                           <td className="pt-2 text-appGray">{t("relation")}</td>
                           <td className="text-primary font-demi pt-2">
-                            <span className="text-black font-regular">
+                            <span className="text-appGray font-regular">
                               : &nbsp;&nbsp;
                             </span>
                             {familyMember?.relation}
@@ -61,7 +61,7 @@ const FamilyMemberDetails: React.FC = () => {
                         <tr>
                           <td className="pt-2 text-appGray">{t("gender")}</td>
                           <td className="text-primary font-demi pt-2 capitalize">
-                            <span className="text-black font-regular">
+                            <span className="text-appGray font-regular">
                               : &nbsp;&nbsp;
                             </span>
                             {familyMember?.gender}
@@ -70,7 +70,7 @@ const FamilyMemberDetails: React.FC = () => {
                         <tr>
                           <td className="pt-2 text-appGray">{t("age")}</td>
                           <td className="text-primary font-demi pt-2">
-                            <span className="text-black font-regular">
+                            <span className="text-appGray font-regular">
                               : &nbsp;&nbsp;
                             </span>
                             {familyMember?.age}
@@ -81,7 +81,7 @@ const FamilyMemberDetails: React.FC = () => {
                             {t("dob")}&nbsp;&nbsp;&nbsp;
                           </td>
                           <td className="text-primary font-demi pt-2">
-                            <span className="text-black font-regular">
+                            <span className="text-appGray font-regular">
                               : &nbsp;&nbsp;
                             </span>
                             {familyMember?.dob?.split("T")[0]}
@@ -93,7 +93,7 @@ const FamilyMemberDetails: React.FC = () => {
                               {t("occupation")}
                             </td>
                             <td className="text-primary font-demi pt-2">
-                              <span className="text-black font-regular">
+                              <span className="text-appGray font-regular">
                                 : &nbsp;&nbsp;
                               </span>
                               {familyMember?.occupation}
@@ -106,7 +106,7 @@ const FamilyMemberDetails: React.FC = () => {
                               Schemes Availed&nbsp;
                             </td>
                             <td className="text-primary font-demi pt-2">
-                              <span className="text-black font-regular">
+                              <span className="text-appGray font-regular">
                                 : &nbsp;&nbsp;
                               </span>
                               {familyMember?.schemesAvailed}
@@ -117,7 +117,7 @@ const FamilyMemberDetails: React.FC = () => {
                           <tr>
                             <td className="pt-2 text-appGray">Caste&nbsp;</td>
                             <td className="text-primary font-demi pt-2">
-                              <span className="text-black font-regular">
+                              <span className="text-appGray font-regular">
                                 : &nbsp;&nbsp;
                               </span>
                               {familyMember?.caste}
@@ -143,10 +143,10 @@ const FamilyMemberDetails: React.FC = () => {
                           <IncomeCertiIcon />
                           <p className="mt-2">{t("income_certificate")}</p>
                         </div>
-                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        {/* <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <BirthCertiIcon />
                           <p className="mt-2">{t("birth_certificate")}</p>
-                        </div>
+                        </div> */}
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <AddIcon />
                           <p className="mt-2">{t("add_more")}</p>

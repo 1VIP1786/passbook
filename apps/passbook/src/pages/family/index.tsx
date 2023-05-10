@@ -26,7 +26,7 @@ const Family: React.FC = () => {
         familyData?.status !== 500 && familyData?.status !== 403 ? (
           <div className="pt-40 sm:pt-48">
             <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-[70vh]">
-              <div className="text-primary font-bold text-center text-[20px] uppercase">
+              <div className="text-appGray font-bold text-center text-[20px] uppercase">
                 {t("my_family")}
               </div>
               {familyData &&
@@ -45,7 +45,7 @@ const Family: React.FC = () => {
                         )}
                       </div>
                       <div className="flex justify-between w-full uppercase">
-                        <div className="text-[12px] text-[#525252] font-demi">
+                        <div className="text-[12px] text-[#626161] font-demi">
                           {familyMember?.namee}
                           <div className="font-regular text-[10px]">
                             {familyMember?.relation}

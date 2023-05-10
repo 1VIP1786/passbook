@@ -2,5 +2,8 @@
     "enter_otp": "4 अंकों का ओटीपी दर्ज करें",
     "submit": "जमा करना",
     "time_remaining": "शेष समय",
-    "resend_otp": "ओटीपी पुनः भेजें"
+    "resend_otp": "ओटीपी पुनः भेजें",
+    "please_enter_the_otp": "कृपया ओटीपी दर्ज करें",
+    "can_not_verify_otp": "ओटीपी सत्यापित नहीं है",
+    "successful_logged_in": "सफल लॉग इन"
 }

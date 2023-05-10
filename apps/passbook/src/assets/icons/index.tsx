@@ -18,3 +18,4 @@ export * from "./incomeCerti";
 export * from "./birthCerti";
 export * from "./domicileCerti";
 export * from "./add";
+export * from "./coin";

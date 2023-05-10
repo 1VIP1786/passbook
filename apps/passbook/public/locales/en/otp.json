@@ -2,5 +2,8 @@
     "enter_otp": "Enter 4 digit OTP",
     "submit": "Submit",
     "time_remaining": "Time remaining",
-    "resend_otp": "Resend OTP"
+    "resend_otp": "Resend OTP",
+    "please_enter_the_otp": "Please enter the OTP",
+    "can_not_verify_otp": "Can not verify OTP",
+    "successful_logged_in": "Successfully Logged In"
 }

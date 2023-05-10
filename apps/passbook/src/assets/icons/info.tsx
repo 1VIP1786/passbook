@@ -1,7 +1,7 @@
 export const InfoIcon = () => {
   return (
     <svg
-      fill="#525252"
+      fill="#626161"
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@ export const InfoIcon = () => {
       height="23px"
       viewBox="0 0 416.979 416.979"
       xmlSpace="preserve"
-      stroke="#525252"
+      stroke="#626161"
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g

@@ -4,6 +4,7 @@ import { getFamilySummary } from "api";
 import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
 import { useTranslation } from "react-i18next";
+import { CoinIcon } from "assets/icons";
 
 const Home: React.FC = () => {
   const { t } = useTranslation("home");
@@ -41,17 +42,20 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-linear-gradient py-4 px-3 mt-4 mx-5 rounded-lg text-appGray text-center">
-              <h1 className="font-bold text-[24px]">
-                {summary?.amountAvailed
-                  ? `${t("Rs")} ${summary?.amountAvailed}`
-                  : `${t("Rs")} 96,937`}
-              </h1>
+            <div className="bg-tertiary py-4 px-3 mt-4 mx-5 rounded-lg text-appGray text-center">
+              <div className="flex justify-center">
+                <CoinIcon />
+                <h1 className="font-bold text-[24px] ml-3">
+                  {summary?.amountAvailed
+                    ? `${t("Rs")} ${summary?.amountAvailed}`
+                    : `${t("Rs")} 0`}
+                </h1>
+              </div>
               <div className="font-regular text-[11px]">
                 {t("benefits_availed")}
               </div>
             </div>
-            <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-linear-gradient font-regular uppercase text-appGray">
+            <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-tertiary font-regular uppercase text-appGray">
               <span className="font-bold text-[24px]">
                 {summary?.schemesAvailed}
               </span>{" "}

@@ -4,6 +4,7 @@ import { Button } from "ui";
 import Link from "next/link";
 import { useFlags } from "flagsmith/react";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./languageSwitcher";
 
 const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const HamburgerMenu: React.FC = () => {
   const handleClick = (event: any) => {};
   return (
     <>
-      <div className="fixed top-0 md:w-[470px] bg-white w-full border-t border-gray-200">
+      <div className="fixed top-0 md:w-[470px] bg-white w-full border-t border-gray-200 h-[49px]">
         <div className="flex h-full max-w-lg justify-between mx-auto font-medium p-4">
           <label
             htmlFor="my-drawer"
@@ -34,7 +35,9 @@ const HamburgerMenu: React.FC = () => {
           >
             <NavbarIcon />
           </label>
-          <div className="inline-flex flex-col items-end justify-center group"></div>
+          <div className="inline-flex flex-col items-end justify-center group">
+            <LanguageSwitcher />
+          </div>
           <div className="inline-flex flex-col items-end justify-center group">
             <Link href="/notifications">
               <NotificationIcon />

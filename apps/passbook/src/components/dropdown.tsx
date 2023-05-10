@@ -15,7 +15,7 @@ const Dropdown = ({
     <div className={`dropdown dropdown-bottom ${className}`}>
       <label
         tabIndex={0}
-        className="text-[11px] font-regular bg-white rounded px-3 py-2 text-black"
+        className="text-[11px] font-regular bg-white rounded px-3 py-2 text-appGray"
       >
         {heading}&nbsp;&nbsp;
         <CheveronIcon />

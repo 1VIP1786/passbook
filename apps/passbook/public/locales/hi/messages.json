@@ -1,8 +1,0 @@
-{
-    "please_enter_the_family_id": "कृपया परिवार आईडी दर्ज करें",
-    "not_valid_family_id": "मान्य परिवार आईडी नहीं है",
-    "otp_sent_successfully": "ओटीपी सफलतापूर्वक भेजा गया",
-    "please_enter_the_otp": "कृपया ओटीपी दर्ज करें",
-    "can_not_verify_otp": "ओटीपी सत्यापित नहीं है",
-    "successful_logged_in": "सफल लॉग इन"
-}
