@@ -108,10 +108,10 @@ const Benefits: React.FC = () => {
                       </div>
                       <div className="flex flex-col justify-center">
                         <div className="text-white font-bold text-[12px]">
-                          {t("schemes")}: {data?.schemeCount}
+                          {t("schemes")} : {data?.schemeCount}
                         </div>
                         <div className="text-white font-bold text-[12px]">
-                          {t("services")}: 0
+                          {t("services")} : 0
                         </div>
                       </div>
                     </div>
@@ -154,7 +154,7 @@ const Benefits: React.FC = () => {
                         <div className="group text-[12px] text-appGray col-span-4 flex items-center">
                           {scheme?.schemeName}
                         </div>
-                        <div className="flex items-center justify-between text-[12px] text-appGray ml-2">
+                        <div className="flex items-center justify-between text-[13px] text-appGray ml-2">
                           <div className="flex items-center">
                             {scheme?.totalBeneficiary}
                           </div>

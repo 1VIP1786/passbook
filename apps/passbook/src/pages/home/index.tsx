@@ -67,14 +67,16 @@ const Home: React.FC = () => {
                 {t("benefits_availed")}
               </div>
             </div>
-            <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-tertiary font-regular uppercase text-appGray flex justify-center items-center">
-              <span className="font-bold text-[24px]">
-                {summary?.schemesAvailed}
-              </span>
-              <span className="ml-2 font-demi text-[12px]">
-                {t("schemes_availed")}
-              </span>
-            </div>
+            <Link href="/benefits">
+              <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-tertiary font-regular uppercase text-appGray flex justify-center items-center">
+                <span className="font-bold text-[24px]">
+                  {summary?.schemesAvailed}
+                </span>
+                <span className="ml-2 font-demi text-[12px]">
+                  {t("schemes_availed")}
+                </span>
+              </div>
+            </Link>
           </div>
         ) : (
           <div className="bg-tertiary min-h-screen flex flex-col justify-center items-center">
