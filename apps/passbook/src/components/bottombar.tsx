@@ -1,9 +1,11 @@
 import { HomeIcon, FamilyIcon, BenefitsIcon, DiscoverIcon } from "assets/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 export const Bottombar = () => {
   const router = useRouter();
+  const { t } = useTranslation("bottomBar");
   const { pathname } = router;
   return (
     <>
@@ -27,7 +29,7 @@ export const Bottombar = () => {
                       : "text-sm text-gray-500"
                   }
                 >
-                  Home
+                  {t("home")}
                 </span>
               </button>
             </Link>
@@ -48,7 +50,7 @@ export const Bottombar = () => {
                       : "text-sm text-gray-500"
                   }
                 >
-                  Family
+                  {t("family")}
                 </span>
               </button>
             </Link>
@@ -69,7 +71,7 @@ export const Bottombar = () => {
                       : "text-sm text-gray-500"
                   }
                 >
-                  Benefits
+                  {t("benefits")}
                 </span>
               </button>
             </Link>
@@ -90,7 +92,7 @@ export const Bottombar = () => {
                       : "text-sm text-gray-500"
                   }
                 >
-                  Discover
+                  {t("discover")}
                 </span>
               </button>
             </Link>

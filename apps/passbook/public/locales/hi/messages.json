@@ -1,0 +1,7 @@
+{
+    "please_enter_the_family_id": "Please enter the Family ID",
+    "otp_sent_successfully": "Otp sent successfully",
+    "please_enter_the_otp": "Please enter the OTP",
+    "can_not_verify_otp": "Can not verify OTP",
+    "successful_logged_in": "Successfully Logged In"
+}

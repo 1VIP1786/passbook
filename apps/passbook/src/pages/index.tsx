@@ -15,20 +15,20 @@ export default function Index() {
       const response = await login(loginId);
       if (response?.status == 403) {
         swal({
-          text: "Not a valid Family ID",
+          text: t("not_valid_family_id"),
           icon: "warning",
         });
       }
       if (response?.status == 201) {
         swal({
-          text: response.data,
+          text: t("otp_sent_successfully"),
           icon: "success",
         });
         router.push(`/otp?familyId=${loginId}`);
       }
     } else {
       swal({
-        text: "Please enter the Family ID",
+        text: t("please_enter_the_family_id"),
         icon: "warning",
       });
     }

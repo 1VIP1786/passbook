@@ -18,19 +18,19 @@ const Otp: React.FC = () => {
       const response = await verifyOtp(otp, familyId);
       if (response?.status == 201) {
         swal({
-          text: response.data?.result?.responseMsg,
+          text: t("successful_logged_in"),
           icon: "success",
         });
         router.push("/home");
       } else {
         swal({
-          text: response?.data?.message,
+          text: t("can_not_verify_otp"),
           icon: "error",
         });
       }
     } else {
       swal({
-        text: "Please enter the OTP",
+        text: t("please_enter_the_otp"),
         icon: "warning",
       });
     }
