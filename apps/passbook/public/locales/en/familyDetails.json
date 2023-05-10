@@ -6,10 +6,11 @@
     "occupation": "Occupation",
     "caste": "Caste",
     "issued_documents": "Issued Documents",
-    "caste_certificate": "Caste Certificate",
-    "domicile_certificate": "Domicile Certificate",
-    "birth_certificate": "Birth Certificate",
-    "income_certificate": "Income Certificate",
+    "caste_certificate": "Caste",
+    "domicile_certificate": "Domicile",
+    "birth_certificate": "Birth",
+    "income_certificate": "Income",
     "add_more": "Add More",
+    "certificate": "Certificate",
     "family_data_updated": "Please keep your family data updated."
 }

@@ -1,28 +1,49 @@
 export const InfoIcon = () => {
   return (
     <svg
-      fill="#626161"
-      version="1.1"
-      id="Capa_1"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="23px"
-      height="23px"
-      viewBox="0 0 416.979 416.979"
-      xmlSpace="preserve"
-      stroke="#626161"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g
-        id="SVGRepo_tracerCarrier"
+      <circle
+        cx="12"
+        cy="12.0001"
+        r="9.00375"
+        stroke="#4F4F4F"
+        stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
-      ></g>
-      <g id="SVGRepo_iconCarrier">
-        <g>
-          <path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85 c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786 c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576 c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765 c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"></path>{" "}
-        </g>
-      </g>
+      />
+      <path
+        d="M10.9996 15.5016H13.3099"
+        stroke="#4F4F4F"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.159 15.5016V11.2498H11.0085"
+        stroke="#4F4F4F"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.1 8.24581C12.1 8.38394 11.9881 8.49592 11.8499 8.49592C11.7118 8.49592 11.5998 8.38394 11.5998 8.24581C11.5998 8.10769 11.7118 7.99571 11.8499 7.99571"
+        stroke="#4F4F4F"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.8499 7.9957C11.988 7.9957 12.1 8.10768 12.1 8.2458"
+        stroke="#4F4F4F"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   );
 };

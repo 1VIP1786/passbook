@@ -133,15 +133,27 @@ const FamilyMemberDetails: React.FC = () => {
                       <div className="flex justify-around mt-3">
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <CasteCertiIcon />
-                          <p className="mt-2">{t("caste_certificate")}</p>
+                          <p className="mt-2">
+                            {t("caste_certificate")}
+                            <br />
+                            {t("certificate")}
+                          </p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <DomicileCertiIcon />
-                          <p className="mt-2">{t("domicile_certificate")}</p>
+                          <p className="mt-2">
+                            {t("domicile_certificate")}
+                            <br />
+                            {t("certificate")}
+                          </p>
                         </div>
                         <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <IncomeCertiIcon />
-                          <p className="mt-2">{t("income_certificate")}</p>
+                          <p className="mt-2">
+                            {t("income_certificate")}
+                            <br />
+                            {t("certificate")}
+                          </p>
                         </div>
                         {/* <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
                           <BirthCertiIcon />

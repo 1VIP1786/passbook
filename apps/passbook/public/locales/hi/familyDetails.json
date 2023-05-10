@@ -6,10 +6,11 @@
     "occupation": "व्यवसाय",
     "caste": "जाति",
     "issued_documents": "जारी दस्तावेज",
-    "caste_certificate": "जाति प्रमाणपत्र",
-    "domicile_certificate": "अधिवास प्रमाणपत्र",
-    "birth_certificate": "जन्म प्रमाणपत्र",
-    "income_certificate": "आय प्रमाणपत्र",
+    "caste_certificate": "जाति",
+    "domicile_certificate": "अधिवास",
+    "birth_certificate": "जन्म",
+    "income_certificate": "आय",
+    "certificate": "प्रमाणपत्र",
     "add_more": "और जोड़ें",
     "family_data_updated": "कृपया अपने परिवार की जानकारी को अपडेट रखें।"
 }
