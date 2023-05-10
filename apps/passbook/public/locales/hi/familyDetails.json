@@ -1,15 +1,15 @@
 {
-    "relation": "Relation",
-    "dob": "Date of Birth",
-    "age": "Age",
-    "gender": "Gender",
-    "occupation": "Occupation",
-    "caste": "Caste",
-    "issued_documents": "Issued Documents",
-    "caste_certificate": "Caste Certificate",
-    "domicile_certificate": "Domicile Certificate",
-    "birth_certificate": "Birth Certificate",
-    "income_certificate": "Income Certificate",
-    "add_more": "Add More",
-    "family_data_updated": "Please keep your family data updated."
+    "relation": "संबंध",
+    "dob": "जन्मतिथि",
+    "age": "उम्र",
+    "gender": "लिंग",
+    "occupation": "व्यवसाय",
+    "caste": "जाति",
+    "issued_documents": "जारी दस्तावेज",
+    "caste_certificate": "जाति प्रमाणपत्र",
+    "domicile_certificate": "अधिवास प्रमाणपत्र",
+    "birth_certificate": "जन्म प्रमाणपत्र",
+    "income_certificate": "आय प्रमाणपत्र",
+    "add_more": "और जोड़ें",
+    "family_data_updated": "कृपया अपने परिवार की जानकारी को अपडेट रखें।"
 }
