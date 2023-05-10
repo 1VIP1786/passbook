@@ -8,7 +8,7 @@ import flagsmith from "flagsmith/isomorphic";
 import { FlagsmithProvider } from "flagsmith/react";
 
 const MyApp = ({ Component, pageProps, flagsmithState }) => {
-  const locale = "en";
+  const locale = "hi";
   useSyncLanguage(locale);
 
   return (
