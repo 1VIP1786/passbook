@@ -6,9 +6,9 @@ import {
   BirthCertiIcon,
   CasteCertiIcon,
   DomicileCertiIcon,
-  FemaleAvatar,
   IncomeCertiIcon,
-  MaleAvatar,
+  ProfileFemaleIcon,
+  ProfileMaleIcon,
 } from "assets/icons";
 import Link from "next/link";
 import { useStateContext } from "context";
@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 const FamilyMemberDetails: React.FC = () => {
   const { t } = useTranslation("familyDetails");
   const router = useRouter();
-  const { familyData } = useStateContext();
+  const { familyData, locale } = useStateContext();
   const { slug } = router.query;
 
   return (
@@ -32,7 +32,7 @@ const FamilyMemberDetails: React.FC = () => {
               <div className="pt-40 sm:pt-48">
                 <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
                   <div className="font-bold text-center text-[20px] uppercase text-appGray">
-                    {familyMember?.namee}
+                    {locale == "hi" ? familyMember?.nameh : familyMember?.namee}
                   </div>
                   <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl px-3 pb-1 mt-4">
                     <div className="mt-3">
@@ -42,9 +42,9 @@ const FamilyMemberDetails: React.FC = () => {
                     </div>
                     <div className="flex justify-center mt-4">
                       {familyMember?.gender == "M" ? (
-                        <MaleAvatar size="large" />
+                        <ProfileMaleIcon />
                       ) : (
-                        <FemaleAvatar size="large" />
+                        <ProfileFemaleIcon />
                       )}
                     </div>
                     <table className="table-auto mt-3 font-regular mx-3">
@@ -115,7 +115,9 @@ const FamilyMemberDetails: React.FC = () => {
                         )}
                         {familyMember?.caste && (
                           <tr>
-                            <td className="pt-2 text-appGray">Caste&nbsp;</td>
+                            <td className="pt-2 text-appGray">
+                              {t("caste")}&nbsp;
+                            </td>
                             <td className="text-primary font-demi pt-2">
                               <span className="text-appGray font-regular">
                                 : &nbsp;&nbsp;
@@ -131,7 +133,7 @@ const FamilyMemberDetails: React.FC = () => {
                         {t("issued_documents")}
                       </h1>
                       <div className="flex justify-around mt-3">
-                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
                           <CasteCertiIcon />
                           <p className="mt-2">
                             {t("caste_certificate")}
@@ -139,7 +141,7 @@ const FamilyMemberDetails: React.FC = () => {
                             {t("certificate")}
                           </p>
                         </div>
-                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
                           <DomicileCertiIcon />
                           <p className="mt-2">
                             {t("domicile_certificate")}
@@ -147,7 +149,7 @@ const FamilyMemberDetails: React.FC = () => {
                             {t("certificate")}
                           </p>
                         </div>
-                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
                           <IncomeCertiIcon />
                           <p className="mt-2">
                             {t("income_certificate")}
@@ -155,17 +157,17 @@ const FamilyMemberDetails: React.FC = () => {
                             {t("certificate")}
                           </p>
                         </div>
-                        {/* <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        {/* <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
                           <BirthCertiIcon />
                           <p className="mt-2">{t("birth_certificate")}</p>
                         </div> */}
-                        <div className="text-center font-medium text-[10px] text-appGray flex justify-center flex-col items-center">
+                        <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
                           <AddIcon />
                           <p className="mt-2">{t("add_more")}</p>
                         </div>
                       </div>
                     </div>
-                    <div className="mt-6 text-appGray text-[10px] text-center font-regular">
+                    <div className="mt-6 text-appGray text-[11px] text-center font-regular">
                       {t("family_data_updated")}
                     </div>
                   </div>

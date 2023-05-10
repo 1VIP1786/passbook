@@ -5,9 +5,11 @@ import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
 import { useTranslation } from "react-i18next";
 import { CoinIcon } from "assets/icons";
+import { useStateContext } from "context";
 
 const Home: React.FC = () => {
   const { t } = useTranslation("home");
+  const { locale } = useStateContext();
   const [summary, setSummary]: any = useState();
   useEffect(() => {
     const getData = async () => {
@@ -23,15 +25,20 @@ const Home: React.FC = () => {
       {summary ? (
         summary?.status != 500 && summary?.status != 403 ? (
           <div className="pt-40 sm:pt-48">
-            <div className="bg-summary-card py-6 px-3 mx-5 rounded-lg text-white">
+            <div className="bg-summary-card py-6 px-3 mx-5 rounded-lg text-white min-h-[25vh]">
               <h1 className="font-demi text-[20px]">{summary?.familyID}</h1>
               <div className="font-regular text-[11px] uppercase">
                 {t("family_id")}
               </div>
 
-              <h1 className="font-demi text-[20px] mt-2">{summary?.namee}</h1>
+              <h1 className="font-demi text-[20px] mt-2">
+                {locale == "hi" ? summary?.nameh : summary?.namee}
+              </h1>
               <div className="font-regular text-[11px]">
-                {summary?.districtNamee}, {summary?.blockName}
+                {locale == "hi"
+                  ? summary?.districtNameh
+                  : summary?.districtNamee}
+                , {summary?.blockName}
               </div>
               <div className="flex justify-between mt-3">
                 <div className="font-medium text-[11px]">

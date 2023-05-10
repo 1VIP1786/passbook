@@ -7,6 +7,7 @@ import Fallback from "components/fallback";
 import Loading from "assets/icons/loading";
 import Dropdown from "components/dropdown";
 import { useTranslation } from "react-i18next";
+import { useStateContext } from "context";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
@@ -18,7 +19,7 @@ const Benefits: React.FC = () => {
   const [beneficiary, setBeneficiary]: any = useState("");
 
   const { t } = useTranslation("benefits");
-
+  const { locale } = useStateContext();
   const benefitTypeOptions = [
     { value: "C", label: t("cash") },
     { value: "IK", label: t("in_kind") },
@@ -63,7 +64,7 @@ const Benefits: React.FC = () => {
       res?.familyMembers?.forEach((familyMember: any) => {
         beneficiaryOptions.push({
           value: familyMember?.familyMemberId,
-          label: familyMember?.namee,
+          label: locale == "hi" ? familyMember?.nameh : familyMember?.namee,
         });
       });
       setBeneficiaryData(beneficiaryOptions);
@@ -188,7 +189,9 @@ const Benefits: React.FC = () => {
                         </div>
                         <div className="flex items-center">
                           <div className="text-appGray uppercase text-[11px] font-demi">
-                            {transaction?.beneficiaryNamee}
+                            {locale == "hi"
+                              ? transaction?.beneficiaryNameh
+                              : transaction?.beneficiaryNamee}
                           </div>
                         </div>
                       </div>

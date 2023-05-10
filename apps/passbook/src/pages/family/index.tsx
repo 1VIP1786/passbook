@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const Family: React.FC = () => {
   const { t } = useTranslation("family");
-  const { familyData, setFamilyData } = useStateContext();
+  const { familyData, setFamilyData, locale } = useStateContext();
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilyData();
@@ -46,7 +46,9 @@ const Family: React.FC = () => {
                       </div>
                       <div className="flex justify-between w-full uppercase">
                         <div className="text-[12px] text-[#626161] font-demi">
-                          {familyMember?.namee}
+                          {locale == "hi"
+                            ? familyMember?.nameh
+                            : familyMember?.namee}
                           <div className="font-regular text-[10px]">
                             {familyMember?.relation}
                           </div>
