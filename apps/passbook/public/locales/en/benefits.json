@@ -8,6 +8,7 @@
     "beneficiary": "Beneficiary",
     "fy": "FY",
     "no_schemes_available": "No schemes available for the selected filter.",
+    "no_transactions_available": "No transactions available for the selected filter.",
     "cash": "Cash",
     "in_kind": "In Kind",
     "certificates": "Certificates"

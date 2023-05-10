@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const Benefits: React.FC = () => {
   const [data, setData]: any = useState();
-  const [transactons, setTransactions]: any = useState();
+  const [transactions, setTransactions]: any = useState();
   const [checked, setChecked] = useState(true);
   const [beneficiaryData, setBeneficiaryData]: any = useState();
   const [benefitType, setBenefitType]: any = useState("C");
@@ -44,14 +44,14 @@ const Benefits: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       const res: any = await getFamilySchemes(benefitType, beneficiary, fy);
-      // const transactions: any = await getFamilyTransactions(
-      //   benefitType,
-      //   beneficiary,
-      //   fy
-      // );
-      // console.log({transactions});
+      const transactions: any = await getFamilyTransactions(
+        benefitType,
+        beneficiary,
+        fy
+      );
+      console.log({ transactions });
       setData(res);
-      // setTransactions(transactions);
+      setTransactions(transactions);
     };
     getData();
   }, [benefitType, beneficiary, fy]);
@@ -169,26 +169,34 @@ const Benefits: React.FC = () => {
                       {t("no_schemes_available")}
                     </div>
                   )
+                ) : transactions &&
+                  transactions?.transactions &&
+                  transactions?.transactions?.length > 0 ? (
+                  transactions?.transactions?.map((transaction: any) => (
+                    <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
+                      <div className="group flex items-center">
+                        <SchemesIcon />
+                      </div>
+                      <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+                        {transaction?.schemeName}
+                      </div>
+                      <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
+                        <div className="flex items-center">
+                          <div className="text-[#23C96F] uppercase text-[11px] font-demi">
+                            {transaction?.amount}
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="text-appGray uppercase text-[11px] font-demi">
+                            {transaction?.beneficiaryNamee}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))
                 ) : (
-                  <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
-                    <div className="group flex items-center">
-                      <SchemesIcon />
-                    </div>
-                    <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                      Integrated Development of Horticulture (MIDH) CSS
-                    </div>
-                    <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
-                      <div className="flex items-center">
-                        <div className="text-[#23C96F] uppercase text-[11px] font-demi">
-                          IN KIND
-                        </div>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="text-appGray uppercase text-[11px] font-demi">
-                          NarAAjiya
-                        </div>
-                      </div>
-                    </div>
+                  <div className="font-medium py-5 text-primary">
+                    {t("no_transactions_available")}
                   </div>
                 )}
                 {}
