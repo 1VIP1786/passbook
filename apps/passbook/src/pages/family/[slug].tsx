@@ -161,9 +161,9 @@ const FamilyMemberDetails: React.FC = () => {
                           <BirthCertiIcon />
                           <p className="mt-2">{t("birth_certificate")}</p>
                         </div> */}
-                        <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
+                        <div className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center">
                           <AddIcon />
-                          <p className="mt-2">{t("add_more")}</p>
+                          <p className="mt-6">{t("add_more")}</p>
                         </div>
                       </div>
                     </div>
