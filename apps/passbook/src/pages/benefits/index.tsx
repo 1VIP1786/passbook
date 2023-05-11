@@ -39,7 +39,6 @@ const Benefits: React.FC = () => {
   ];
   const handleBenefitTypeChange = (event: any) => {
     const attributeValue = event.target.getAttribute("value");
-    console.log(event);
     setBenefitType({
       value: attributeValue,
       label: event?.target?.innerHTML,
@@ -69,8 +68,8 @@ const Benefits: React.FC = () => {
       );
       const transactions: any = await getFamilyTransactions(
         benefitType?.value,
-        beneficiary,
-        fy
+        beneficiary?.value,
+        fy?.value
       );
       console.log({ res });
       setData(res);
