@@ -1,5 +1,5 @@
 import { Navbar, Header, Bottombar } from "components";
-import { SchemesAvailed, SchemesIcon } from "assets/icons";
+import { BenefitsIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
 import { RupeeIcon } from "assets/icons/rupee";
 import { useEffect, useState } from "react";
 import { getFamilyData, getFamilySchemes, getFamilyTransactions } from "api";
@@ -148,8 +148,8 @@ const Benefits: React.FC = () => {
                         className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
                         key={scheme?.code}
                       >
-                        <div className="group flex items-center">
-                          <SchemesIcon />
+                        <div className="group flex items-center text-primary">
+                          <BenefitsIcon />
                         </div>
                         <div className="group text-[12px] text-appGray col-span-4 flex items-center">
                           {scheme?.schemeName}
@@ -175,8 +175,8 @@ const Benefits: React.FC = () => {
                   transactions?.transactions?.length > 0 ? (
                   transactions?.transactions?.map((transaction: any) => (
                     <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
-                      <div className="group flex items-center">
-                        <SchemesIcon />
+                      <div className="group flex items-center text-primary">
+                        <BenefitsIcon />
                       </div>
                       <div className="group text-[12px] text-appGray col-span-4 flex items-center">
                         {transaction?.schemeName}
@@ -188,7 +188,7 @@ const Benefits: React.FC = () => {
                           </div>
                         </div>
                         <div className="flex items-center">
-                          <div className="text-appGray uppercase text-[11px] font-demi">
+                          <div className="text-appGray uppercase text-[9px] font-demi">
                             {locale == "hi"
                               ? transaction?.beneficiaryNameh
                               : transaction?.beneficiaryNamee}
