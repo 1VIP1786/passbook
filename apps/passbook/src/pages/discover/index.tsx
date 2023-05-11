@@ -14,11 +14,11 @@ const Discover: React.FC = () => {
     <div className="bg-tertiary min-h-screen flex flex-col justify-center items-center">
       <Navbar />
       <Header />
-      <h1 className="text-primary font-bold text-[34px] mb-3">
+      <h1 className="text-primary font-bold text-[34px]">
         {t("coming_soon")} !
       </h1>
       <ComingSoon />
-      <div className="font-regular text-appGray text-center px-7 mt-5">
+      <div className="font-regular text-appGray text-center px-7">
         {t("coming_soon_description")}
       </div>
       <Button

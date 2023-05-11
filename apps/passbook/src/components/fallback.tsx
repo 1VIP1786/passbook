@@ -13,7 +13,7 @@ const Fallback = () => {
         Something went wrong!
       </h1>
       <Lock />
-      <div className="font-regular text-appGray text-center px-7 mt-5">
+      <div className="font-regular text-appGray text-center px-7">
         Please try logging in again.
       </div>
       <Button className="font-medium mt-4" onClick={handleClick} text="Login" />
