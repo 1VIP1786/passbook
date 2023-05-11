@@ -14,7 +14,7 @@ const Benefits: React.FC = () => {
   const [transactions, setTransactions]: any = useState();
   const [checked, setChecked] = useState(true);
   const [beneficiaryData, setBeneficiaryData]: any = useState();
-  const [benefitType, setBenefitType]: any = useState("C");
+  const [benefitType, setBenefitType]: any = useState("");
   const [fy, setFy]: any = useState("2022-23");
   const [beneficiary, setBeneficiary]: any = useState("");
 
@@ -50,7 +50,7 @@ const Benefits: React.FC = () => {
         beneficiary,
         fy
       );
-      console.log({ transactions });
+      console.log({ res });
       setData(res);
       setTransactions(transactions);
     };
@@ -70,7 +70,7 @@ const Benefits: React.FC = () => {
       setBeneficiaryData(beneficiaryOptions);
     };
     getData();
-  }, []);
+  }, [locale]);
   return (
     <div className="mb-20">
       <Navbar />
@@ -103,7 +103,7 @@ const Benefits: React.FC = () => {
                           {t("total_family_benefits")}
                         </div>
                         <div className="text-white font-bold">
-                          {t("Rs")} 92,227
+                          {t("Rs")} {data?.totalAmount}
                         </div>
                       </div>
                       <div className="flex flex-col justify-center">

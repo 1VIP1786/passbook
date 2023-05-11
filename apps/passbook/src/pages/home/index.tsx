@@ -32,7 +32,9 @@ const Home: React.FC = () => {
                   {t("family_id")}
                 </div>
                 <h1 className="font-demi text-[24px] mt-6">
-                  {summary?.familyID}
+                  {summary?.familyID.match(/.{1,4}/g)?.map((char: any) => (
+                    <>{char}&nbsp;&nbsp;</>
+                  ))}
                 </h1>
 
                 <h1 className="font-demi text-[20px] mt-6">
