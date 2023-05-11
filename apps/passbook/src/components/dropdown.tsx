@@ -8,7 +8,7 @@ const Dropdown = ({
   className = "",
 }) => {
   const isActive = (key: any) => {
-    return key === value ? "bg-primary text-white" : "";
+    return key === value?.value ? "bg-primary text-white" : "";
   };
 
   return (

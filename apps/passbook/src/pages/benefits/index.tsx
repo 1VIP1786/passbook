@@ -14,9 +14,18 @@ const Benefits: React.FC = () => {
   const [transactions, setTransactions]: any = useState();
   const [checked, setChecked] = useState(true);
   const [beneficiaryData, setBeneficiaryData]: any = useState();
-  const [benefitType, setBenefitType]: any = useState("");
-  const [fy, setFy]: any = useState("2022-23");
-  const [beneficiary, setBeneficiary]: any = useState("");
+  const [benefitType, setBenefitType]: any = useState({
+    value: "",
+    label: "",
+  });
+  const [fy, setFy]: any = useState({
+    value: "2022-23",
+    label: "2022-23",
+  });
+  const [beneficiary, setBeneficiary]: any = useState({
+    value: "",
+    label: "",
+  });
 
   const { t } = useTranslation("benefits");
   const { locale } = useStateContext();
@@ -31,22 +40,36 @@ const Benefits: React.FC = () => {
   ];
   const handleBenefitTypeChange = (event: any) => {
     const attributeValue = event.target.getAttribute("value");
-    setBenefitType(attributeValue);
+    console.log(event);
+    setBenefitType({
+      value: attributeValue,
+      label: event?.target?.innerHTML,
+    });
   };
   const handleFyChange = (event: any) => {
     const attributeValue = event.target.getAttribute("value");
-    setFy(attributeValue);
+    setFy({
+      value: attributeValue,
+      label: event?.target?.innerHTML,
+    });
   };
   const handleBeneficiaryChange = (event: any) => {
     const attributeValue = event.target.getAttribute("value");
-    setBeneficiary(attributeValue);
+    setBeneficiary({
+      value: attributeValue,
+      label: event?.target?.innerHTML,
+    });
   };
 
   useEffect(() => {
     const getData = async () => {
-      const res: any = await getFamilySchemes(benefitType, beneficiary, fy);
+      const res: any = await getFamilySchemes(
+        benefitType?.value,
+        beneficiary?.value,
+        fy?.value
+      );
       const transactions: any = await getFamilyTransactions(
-        benefitType,
+        benefitType?.value,
         beneficiary,
         fy
       );
@@ -120,20 +143,28 @@ const Benefits: React.FC = () => {
 
                 <div className="mt-5 pb-3">
                   <Dropdown
-                    heading={t("benefit_type")}
+                    heading={
+                      benefitType && benefitType?.label
+                        ? benefitType?.label
+                        : t("benefit_type")
+                    }
                     options={benefitTypeOptions}
                     handleChange={handleBenefitTypeChange}
                     value={benefitType}
                   />
                   <Dropdown
-                    heading={t("beneficiary")}
+                    heading={
+                      beneficiary && beneficiary?.label
+                        ? beneficiary?.label
+                        : t("beneficiary")
+                    }
                     options={beneficiaryData}
                     handleChange={handleBeneficiaryChange}
                     value={beneficiary}
                     className="ml-2"
                   />
                   <Dropdown
-                    heading={t("fy")}
+                    heading={fy && fy?.label ? fy?.label : t("fy")}
                     options={fyOptions}
                     handleChange={handleFyChange}
                     value={fy}
