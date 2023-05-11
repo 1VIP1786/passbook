@@ -5,7 +5,7 @@ body {
 }
 
 :root {
-  --primary: #E1703B;
+  --primary: #e1703b;
   --secondary: #35d3cf;
   --tertiary: rgba(228, 165, 127, 0.2);
   --fontColor: #626161;
@@ -107,4 +107,45 @@ input {
 .active-language {
   background: var(--primary);
   color: white;
+}
+
+.actionsheet-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.actionsheet-box {
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px 10px 0 0;  
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2);
+  animation-name: slide-up;
+  animation-duration: 0.5s;
+}
+
+.actionsheet-slide-down {
+  animation-name: slide-down;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translate(0, 100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 100%);
+  }
 }

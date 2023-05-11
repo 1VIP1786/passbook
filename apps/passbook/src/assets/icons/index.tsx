@@ -21,3 +21,4 @@ export * from "./add";
 export * from "./coin";
 export * from "./profileFemale";
 export * from "./profileMale";
+export * from "./cross";

@@ -26,7 +26,6 @@ const Benefits: React.FC = () => {
     value: "",
     label: "",
   });
-
   const { t } = useTranslation("benefits");
   const { locale } = useStateContext();
   const benefitTypeOptions = [

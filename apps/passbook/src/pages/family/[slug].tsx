@@ -13,10 +13,18 @@ import {
 import Link from "next/link";
 import { useStateContext } from "context";
 import { useTranslation } from "react-i18next";
+import { ActionSheet } from "components/actionSheet";
+import { useState } from "react";
 
 const FamilyMemberDetails: React.FC = () => {
   const { t } = useTranslation("familyDetails");
   const router = useRouter();
+  const [showBox, setShowBox] = useState(false);
+
+  const toggleBox = () => {
+    setShowBox(!showBox);
+  };
+
   const { familyData, locale } = useStateContext();
   const { slug } = router.query;
 
@@ -40,7 +48,10 @@ const FamilyMemberDetails: React.FC = () => {
                         <BackIcon />
                       </Link>
                     </div>
-                    <div className="flex justify-center mt-4">
+                    <div
+                      className="flex justify-center mt-4"
+                      onClick={toggleBox}
+                    >
                       {familyMember?.gender == "M" ? (
                         <ProfileMaleIcon />
                       ) : (
@@ -161,7 +172,10 @@ const FamilyMemberDetails: React.FC = () => {
                           <BirthCertiIcon />
                           <p className="mt-2">{t("birth_certificate")}</p>
                         </div> */}
-                        <div className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center">
+                        <div
+                          className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center"
+                          onClick={toggleBox}
+                        >
                           <AddIcon />
                           <p className="mt-6">{t("add_more")}</p>
                         </div>
@@ -175,6 +189,7 @@ const FamilyMemberDetails: React.FC = () => {
               </div>
             )
         )}
+      <ActionSheet showBox={showBox} toggleBox={toggleBox} />
       <Bottombar />
     </div>
   );
