@@ -1,7 +1,7 @@
 {
-    "enter_family_id": "परिवार आईडी दर्ज करें",
+    "enter_family_id": "फ़ैमिली आईडी दर्ज करें",
     "login": "लॉग इन करें",
-    "please_enter_the_family_id": "कृपया परिवार आईडी दर्ज करें",
-    "not_valid_family_id": "मान्य परिवार आईडी नहीं है",
+    "please_enter_the_family_id": "कृपया फ़ैमिली आईडी दर्ज करें",
+    "not_valid_family_id": "मान्य फ़ैमिली आईडी नहीं है",
     "otp_sent_successfully": "ओटीपी सफलतापूर्वक भेजा गया"
 }
