@@ -28,9 +28,13 @@ const Home: React.FC = () => {
           <div className="pt-40 sm:pt-48">
             <Link href="/family">
               <div className="bg-summary-card py-7 px-5 mx-5 rounded-lg text-white">
-                <div className="font-regular text-[11px] uppercase">
-                  {t("family_id")}
+                <div className="flex justify-between">
+                  <div className="font-regular text-[11px] uppercase">
+                    {t("family_id")}
+                  </div>
+                  {/* <img src="/images/logo.png" /> */}
                 </div>
+
                 <h1 className="font-demi text-[24px] mt-6">
                   {summary?.familyID.match(/.{1,4}/g)?.map((char: any) => (
                     <>{char}&nbsp;&nbsp;</>

@@ -25,16 +25,18 @@ const Dropdown = ({
         className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
         onClick={handleChange}
       >
-        {options &&
-          options?.map((option: any) => (
-            <li
-              className={` ${isActive(option?.value)} text-[#313144]`}
-              key={option?.value}
-            >
-              {/* @ts-ignore */}
-              <a value={option?.value}>{option?.label}</a>
-            </li>
-          ))}
+        <div className="max-h-[200px] overflow-y-scroll">
+          {options &&
+            options?.map((option: any) => (
+              <li
+                className={` ${isActive(option?.value)} text-[#313144]`}
+                key={option?.value}
+              >
+                {/* @ts-ignore */}
+                <a value={option?.value}>{option?.label}</a>
+              </li>
+            ))}
+        </div>
       </ul>
     </div>
   );
