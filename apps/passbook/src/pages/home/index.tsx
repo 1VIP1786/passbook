@@ -56,19 +56,21 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </Link>
-            <div className="bg-tertiary py-4 px-3 mt-10 mx-5 rounded-lg text-appGray text-center">
-              <div className="flex justify-center">
-                <CoinIcon />
-                <h1 className="font-bold text-[24px] ml-3">
-                  {summary?.amountAvailed
-                    ? `${t("Rs")} ${summary?.amountAvailed}`
-                    : `${t("Rs")} 0`}
-                </h1>
+            <Link href="/benefits?transactions=true">
+              <div className="bg-tertiary py-4 px-3 mt-10 mx-5 rounded-lg text-appGray text-center">
+                <div className="flex justify-center">
+                  <CoinIcon />
+                  <h1 className="font-bold text-[24px] ml-3">
+                    {summary?.amountAvailed
+                      ? `${t("Rs")} ${summary?.amountAvailed}`
+                      : `${t("Rs")} 0`}
+                  </h1>
+                </div>
+                <div className="font-regular text-[11px]">
+                  {t("benefits_availed")}
+                </div>
               </div>
-              <div className="font-regular text-[11px]">
-                {t("benefits_availed")}
-              </div>
-            </div>
+            </Link>
             <Link href="/benefits">
               <div className="py-2 px-3 mt-4 mx-5 rounded-lg text-center bg-tertiary font-regular uppercase text-appGray flex justify-center items-center">
                 <span className="font-bold text-[24px]">

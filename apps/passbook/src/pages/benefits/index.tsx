@@ -8,11 +8,15 @@ import Loading from "assets/icons/loading";
 import Dropdown from "components/dropdown";
 import { useTranslation } from "react-i18next";
 import { useStateContext } from "context";
+import { useRouter } from "next/router";
 
 const Benefits: React.FC = () => {
+  const router = useRouter();
   const [data, setData]: any = useState();
   const [transactions, setTransactions]: any = useState();
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(
+    router?.query?.transactions ? true : false
+  );
   const [beneficiaryData, setBeneficiaryData]: any = useState();
   const [benefitType, setBenefitType]: any = useState({
     value: "",
@@ -109,6 +113,7 @@ const Benefits: React.FC = () => {
                     <input
                       type="checkbox"
                       className="toggle toggle-primary"
+                      checked={checked}
                       onChange={() => setChecked(!checked)}
                     />
                     <span className="font-bold text-[12px] text-[#695F5F] uppercase flex items-center">
@@ -171,64 +176,64 @@ const Benefits: React.FC = () => {
                 </div>
 
                 {checked ? (
-                  data && data?.schemes && data?.schemes?.length > 0 ? (
-                    data?.schemes?.map((scheme: any) => (
-                      <div
-                        className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
-                        key={scheme?.code}
-                      >
+                  transactions &&
+                  transactions?.transactions &&
+                  transactions?.transactions?.length > 0 ? (
+                    transactions?.transactions?.map((transaction: any) => (
+                      <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
                         <div className="group flex items-center text-primary">
                           <BenefitsIcon />
                         </div>
                         <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                          {scheme?.schemeName}
+                          {transaction?.schemeName}
                         </div>
-                        <div className="flex items-center justify-between text-[13px] text-appGray ml-2">
+                        <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
                           <div className="flex items-center">
-                            {scheme?.totalBeneficiary}
+                            <div className="text-[#23C96F] uppercase text-[11px] font-demi">
+                              {transaction?.amount}
+                            </div>
                           </div>
-                          <SchemesAvailed />
-                        </div>
-                        <div className="flex items-center justify-end text-[12px] text-appGray">
-                          <RupeeIcon />
+                          <div className="flex items-center">
+                            <div className="text-appGray uppercase text-[9px] font-demi">
+                              {locale == "hi"
+                                ? transaction?.beneficiaryNameh
+                                : transaction?.beneficiaryNamee}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ))
                   ) : (
                     <div className="font-medium py-5 text-primary">
-                      {t("no_schemes_available")}
+                      {t("no_transactions_available")}
                     </div>
                   )
-                ) : transactions &&
-                  transactions?.transactions &&
-                  transactions?.transactions?.length > 0 ? (
-                  transactions?.transactions?.map((transaction: any) => (
-                    <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
+                ) : data && data?.schemes && data?.schemes?.length > 0 ? (
+                  data?.schemes?.map((scheme: any) => (
+                    <div
+                      className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
+                      key={scheme?.code}
+                    >
                       <div className="group flex items-center text-primary">
                         <BenefitsIcon />
                       </div>
                       <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                        {transaction?.schemeName}
+                        {scheme?.schemeName}
                       </div>
-                      <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
+                      <div className="flex items-center justify-between text-[13px] text-appGray ml-2">
                         <div className="flex items-center">
-                          <div className="text-[#23C96F] uppercase text-[11px] font-demi">
-                            {transaction?.amount}
-                          </div>
+                          {scheme?.totalBeneficiary}
                         </div>
-                        <div className="flex items-center">
-                          <div className="text-appGray uppercase text-[9px] font-demi">
-                            {locale == "hi"
-                              ? transaction?.beneficiaryNameh
-                              : transaction?.beneficiaryNamee}
-                          </div>
-                        </div>
+                        <SchemesAvailed />
+                      </div>
+                      <div className="flex items-center justify-end text-[12px] text-appGray">
+                        <RupeeIcon />
                       </div>
                     </div>
                   ))
                 ) : (
                   <div className="font-medium py-5 text-primary">
-                    {t("no_transactions_available")}
+                    {t("no_schemes_available")}
                   </div>
                 )}
                 {}
