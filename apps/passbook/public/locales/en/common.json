@@ -1,7 +1,7 @@
 {
-    "enter_family_id": "Enter Family ID",
+    "enter_family_id": "Enter Aadhar Number",
     "login": "Login",
-    "please_enter_the_family_id": "Please enter the Family ID",
-    "not_valid_family_id": "Not a valid Family ID",
+    "please_enter_the_family_id": "Please enter the Aadhar Number",
+    "not_valid_family_id": "Not a valid Aadhar Number",
     "otp_sent_successfully": "Otp sent successfully"
 }
