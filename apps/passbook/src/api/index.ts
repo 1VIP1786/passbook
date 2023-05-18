@@ -3,19 +3,24 @@ import { setCookie, getCookie } from "cookies-next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-export const login = async (familyId: string) => {
+export const login = async (aadhar: string) => {
   try {
-    const response = await axios.post(`${baseUrl}/auth/login/${familyId}`);
+    const response = await axios.post(`${baseUrl}/auth/login/${aadhar}`);
     return response;
   } catch (error) {
     return error?.response;
   }
 };
 
-export const verifyOtp = async (otp: string, familyId: any) => {
+export const verifyOtp = async (otp: string, aadhar: any, txn: any) => {
   try {
+    const body = {
+      otp,
+      otptxn: txn,
+    };
     const response = await axios.post(
-      `${baseUrl}/auth/verifyOTP/${familyId}/${otp}`
+      `${baseUrl}/auth/verifyOTP/${aadhar}`,
+      JSON.stringify(body)
     );
     setCookie(
       "responseToken",

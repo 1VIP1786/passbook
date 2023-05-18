@@ -1,11 +1,26 @@
+import { login } from "api";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import swal from "sweetalert";
 
 export const Timer = (props: any) => {
   const { t } = useTranslation("otp");
-  const resendOTP = () => {
+  const router = useRouter();
+  const resendOTP = async () => {
     setMinutes(0);
     setSeconds(30);
+    const response = await login(props?.aadhar);
+    console.log(response);
+    if (response?.status == 201) {
+      swal({
+        text: t("otp_sent_successfully"),
+        icon: "success",
+      });
+      router.push(
+        `/otp?aadhar=${props?.aadhar}&txn=${response?.data?.Value[0]?.otptxn}&mobile=${response?.data?.Value[0]?.maskedMobile}`
+      );
+    }
   };
 
   const { initialMinute = 0, initialSeconds = 30 } = props;

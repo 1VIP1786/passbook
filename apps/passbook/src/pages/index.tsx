@@ -24,11 +24,14 @@ export default function Index() {
         });
       }
       if (response?.status == 201) {
+        console.log({ response });
         swal({
           text: t("otp_sent_successfully"),
           icon: "success",
         });
-        router.push(`/otp?familyId=${loginId}`);
+        router.push(
+          `/otp?aadhar=${loginId}&txn=${response?.data?.Value[0]?.otptxn}&mobile=${response?.data?.Value[0]?.maskedMobile}`
+        );
       }
     } else {
       swal({

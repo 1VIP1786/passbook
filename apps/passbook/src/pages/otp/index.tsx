@@ -10,12 +10,12 @@ import { useTranslation } from "react-i18next";
 const Otp: React.FC = () => {
   const router = useRouter();
   const { t } = useTranslation("otp");
-  const { familyId } = router?.query;
+  const { aadhar, txn, mobile } = router?.query;
   const [otp, setOtp] = useState("");
 
   const handleClick = async (event: any) => {
     if (otp) {
-      const response = await verifyOtp(otp, familyId);
+      const response = await verifyOtp(otp, aadhar, txn);
       if (response?.status == 201) {
         swal({
           text: t("successful_logged_in"),
@@ -73,7 +73,7 @@ const Otp: React.FC = () => {
         />
       </div>
       <div className="mt-6 text-appGray font-regular text-center">
-        <Timer />
+        <Timer aadhar={aadhar} />
       </div>
     </div>
   );
