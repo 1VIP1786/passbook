@@ -23,7 +23,7 @@ export const verifyOtp = async (otp: string, aadhar: any, txn: any) => {
       response?.data?.result?.data?.user?.refreshToken
     );
     setCookie("token", response?.data?.result?.data?.user?.token);
-    setCookie("username", response?.data?.result?.data?.user?.user?.username);
+    setCookie("username", aadhar);
     return response;
   } catch (error) {
     return error?.response;
