@@ -52,13 +52,13 @@ const Otp: React.FC = () => {
           <OtpInput
             value={otp}
             onChange={setOtp}
-            numInputs={4}
+            numInputs={6}
             renderSeparator={<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}
             renderInput={(props) => <input {...props} />}
             inputType="number"
             inputStyle={{
-              width: "2.5rem",
-              height: "2.5rem",
+              width: "2rem",
+              height: "2rem",
               border: "1px solid lightgray",
               borderRadius: "5px",
             }}
