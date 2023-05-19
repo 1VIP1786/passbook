@@ -36,7 +36,7 @@ const Home: React.FC = () => {
                 </div>
 
                 <h1 className="font-demi text-[24px] mt-6">
-                  {summary?.familyID.match(/.{1,4}/g)?.map((char: any) => (
+                  {summary?.familyID?.match(/.{1,4}/g)?.map((char: any) => (
                     <>{char}&nbsp;&nbsp;</>
                   ))}
                 </h1>
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
                   {locale == "hi"
                     ? summary?.districtNameh
                     : summary?.districtNamee}
-                  , {summary?.blockName}
+                  {summary?.blockName && `,${summary?.blockName}`}
                 </div>
                 <div className="flex justify-between mt-1">
                   <div className="font-medium text-[11px]">
