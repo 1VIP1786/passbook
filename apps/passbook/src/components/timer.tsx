@@ -9,7 +9,7 @@ export const Timer = (props: any) => {
   const router = useRouter();
   const resendOTP = async () => {
     setMinutes(0);
-    setSeconds(30);
+    setSeconds(60);
     const response = await login(props?.aadhar);
     console.log(response);
     if (response?.status == 201) {
@@ -23,7 +23,7 @@ export const Timer = (props: any) => {
     }
   };
 
-  const { initialMinute = 0, initialSeconds = 30 } = props;
+  const { initialMinute = 0, initialSeconds = 60 } = props;
   const [minutes, setMinutes] = useState(initialMinute);
   const [seconds, setSeconds] = useState(initialSeconds);
   useEffect(() => {

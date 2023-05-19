@@ -14,14 +14,10 @@ export const login = async (aadhar: string) => {
 
 export const verifyOtp = async (otp: string, aadhar: any, txn: any) => {
   try {
-    const body = {
+    const response = await axios.post(`${baseUrl}/auth/verifyOTP/${aadhar}`, {
       otp,
       otptxn: txn,
-    };
-    const response = await axios.post(
-      `${baseUrl}/auth/verifyOTP/${aadhar}`,
-      JSON.stringify(body)
-    );
+    });
     setCookie(
       "responseToken",
       response?.data?.result?.data?.user?.refreshToken
