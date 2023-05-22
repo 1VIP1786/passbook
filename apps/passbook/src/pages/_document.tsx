@@ -43,7 +43,7 @@ export default function Document() {
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <link rel="icon" href="icons/favicon.ico" />
 
-        {/* <title>पासवृक</title> */}
+        <title>पासवृक</title>
       </Head>
       <body>
         <Main />

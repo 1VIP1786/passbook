@@ -43,11 +43,11 @@ export default function Index() {
   return (
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
       <div className="flex justify-between">
-        <img src="./images/govtLogo.png" />
-        <img src="./images/cm.png" />
+        <img src="./images/govtLogo.png" alt="govtLogo" />
+        <img src="./images/cm.png" alt="CM" />
       </div>
       <div className="flex justify-center mt-10">
-        <img src="./images/logo.png" />
+        <img src="./images/logo.png" alt="familyID Logo" />
       </div>
       <div className="flex justify-center mt-5 flex-col">
         <h1 className="text-center text-gray-500 text-[1.5rem] font-medium">
