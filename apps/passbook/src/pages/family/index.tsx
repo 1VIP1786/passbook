@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import { Navbar, Header, Bottombar } from "components";
 import { FemaleAvatar, InfoIcon, MaleAvatar } from "assets/icons";
 import Link from "next/link";
-import { getFamilyData } from "api";
+import { digilockerSignin, getFamilyData } from "api";
 import { useStateContext } from "context";
 import Loading from "assets/icons/loading";
 import Fallback from "components/fallback";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 const Family: React.FC = () => {
   const { t } = useTranslation("family");
+  const router = useRouter();
   const { familyData, setFamilyData, locale } = useStateContext();
   useEffect(() => {
     const getData = async () => {
@@ -17,6 +19,14 @@ const Family: React.FC = () => {
       setFamilyData(res);
     };
     getData();
+  }, []);
+  useEffect(() => {
+    if (router?.query?.code) {
+      const sendCode = async () => {
+        await digilockerSignin(router?.query?.code);
+      };
+      sendCode();
+    }
   }, []);
   return (
     <div className="mb-20">

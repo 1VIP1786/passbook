@@ -1,3 +1,4 @@
+import { setCookie } from "cookies-next";
 import { sha256 } from "js-sha256";
 
 // Program to generate random strings
@@ -6,7 +7,7 @@ import { sha256 } from "js-sha256";
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#*!";
 
-function generateString(length) {
+function generateString(length: number) {
   let result = " ";
   const charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
@@ -17,7 +18,9 @@ function generateString(length) {
 }
 
 export const getCodeChallenge = () => {
-  const encryptedSha256 = sha256(`${generateString(6)}${Date.now()}`);
+  const codeVerifier = `${generateString(10)}${Date.now()}`;
+  setCookie("code_verifier", codeVerifier);
+  const encryptedSha256 = sha256(codeVerifier);
   let encryptedbase64 = btoa(encryptedSha256);
   encryptedbase64 = encryptedbase64.replace("=", "");
   encryptedbase64 = encryptedbase64.replace("+", "-");

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setCookie, getCookie } from "cookies-next";
+import { setCookie, getCookie, removeCookies } from "cookies-next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -106,4 +106,18 @@ export const getFamilyTransactions = async (
   }
 };
 
-// export const resendOtp = async (otp: string, familyId: any) => {};
+export const digilockerSignin = async (code: any) => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/digilocker/signin/${getCookie("username")}`,
+      {
+        code,
+        code_verifier: getCookie("code_verifier"),
+      }
+    );
+    removeCookies("code_verifier");
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
