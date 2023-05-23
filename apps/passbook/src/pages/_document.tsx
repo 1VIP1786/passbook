@@ -24,14 +24,17 @@ export default function Document() {
         <meta name="twitter:creator" content="@passbook" />
         <meta
           name="twitter:image:src"
-          content="https://passbook-web.vercel.app/icons/logo512.png"
+          content="https://passbook.familyid.samagra.io/icons/logo512.png"
         />
 
         <meta property="og:title" content="Family ID | Passbook" />
-        <meta property="og:url" content="https://passbook-web.vercel.app/" />
+        <meta
+          property="og:url"
+          content="https://passbook.familyid.samagra.io/"
+        />
         <meta
           property="og:image"
-          content="https://passbook-web.vercel.app/icons/logo512.png"
+          content="https://passbook.familyid.samagra.io/icons/logo512.png"
         />
         <meta
           property="og:description"
