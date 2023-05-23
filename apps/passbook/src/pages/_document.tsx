@@ -40,7 +40,7 @@ export default function Document() {
         <meta property="og:site_name" content="Family ID | Passbook" />
 
         <link rel="apple-touch-icon" href="icons/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="manifest" href="manifest.json" />
         <link rel="icon" href="icons/favicon.ico" />
 
         <title>पासवृक</title>
