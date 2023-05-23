@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 const Family: React.FC = () => {
   const { t } = useTranslation("family");
   const router = useRouter();
+  const code = router?.query?.code;
   const { familyData, setFamilyData, locale } = useStateContext();
   useEffect(() => {
     const getData = async () => {
@@ -21,13 +22,13 @@ const Family: React.FC = () => {
     getData();
   }, []);
   useEffect(() => {
-    if (router?.query?.code) {
+    if (code) {
       const sendCode = async () => {
         await digilockerSignin(router?.query?.code);
       };
       sendCode();
     }
-  }, []);
+  }, [code]);
   return (
     <div className="mb-20">
       <Navbar />
