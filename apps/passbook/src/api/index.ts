@@ -113,6 +113,11 @@ export const digilockerSignin = async (code: any) => {
       {
         code,
         code_verifier: getCookie("code_verifier"),
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
       }
     );
     removeCookies("code_verifier");
