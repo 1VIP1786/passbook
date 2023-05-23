@@ -8,7 +8,7 @@ const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#*!";
 
 function generateString(length: number) {
-  let result = " ";
+  let result = "";
   const charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -18,7 +18,8 @@ function generateString(length: number) {
 }
 
 export const getCodeChallenge = () => {
-  const codeVerifier = `${generateString(10)}${Date.now()}`;
+  const codeVerifier = generateString(10) + Date.now();
+  console.log(codeVerifier);
   setCookie("code_verifier", codeVerifier);
   const encryptedSha256 = sha256(codeVerifier);
   let encryptedbase64 = btoa(encryptedSha256);
