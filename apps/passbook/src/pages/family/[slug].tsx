@@ -52,7 +52,14 @@ const FamilyMemberDetails: React.FC = () => {
                       className="flex justify-center mt-4"
                       onClick={toggleBox}
                     >
-                      {familyMember?.gender == "M" ? (
+                      {familyMember?.bs64Photo ? (
+                        <img
+                          src={`data:image/png;base64, ${familyMember?.bs64Photo}`}
+                          alt="avatar"
+                          width="24%"
+                          className="rounded-full"
+                        />
+                      ) : familyMember?.gender == "M" ? (
                         <ProfileMaleIcon />
                       ) : (
                         <ProfileFemaleIcon />
