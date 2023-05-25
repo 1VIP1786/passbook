@@ -11,7 +11,6 @@ export const Timer = (props: any) => {
     setMinutes(0);
     setSeconds(60);
     const response = await login(props?.aadhar);
-    console.log(response);
     if (response?.status == 201) {
       swal({
         text: t("otp_sent_successfully"),

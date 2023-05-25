@@ -75,7 +75,6 @@ const Benefits: React.FC = () => {
         beneficiary?.value,
         fy?.value
       );
-      console.log({ res });
       setData(res);
       setTransactions(transactions);
     };

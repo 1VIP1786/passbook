@@ -23,7 +23,6 @@ export default function Index() {
     ) {
       const authTokenVerification = async () => {
         const res = await verifyToken();
-        console.log(res);
         if (res == 200) {
           router.push("/home");
         } else {
@@ -45,7 +44,6 @@ export default function Index() {
         });
       }
       if (response?.status == 201) {
-        console.log({ response });
         swal({
           text: t("otp_sent_successfully"),
           icon: "success",

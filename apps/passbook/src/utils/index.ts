@@ -19,7 +19,6 @@ function generateString(length: number) {
 
 export const getCodeChallenge = () => {
   const codeVerifier = generateString(10) + Date.now();
-  console.log(codeVerifier);
   setCookie("code_verifier", codeVerifier);
   const encryptedSha256 = sha256(codeVerifier);
   let encryptedbase64 = btoa(encryptedSha256);
