@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="favicon.ico" sizes="16x16" />
+        <link rel="icon" href="icons/favicon.ico" sizes="16x16" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="Family ID, passbook" />
         <meta
@@ -41,7 +41,7 @@ export default function Document() {
 
         <link rel="apple-touch-icon" href="icons/logo192.png" />
         <link rel="manifest" href="manifest.json" />
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="icons/favicon.ico" />
 
         <title>पासवृक</title>
       </Head>
