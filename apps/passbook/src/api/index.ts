@@ -126,3 +126,36 @@ export const digilockerSignin = async (code: any) => {
     return error?.response;
   }
 };
+
+export const verifyToken = async () => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/auth/verifyToken/${getCookie("username")}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
+export const getAccessTokenWithRefreshToken = async () => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/auth/refreshToken/${getCookie("username")}`,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};

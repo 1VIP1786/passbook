@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "ui";
 import swal from "sweetalert";
-import { login } from "api";
+import { login, verifyToken } from "api";
 import { useTranslation } from "react-i18next";
 import { useStateContext } from "context";
 import { useSyncLanguage } from "ni18n";
@@ -14,6 +14,16 @@ export default function Index() {
 
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
+  useEffect(() => {
+    const authTokenVerification = async () => {
+      const res = await verifyToken();
+      console.log(res);
+      if (res == 200) {
+        router.push("/home");
+      }
+    };
+    authTokenVerification();
+  }, []);
   const handleClick = async (event: any) => {
     if (loginId) {
       const response = await login(loginId);
