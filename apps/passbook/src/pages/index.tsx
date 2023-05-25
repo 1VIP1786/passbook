@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "ui";
 import swal from "sweetalert";
-import { login, verifyToken } from "api";
+import { getAccessTokenWithRefreshToken, login, verifyToken } from "api";
 import { useTranslation } from "react-i18next";
 import { useStateContext } from "context";
 import { useSyncLanguage } from "ni18n";
+import { getCookie, setCookie } from "cookies-next";
 
 export default function Index() {
   const { t } = useTranslation("common");
@@ -15,14 +16,20 @@ export default function Index() {
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
   useEffect(() => {
-    const authTokenVerification = async () => {
-      const res = await verifyToken();
-      console.log(res);
-      if (res == 200) {
-        router.push("/home");
-      }
-    };
-    authTokenVerification();
+    if (getCookie("username")) {
+      const authTokenVerification = async () => {
+        const res = await verifyToken();
+        console.log(res);
+        if (res == 200) {
+          router.push("/home");
+        } else {
+          const res = await getAccessTokenWithRefreshToken();
+          setCookie("token", res?.result?.user?.token);
+          router.push("/home");
+        }
+      };
+      authTokenVerification();
+    }
   }, []);
   const handleClick = async (event: any) => {
     if (loginId) {

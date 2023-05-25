@@ -18,10 +18,7 @@ export const verifyOtp = async (otp: string, aadhar: any, txn: any) => {
       otp,
       otptxn: txn,
     });
-    setCookie(
-      "responseToken",
-      response?.data?.result?.data?.user?.refreshToken
-    );
+    setCookie("refreshToken", response?.data?.result?.data?.user?.refreshToken);
     setCookie("token", response?.data?.result?.data?.user?.token);
     setCookie("username", aadhar);
     return response;
@@ -129,31 +126,31 @@ export const digilockerSignin = async (code: any) => {
 
 export const verifyToken = async () => {
   try {
-    const response = await axios.post(
-      `${baseUrl}/auth/verifyToken/${getCookie("username")}`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${getCookie("token")}`,
-        },
-      }
-    );
-    return response?.data;
+    if (getCookie("username")) {
+      const response = await axios.post(
+        `${baseUrl}/auth/verifyToken/${getCookie("username")}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${getCookie("token")}`,
+          },
+        }
+      );
+      return response?.data;
+    } else {
+      throw new Error("No cookies found for the user");
+    }
   } catch (error) {
-    return error?.response;
+    return error;
   }
 };
 
 export const getAccessTokenWithRefreshToken = async () => {
   try {
-    const response = await axios.post(
-      `${baseUrl}/auth/refreshToken/${getCookie("username")}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getCookie("token")}`,
-        },
-      }
-    );
+    const response = await axios.post(`${baseUrl}/auth/refreshToken`, {
+      refresh_token: getCookie("refreshToken"),
+      access_token: getCookie("token"),
+    });
     return response?.data;
   } catch (error) {
     return error?.response;
