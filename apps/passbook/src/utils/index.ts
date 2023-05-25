@@ -23,8 +23,8 @@ export const getCodeChallenge = () => {
   setCookie("code_verifier", codeVerifier);
   const encryptedSha256 = sha256(codeVerifier);
   let encryptedbase64 = btoa(encryptedSha256);
-  encryptedbase64 = encryptedbase64.replace(/=/g, ''); // Remove any trailing '='
-  encryptedbase64 = encryptedbase64.replace(/\+/g, '-'); // Replace '+' with '-'
-  encryptedbase64 = encryptedbase64.replace(/\//g, '_'); // Replace '/' with '_'
+  encryptedbase64 = encryptedbase64.replace(/=/g, ""); // Remove any trailing '='
+  encryptedbase64 = encryptedbase64.replace(/\+/g, "-"); // Replace '+' with '-'
+  encryptedbase64 = encryptedbase64.replace(/\//g, "_"); // Replace '/' with '_'
   return encryptedbase64;
 };

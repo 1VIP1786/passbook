@@ -41,7 +41,7 @@ export default function Document() {
 
         <link rel="apple-touch-icon" href="icons/logo192.png" />
         <link rel="manifest" href="manifest.json" />
-        <link rel="icon" href="icons/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
 
         <title>पासवृक</title>
       </Head>
