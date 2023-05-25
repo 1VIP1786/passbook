@@ -181,7 +181,11 @@ const FamilyMemberDetails: React.FC = () => {
                         </div> */}
                         <div
                           className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center"
-                          onClick={toggleBox}
+                          onClick={() =>
+                            router.push(
+                              `/family/${familyMember?.familyMemberId}/documents`
+                            )
+                          }
                         >
                           <AddIcon />
                           <p className="mt-6">{t("add_more")}</p>
