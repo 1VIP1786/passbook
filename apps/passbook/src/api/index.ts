@@ -126,7 +126,11 @@ export const digilockerSignin = async (code: any) => {
 
 export const verifyToken = async () => {
   try {
-    if (getCookie("username")) {
+    if (
+      getCookie("username") &&
+      getCookie("token") &&
+      getCookie("refreshToken")
+    ) {
       const response = await axios.post(
         `${baseUrl}/auth/verifyToken/${getCookie("username")}`,
         {},

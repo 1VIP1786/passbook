@@ -32,7 +32,12 @@ function RouteGuard({ children }) {
     // redirect to login page if accessing a private page and not logged in
     const publicPaths = ["/", "/otp"];
     const path = url.split("?")[0];
-    if (!getCookie("token") && !publicPaths.includes(path)) {
+    if (
+      !getCookie("token") &&
+      !getCookie("username") &&
+      !getCookie("refreshToken") &&
+      !publicPaths.includes(path)
+    ) {
       setAuthorized(false);
       console.log("Access denied");
       router.push({

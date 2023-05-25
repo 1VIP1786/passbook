@@ -16,7 +16,11 @@ export default function Index() {
   const router = useRouter();
   const [loginId, setloginId] = useState(null);
   useEffect(() => {
-    if (getCookie("username")) {
+    if (
+      getCookie("username") &&
+      getCookie("token") &&
+      getCookie("refreshToken")
+    ) {
       const authTokenVerification = async () => {
         const res = await verifyToken();
         console.log(res);
