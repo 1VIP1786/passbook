@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <Header />
       {summary ? (
         summary?.status != 500 && summary?.status != 403 ? (
-          <div className="pt-40 sm:pt-48">
+          <div className="pt-40 sm:pt-48" key={summary?.familyID}>
             <Link href="/family">
               <div className="bg-summary-card py-7 px-5 mx-5 rounded-lg text-white">
                 <div className="flex justify-between">

@@ -24,7 +24,7 @@ const FamilyMemberDocuments: React.FC = () => {
   };
 
   const { familyData, locale } = useStateContext();
-  const { slug } = router.query;
+  const { slug } = router?.query;
 
   return (
     <div className="mb-20">
@@ -35,7 +35,10 @@ const FamilyMemberDocuments: React.FC = () => {
         familyData?.familyMembers.map(
           (familyMember: any) =>
             familyMember?.familyMemberId == slug && (
-              <div className="pt-40 sm:pt-48">
+              <div
+                className="pt-40 sm:pt-48"
+                key={familyMember?.familyMemberId}
+              >
                 <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
                   <div className="font-bold text-center text-[20px] uppercase text-appGray">
                     Family Wallet

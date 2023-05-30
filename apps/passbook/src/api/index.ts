@@ -103,10 +103,10 @@ export const getFamilyTransactions = async (
   }
 };
 
-export const digilockerSignin = async (code: any) => {
+export const digilockerSignin = async (code: any, familyMemberId: any) => {
   try {
     const response = await axios.post(
-      `${baseUrl}/digilocker/signin/${getCookie("username")}`,
+      `${baseUrl}/digilocker/signin/${getCookie("username")}/${familyMemberId}`,
       {
         code,
         code_verifier: getCookie("code_verifier"),
@@ -118,6 +118,43 @@ export const digilockerSignin = async (code: any) => {
       }
     );
     removeCookies("code_verifier");
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
+export const getDigilockerIssuedFiles = async (familyMemberId: any) => {
+  try {
+    const response = await axios.get(
+      `${baseUrl}/digilocker/filesIssued/${getCookie(
+        "username"
+      )}/${familyMemberId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
+export const setDigilockerIssuedFiles = async (familyMemberId: any) => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/digilocker/filesIssued/${getCookie(
+        "username"
+      )}/${familyMemberId}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
     return response?.data;
   } catch (error) {
     return error?.response;

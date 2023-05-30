@@ -22,3 +22,5 @@ export * from "./coin";
 export * from "./profileFemale";
 export * from "./profileMale";
 export * from "./cross";
+export * from "./wallet";
+export * from "./import";
