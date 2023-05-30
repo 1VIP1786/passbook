@@ -5,13 +5,15 @@ import Link from "next/link";
 import { useFlags } from "flagsmith/react";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./languageSwitcher";
+import { removeCookies } from "cookies-next";
+import { useRouter } from "next/router";
 
 const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hide, setHide] = useState("");
   const flags = useFlags(["notifications"]);
   const { t } = useTranslation("sidebar");
-
+  const router = useRouter();
   const clickHandler = () => {
     setIsOpen(!isOpen);
 
@@ -24,6 +26,13 @@ const HamburgerMenu: React.FC = () => {
   const fullPage = isOpen ? "z-20 h-screen w-full" : hide;
 
   const handleClick = (event: any) => {};
+  const handleLogOut = () => {
+    removeCookies("refreshToken");
+    removeCookies("token");
+    removeCookies("username");
+    removeCookies("code_verifier");
+    router.push("/");
+  };
   return (
     <>
       <div className="fixed top-0 md:w-[470px] bg-white w-full border-t border-gray-200 h-[49px]">
@@ -91,6 +100,13 @@ const HamburgerMenu: React.FC = () => {
                 className="font-demi w-full mt-5"
                 onClick={handleClick}
                 text={t("update_family")}
+              />
+            </li>
+            <li>
+              <Button
+                className="font-demi w-full mt-5"
+                onClick={handleLogOut}
+                text={t("log_out")}
               />
             </li>
           </ul>
