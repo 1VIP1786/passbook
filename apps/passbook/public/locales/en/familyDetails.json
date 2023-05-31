@@ -13,5 +13,7 @@
     "add_more": "Add More",
     "certificate": "Certificate",
     "family_data_updated": "Please keep your family data updated.",
-    "add_documents": "Add Documents"
+    "add_documents": "Add Documents",
+    "family_wallet": "Family Wallet",
+    "documents_added_successfully": "Documents added successfully"
 }

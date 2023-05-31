@@ -13,5 +13,7 @@
     "certificate": "प्रमाणपत्र",
     "add_more": "और जोड़ें",
     "family_data_updated": "कृपया अपने परिवार की जानकारी को अपडेट रखें।",
-    "add_documents": "Add Documents"
+    "add_documents": "दस्तावेज़ जोड़ें",
+    "family_wallet": "पारिवारिक बटुआ",
+    "documents_added_successfully": "दस्तावेज़ सफलतापूर्वक जोड़े गए"
 }

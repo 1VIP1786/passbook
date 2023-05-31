@@ -117,7 +117,6 @@ export const digilockerSignin = async (code: any, familyMemberId: any) => {
         },
       }
     );
-    removeCookies("code_verifier");
     return response?.data;
   } catch (error) {
     return error?.response;
@@ -142,13 +141,16 @@ export const getDigilockerIssuedFiles = async (familyMemberId: any) => {
   }
 };
 
-export const setDigilockerIssuedFiles = async (familyMemberId: any) => {
+export const setDigilockerIssuedFiles = async (
+  body: any,
+  familyMemberId: any
+) => {
   try {
     const response = await axios.post(
       `${baseUrl}/digilocker/filesIssued/${getCookie(
         "username"
       )}/${familyMemberId}`,
-      {},
+      body,
       {
         headers: {
           Authorization: `Bearer ${getCookie("token")}`,
