@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.2",
     "react-otp-input": "^3.0.0",
+    "react-star-ratings": "^2.3.0",
     "sweetalert": "^2.1.2",
     "ui": "*"
   },

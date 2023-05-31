@@ -1,8 +1,7 @@
 import { Navbar, Header, Bottombar } from "components";
-import { ComingSoon } from "assets/icons";
-import { Button } from "ui";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import { faqs } from "config/faq";
 
 const Help: React.FC = () => {
   const router = useRouter();
@@ -11,21 +10,33 @@ const Help: React.FC = () => {
     router.push(`/home`);
   };
   return (
-    <div className="bg-tertiary min-h-screen flex flex-col justify-center items-center">
+    <div className="mb-20">
       <Navbar />
       <Header />
-      <h1 className="text-primary font-bold text-[34px]">
-        {t("coming_soon")} !
-      </h1>
-      <ComingSoon />
-      <div className="font-regular text-appGray text-center px-7">
-        {t("coming_soon_description")}
+      <div className="pt-40 sm:pt-48 ">
+        <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-[70vh]">
+          <h1 className="text-appGray text-[20px] text-center pb-3 font-bold border-b border-[#DB6027]">
+            FAQs
+          </h1>
+          {faqs &&
+            faqs?.length > 0 &&
+            faqs.map((faq) => (
+              <div
+                tabIndex={0}
+                className="collapse collapse-arrow bg-primary rounded mt-4"
+                key={faq?.id}
+              >
+                <div className="collapse-title text-white font-demi text-[18px]">
+                  {faq?.que}
+                </div>
+                <div className="collapse-content font-regular text-appGray bg-white">
+                  <p className="pt-3">{faq?.ans}</p>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
-      <Button
-        className="font-medium mt-4"
-        onClick={handleClick}
-        text={t("back")}
-      />
+
       <Bottombar />
     </div>
   );

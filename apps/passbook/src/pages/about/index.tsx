@@ -11,21 +11,39 @@ const About: React.FC = () => {
     router.push(`/home`);
   };
   return (
-    <div className="bg-tertiary min-h-screen flex flex-col justify-center items-center">
+    <div className="mb-20">
       <Navbar />
       <Header />
-      <h1 className="text-primary font-bold text-[34px]">
-        {t("coming_soon")} !
-      </h1>
-      <ComingSoon />
-      <div className="font-regular text-appGray text-center px-7">
-        {t("coming_soon_description")}
+      <div className="pt-40 sm:pt-48 ">
+        {" "}
+        <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-[70vh]">
+          <h1 className="text-appGray text-[20px] text-center pb-3 font-bold border-b border-[#DB6027]">
+            About
+          </h1>
+          <div className="mt-5 font-medium text-appGray text-[20px]">
+            Family ID
+          </div>
+          <p className="text-appGray text-[15px] font-regular mt-2 leading-6">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry.
+          </p>
+          <div className="mt-5 font-medium text-appGray text-[20px]">
+            Family Passbook
+          </div>
+          <p className="text-appGray text-[15px] font-regular mt-2 leading-6">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry.
+          </p>
+          <p className="text-appGray text-[15px] font-regular mt-4 leading-6">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry.
+          </p>
+        </div>
       </div>
-      <Button
-        className="font-medium mt-4"
-        onClick={handleClick}
-        text={t("back")}
-      />
+
       <Bottombar />
     </div>
   );

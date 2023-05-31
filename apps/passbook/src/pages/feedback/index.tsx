@@ -1,31 +1,47 @@
 import { Navbar, Header, Bottombar } from "components";
-import { ComingSoon } from "assets/icons";
+import { useState } from "react";
+import StarRatings from "react-star-ratings";
 import { Button } from "ui";
-import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
 
 const Feedback: React.FC = () => {
-  const router = useRouter();
-  const { t } = useTranslation("comingSoon");
-  const handleClick = async (event: any) => {
-    router.push(`/home`);
-  };
+  const [rating, setRating] = useState(0);
   return (
-    <div className="bg-tertiary min-h-screen flex flex-col justify-center items-center">
+    <div className="mb-20">
       <Navbar />
       <Header />
-      <h1 className="text-primary font-bold text-[34px]">
-        {t("coming_soon")} !
-      </h1>
-      <ComingSoon />
-      <div className="font-regular text-appGray text-center px-7">
-        {t("coming_soon_description")}
+      <div className="pt-40 sm:pt-48 ">
+        <div className="bg-tertiary rounded-xl px-4 py-5 mx-3 min-h-[70vh]">
+          <h1 className="text-appGray text-[20px] text-center pb-3 font-bold border-b border-[#DB6027]">
+            Feedback
+          </h1>
+          <div className="bg-white py-3 px-4 mt-3 rounded-lg flex justify-center flex-col items-center">
+            <div className="text-[18px] font-demi text-appGray mb-3 mt-2">
+              Did you find this useful?
+            </div>
+            <StarRatings
+              rating={rating}
+              starDimension="35px"
+              starSpacing="10px"
+              changeRating={(rate: any) => setRating(rate)}
+              starRatedColor="#E1703B"
+              starHoverColor="#E1703B"
+            />
+            <div className="font-regular text-appGray mb-4 mt-6">
+              Write your review (optional)
+            </div>
+            <textarea
+              className="w-full px-3 py-2"
+              placeholder="Please write your experience's feedback"
+            />
+            <Button
+              className="font-medium mt-5"
+              onClick={() => {}}
+              text={"Submit Review"}
+            />
+          </div>
+        </div>
       </div>
-      <Button
-        className="font-medium mt-4"
-        onClick={handleClick}
-        text={t("back")}
-      />
+
       <Bottombar />
     </div>
   );
