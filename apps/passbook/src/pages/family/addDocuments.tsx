@@ -7,10 +7,14 @@ import { useState, useEffect } from "react";
 import { Button } from "ui";
 import { digilockerSignin, setDigilockerIssuedFiles } from "api";
 import swal from "sweetalert";
+import { useStateContext } from "context";
+import { useSyncLanguage } from "ni18n";
 
 const FamilyMemberAddDocuments: React.FC = () => {
   const { t } = useTranslation("familyDetails");
   const router = useRouter();
+  const { locale } = useStateContext();
+  useSyncLanguage(locale);
   const [docStatus, setDocStatus] = useState({});
   const code = router?.query?.code;
   const [documents, setDocuments] = useState([]);
@@ -57,7 +61,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
       <div className="pt-40 sm:pt-48">
         <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
           <div className="font-bold text-center text-[20px] uppercase text-appGray">
-            {t("family_wallet")}
+            {t("Family Wallet")}
           </div>
           <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl pb-1 mt-4 px-3">
             <div className="mt-6 flex justify-between">
@@ -65,7 +69,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
                 <BackIcon />
               </Link>
               <div className="font-demi text-appGray mb-4 mx-3 text-[18px]">
-                {t("add_documents")}
+                {t("Add Documents")}
               </div>
               <WalletIcon />
             </div>
