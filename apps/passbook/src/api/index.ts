@@ -163,6 +163,26 @@ export const setDigilockerIssuedFiles = async (
   }
 };
 
+export const pullDigilockerDocument = async (
+  body: any,
+  familyMemberId: any
+) => {
+  try {
+    const response = await axios.post(
+      `${baseUrl}/digilocker/files/${getCookie("username")}/${familyMemberId}`,
+      body,
+      {
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+        },
+      }
+    );
+    return response?.data;
+  } catch (error) {
+    return error?.response;
+  }
+};
+
 export const verifyToken = async () => {
   try {
     if (

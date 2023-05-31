@@ -13,18 +13,39 @@ import { useTranslation } from "react-i18next";
 import { ActionSheet } from "components/actionSheet";
 import { useState } from "react";
 import { Button } from "ui";
+import { useEffect } from "react";
+import { getDigilockerIssuedFiles, pullDigilockerDocument } from "api";
 
 const FamilyMemberDocuments: React.FC = () => {
   const { t } = useTranslation("familyDetails");
   const router = useRouter();
   const [showBox, setShowBox] = useState(false);
-
+  const [issuedDocuments, setIssuedDocuments] = useState([]);
   const toggleBox = () => {
     setShowBox(!showBox);
   };
 
   const { familyData, locale } = useStateContext();
   const { slug } = router?.query;
+
+  useEffect(() => {
+    const getIssuedFiles = async () => {
+      const res = await getDigilockerIssuedFiles(slug);
+      setIssuedDocuments(res);
+    };
+    getIssuedFiles();
+  }, []);
+
+  const handlePullDocument = async (event: any) => {
+    console.log(event);
+    const res = await pullDigilockerDocument(
+      {
+        doctype: ["ADHAR", "HSCER"],
+      },
+      slug
+    );
+    setIssuedDocuments(res);
+  };
 
   return (
     <div className="mb-20">
@@ -39,9 +60,9 @@ const FamilyMemberDocuments: React.FC = () => {
                 className="pt-40 sm:pt-48"
                 key={familyMember?.familyMemberId}
               >
-                <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
+                <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3 min-h-[72vh]">
                   <div className="font-bold text-center text-[20px] uppercase text-appGray">
-                    Family Wallet
+                    {t("family_wallet")}
                   </div>
                   <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl pb-1 mt-4">
                     <div className="mt-3 mx-3">
@@ -72,29 +93,56 @@ const FamilyMemberDocuments: React.FC = () => {
                         : familyMember?.namee}
                     </div>
                     <div className="font-demi text-appGray mt-8 mb-3 mx-3">
-                      My Documents
+                      {t("my_documents")}
                     </div>
-                    <div className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7">
-                      <div className="col-span-1">
-                        <CasteCertiIcon />
-                      </div>
-                      <div className="flex self-center ml-4 col-span-4">
-                        Caste Certificate
-                      </div>
-                    </div>
-                    <div className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7">
-                      <div className="col-span-1">
-                        <IncomeCertiIcon />
-                      </div>
-                      <div className="flex self-center ml-4 col-span-4">
-                        Income Certificate
-                      </div>
-                    </div>
+                    {issuedDocuments && issuedDocuments?.length > 0 ? (
+                      issuedDocuments?.map((document) => (
+                        <div
+                          className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7"
+                          key={document?.doctype}
+                          onClick={handlePullDocument}
+                        >
+                          <div className="col-span-1">
+                            <CasteCertiIcon />
+                          </div>
+                          <div className="flex self-center ml-4 col-span-4">
+                            {document?.name}
+                          </div>
+                          <div className="text-[#23C96F] uppercase text-[11px] font-demi flex justify-end self-center col-span-2">
+                            {t("issued")}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <>
+                        <div
+                          className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7"
+                          key={"ADHAR"}
+                          onClick={handlePullDocument}
+                        >
+                          <div className="col-span-1">
+                            <CasteCertiIcon />
+                          </div>
+                          <div className="flex self-center ml-4 col-span-4">
+                            Caste Certificate
+                          </div>
+                        </div>
+                        <div className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7">
+                          <div className="col-span-1">
+                            <IncomeCertiIcon />
+                          </div>
+                          <div className="flex self-center ml-4 col-span-4">
+                            Income Certificate
+                          </div>
+                        </div>
+                      </>
+                    )}
+
                     <div className="flex justify-center mt-12 mb-5">
                       <Button
                         className="font-medium"
                         onClick={() => toggleBox()}
-                        text={t("Add Documents")}
+                        text={t("add_documents")}
                       />
                     </div>
                   </div>

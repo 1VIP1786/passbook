@@ -15,5 +15,7 @@
     "family_data_updated": "Please keep your family data updated.",
     "add_documents": "Add Documents",
     "family_wallet": "Family Wallet",
-    "documents_added_successfully": "Documents added successfully"
+    "documents_added_successfully": "Documents added successfully",
+    "my_documents": "My Documents",
+    "issued": "Issued"
 }

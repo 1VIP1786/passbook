@@ -14,7 +14,8 @@ import Link from "next/link";
 import { useStateContext } from "context";
 import { useTranslation } from "react-i18next";
 import { ActionSheet } from "components/actionSheet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getDigilockerIssuedFiles } from "api";
 
 const FamilyMemberDetails: React.FC = () => {
   const { t } = useTranslation("familyDetails");
@@ -27,6 +28,14 @@ const FamilyMemberDetails: React.FC = () => {
 
   const { familyData, locale } = useStateContext();
   const { slug } = router.query;
+
+  useEffect(() => {
+    const getIssuedFiles = async () => {
+      const res = await getDigilockerIssuedFiles(slug);
+      console.log(res);
+    };
+    getIssuedFiles();
+  }, []);
 
   return (
     <div className="mb-20">
@@ -175,10 +184,6 @@ const FamilyMemberDetails: React.FC = () => {
                             {t("certificate")}
                           </p>
                         </div>
-                        {/* <div className="text-center font-medium text-[11px] text-appGray flex justify-center flex-col items-center">
-                          <BirthCertiIcon />
-                          <p className="mt-2">{t("birth_certificate")}</p>
-                        </div> */}
                         <div
                           className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center"
                           onClick={() =>
