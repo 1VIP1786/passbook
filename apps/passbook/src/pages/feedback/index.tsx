@@ -34,7 +34,7 @@ const Feedback: React.FC = () => {
               placeholder="Please write your experience's feedback"
             />
             <Button
-              className="font-medium mt-5"
+              className="font-medium mt-5 mb-3"
               onClick={() => {}}
               text={"Submit Review"}
             />
