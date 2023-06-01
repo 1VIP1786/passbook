@@ -44,7 +44,8 @@ const FamilyMemberAddDocuments: React.FC = () => {
 
   const handleAddDocuments = async () => {
     const res = await setDigilockerIssuedFiles(docStatus, router?.query?.state);
-    if (res) {
+    console.log(res);
+    if (res?.status == 201) {
       swal({
         text: t("documents_added_successfully"),
         icon: "success",

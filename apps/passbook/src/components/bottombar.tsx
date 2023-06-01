@@ -1,12 +1,11 @@
 import { HomeIcon, FamilyIcon, BenefitsIcon, DiscoverIcon } from "assets/icons";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
 export const Bottombar = () => {
-  const router = useRouter();
   const { t } = useTranslation("bottomBar");
-  const { pathname } = router;
+  const pathname = usePathname();
   return (
     <>
       {pathname && (

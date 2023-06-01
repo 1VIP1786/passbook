@@ -165,36 +165,30 @@ input {
 }
 
 .document-preview {
-  position: fixed;
-  top: 0;
+  display: none; /* Hide the modal by default */
+  position: fixed; /* Position the modal */
+  z-index: 9999; /* Set a high z-index to make sure it's above other elements */
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  overflow: auto; /* Enable scrolling if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Add a semi-transparent background */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-content {
   background-color: #fff;
-  padding: 20px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  animation: slideIn 0.3s ease-in-out;
 }
 
-.modal-close {
-  background-color: #ccc;
-  border: none;
-  padding: 8px 16px;
-  margin-top: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modal-close:hover {
-  background-color: #999;
+.document-preview.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aadhar {
@@ -207,9 +201,27 @@ input {
   font-family: Mulish-regular;
 }
 
-textarea{
+textarea {
   color: #626161;
   font-family: Mulish-regular;
   border: solid 2px var(--primary);
   min-height: 150px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-40%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
