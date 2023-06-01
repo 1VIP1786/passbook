@@ -20,23 +20,23 @@ const About: React.FC = () => {
           <h1 className="text-appGray text-[20px] text-center pb-3 font-bold border-b border-[#DB6027]">
             About
           </h1>
-          <div className="mt-5 font-medium text-appGray text-[20px]">
+          <div className="mt-5 font-medium text-appGray text-[18px]">
             Family ID
           </div>
-          <p className="text-appGray text-[15px] font-regular mt-2 leading-6">
+          <p className="text-appGray text-[14px] font-regular mt-2 leading-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.
           </p>
-          <div className="mt-5 font-medium text-appGray text-[20px]">
+          <div className="mt-5 font-medium text-appGray text-[18px]">
             Family Passbook
           </div>
-          <p className="text-appGray text-[15px] font-regular mt-2 leading-6">
+          <p className="text-appGray text-[14px] font-regular mt-2 leading-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.
           </p>
-          <p className="text-appGray text-[15px] font-regular mt-4 leading-6">
+          <p className="text-appGray text-[14px] font-regular mt-4 leading-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.

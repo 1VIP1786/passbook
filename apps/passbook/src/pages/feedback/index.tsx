@@ -20,17 +20,17 @@ const Feedback: React.FC = () => {
             </div>
             <StarRatings
               rating={rating}
-              starDimension="35px"
-              starSpacing="10px"
+              starDimension="32px"
+              starSpacing="5px"
               changeRating={(rate: any) => setRating(rate)}
               starRatedColor="#E1703B"
               starHoverColor="#E1703B"
             />
-            <div className="font-regular text-appGray mb-4 mt-6">
+            <div className="font-regular text-appGray mb-4 mt-6  text-[15px]">
               Write your review (optional)
             </div>
             <textarea
-              className="w-full px-3 py-2"
+              className="w-full px-3 py-2 text-[14px]"
               placeholder="Please write your experience's feedback"
             />
             <Button

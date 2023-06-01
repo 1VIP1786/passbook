@@ -20,16 +20,16 @@ const Help: React.FC = () => {
           </h1>
           {faqs &&
             faqs?.length > 0 &&
-            faqs.map((faq) => (
+            faqs.map((faq: any) => (
               <div
                 tabIndex={0}
                 className="collapse collapse-arrow bg-primary rounded mt-4"
                 key={faq?.id}
               >
-                <div className="collapse-title text-white font-demi text-[18px]">
+                <div className="collapse-title text-white font-demi text-[15px] min-h-[0.5rem] py-[0.70rem]">
                   {faq?.que}
                 </div>
-                <div className="collapse-content font-regular text-appGray bg-white">
+                <div className="collapse-content font-regular text-appGray bg-white text-[13px]">
                   <p className="pt-3">{faq?.ans}</p>
                 </div>
               </div>

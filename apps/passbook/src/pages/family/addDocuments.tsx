@@ -49,7 +49,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
         text: t("documents_added_successfully"),
         icon: "success",
       });
-      router.push("/family");
+      router.push(`/family/${router?.query?.state}/documents`);
     }
   };
 

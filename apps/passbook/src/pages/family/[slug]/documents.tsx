@@ -14,7 +14,11 @@ import { ActionSheet } from "components/actionSheet";
 import { useState } from "react";
 import { Button } from "ui";
 import { useEffect } from "react";
-import { getDigilockerIssuedFiles, pullDigilockerDocument } from "api";
+import {
+  getDigilockerIssuedFiles,
+  getFamilyData,
+  pullDigilockerDocument,
+} from "api";
 import { Modal } from "components";
 
 const FamilyMemberDocuments: React.FC = () => {
@@ -22,12 +26,21 @@ const FamilyMemberDocuments: React.FC = () => {
   const router = useRouter();
   const [showBox, setShowBox] = useState(false);
   const [issuedDocuments, setIssuedDocuments] = useState([]);
+  const [familyData, setFamilyData]: any = useState();
   const toggleBox = () => {
     setShowBox(!showBox);
   };
 
-  const { familyData, locale, setModaleOpen } = useStateContext();
+  const { locale, setModaleOpen } = useStateContext();
   const { slug } = router?.query;
+
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getFamilyData();
+      setFamilyData(res);
+    };
+    getData();
+  }, []);
 
   useEffect(() => {
     const getIssuedFiles = async () => {
@@ -39,10 +52,6 @@ const FamilyMemberDocuments: React.FC = () => {
 
   const openModal = () => {
     setModaleOpen(true);
-  };
-
-  const closeModal = () => {
-    setModaleOpen(false);
   };
 
   const handlePullDocument = async (event: any) => {
