@@ -90,7 +90,7 @@ const FamilyMemberDocuments: React.FC = () => {
                         </Link>
                       </div>
                       <div
-                        className="flex justify-center mt-4"
+                        className="flex justify-center mt-4 cursor-pointer"
                         onClick={toggleBox}
                       >
                         {familyMember?.bs64Photo ? (
@@ -119,7 +119,7 @@ const FamilyMemberDocuments: React.FC = () => {
                           (document) =>
                             document?.imported && (
                               <div
-                                className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7"
+                                className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7 cursor-pointer"
                                 key={document?.doctype}
                                 onClick={(e) =>
                                   handlePullDocument(e, document?.doctype)
@@ -140,7 +140,7 @@ const FamilyMemberDocuments: React.FC = () => {
                       ) : (
                         <>
                           <div
-                            className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7"
+                            className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7 cursor-pointer"
                             key={"ADHAR"}
                             onClick={openModal}
                           >

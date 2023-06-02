@@ -22,7 +22,7 @@ const Dropdown = ({
       </label>
       <ul
         tabIndex={0}
-        className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2"
+        className="dropdown-content menu py-2 shadow bg-base-100 rounded w-auto uppercase font-demi text-[12px] mt-2 cursor-pointer"
         onClick={handleChange}
       >
         <div className="max-h-[200px] overflow-y-scroll">

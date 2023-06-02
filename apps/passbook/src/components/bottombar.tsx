@@ -9,7 +9,7 @@ export const Bottombar = () => {
   return (
     <>
       {pathname && (
-        <div className="fixed bottom-0 md:w-[470px] w-full h-16 bg-white border-t border-gray-200 ">
+        <div className="fixed bottom-0 medium-width w-full h-16 bg-white border-t border-gray-200 ">
           <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
             <Link href="/home">
               <div className="flex justify-center">

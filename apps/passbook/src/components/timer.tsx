@@ -56,7 +56,7 @@ export const Timer = (props: any) => {
       </div>
       <button
         disabled={seconds > 0 || minutes > 0}
-        className="font-regular"
+        className="font-regular cursor-pointer"
         style={{
           color: seconds > 0 || minutes > 0 ? "#9e9e9e" : "#626161",
         }}

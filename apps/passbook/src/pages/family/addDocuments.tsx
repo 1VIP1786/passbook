@@ -83,7 +83,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
                     <label className="label cursor-pointer">
                       <input
                         type="checkbox"
-                        className="checkbox checkbox-primary"
+                        className="checkbox checkbox-primary cursor-pointer"
                         name={document?.doctype}
                         onClick={handleCheckboxClick}
                         checked={document?.imported}

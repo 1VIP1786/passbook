@@ -117,6 +117,12 @@ input {
   justify-content: center;
 }
 
+@media screen and (min-width: 470px) {
+  .actionsheet-container {
+    max-width: 470px;
+  }
+}
+
 .actionsheet-box {
   background-color: #fff;
   width: 90%;
@@ -223,5 +229,11 @@ textarea {
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 470px) {
+  .medium-width {
+    width: 470px;
   }
 }

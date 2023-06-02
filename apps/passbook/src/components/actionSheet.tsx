@@ -25,7 +25,10 @@ export const ActionSheet = ({ showBox, toggleBox }) => {
         <div className="actionsheet-container mb-12">
           <div className="actionsheet-box pb-12">
             <div className="flex justify-end">
-              <button onClick={toggleBox} className="actionsheet-slide-down">
+              <button
+                onClick={toggleBox}
+                className="actionsheet-slide-down cursor-pointer"
+              >
                 <CrossIcon />
               </button>
             </div>

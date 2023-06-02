@@ -58,7 +58,7 @@ const FamilyMemberDetails: React.FC = () => {
                       </Link>
                     </div>
                     <div
-                      className="flex justify-center mt-4"
+                      className="flex justify-center mt-4 cursor-pointer"
                       onClick={toggleBox}
                     >
                       {familyMember?.bs64Photo ? (
@@ -185,7 +185,7 @@ const FamilyMemberDetails: React.FC = () => {
                           </p>
                         </div>
                         <div
-                          className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center"
+                          className="text-center font-medium text-[11px] text-appGray flex mt-[0.4rem] flex-col items-center cursor-pointer"
                           onClick={() =>
                             router.push(
                               `/family/${familyMember?.familyMemberId}/documents`

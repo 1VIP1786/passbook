@@ -11,7 +11,7 @@ export const LanguageSwitcher = () => {
         id="hindi"
         className={`${
           locale == "hi" ? "active-language" : ""
-        } language-switcher font-medium`}
+        } language-switcher font-medium cursor-pointer`}
         style={{ borderRadius: "5px 0px 0px 5px" }}
         onClick={() => setLocale("hi")}
       >
@@ -23,7 +23,7 @@ export const LanguageSwitcher = () => {
           locale == "en"
             ? "language-switcher active-language"
             : "language-switcher"
-        } language-switcher font-medium`}
+        } language-switcher font-medium cursor-pointer`}
         style={{ borderRadius: "0px 5px 5px 0px" }}
         onClick={() => setLocale("en")}
       >

@@ -35,11 +35,11 @@ const HamburgerMenu: React.FC = () => {
   };
   return (
     <>
-      <div className="fixed top-0 md:w-[470px] bg-white w-full border-t border-gray-200 h-[49px]">
+      <div className="fixed top-0 medium-width bg-white w-full border-t border-gray-200 h-[49px]">
         <div className="flex h-full max-w-lg justify-between mx-auto font-medium p-4">
           <label
             htmlFor="my-drawer"
-            className="drawer-button w-5"
+            className="drawer-button w-5 cursor-pointer"
             onClick={clickHandler}
           >
             <NavbarIcon />
@@ -64,7 +64,7 @@ const HamburgerMenu: React.FC = () => {
         <div className="drawer-side">
           <label
             htmlFor="my-drawer"
-            className="drawer-overlay"
+            className="drawer-overlay cursor-pointer"
             onClick={clickHandler}
           ></label>
           <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100 flex-col ">
