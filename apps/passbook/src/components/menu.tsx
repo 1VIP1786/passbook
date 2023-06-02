@@ -96,11 +96,13 @@ const HamburgerMenu: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Button
-                className="font-demi w-full mt-5"
-                onClick={handleClick}
-                text={t("update_family")}
-              />
+              <Link href="/terms">
+                <Button
+                  className="font-demi w-full mt-5"
+                  onClick={handleClick}
+                  text={t("terms_conditions")}
+                />
+              </Link>
             </li>
             <li>
               <Button

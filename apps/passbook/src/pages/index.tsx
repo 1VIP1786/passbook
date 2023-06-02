@@ -12,6 +12,7 @@ import { CMImage } from "assets/images/cm";
 export default function Index() {
   const { t } = useTranslation("common");
   const { locale } = useStateContext();
+
   useSyncLanguage(locale);
 
   const router = useRouter();
