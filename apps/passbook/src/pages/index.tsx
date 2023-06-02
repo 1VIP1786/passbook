@@ -78,7 +78,15 @@ export default function Index() {
           className="mt-5 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-regular"
           value={loginId}
-          onChange={(e: any) => setloginId(e.target.value)}
+          onChange={(e: any) => {
+            if (e?.target?.value?.length > 12) {
+              swal({
+                text: t("not_valid_family_id"),
+                icon: "warning",
+              });
+            }
+            return setloginId(e.target.value);
+          }}
         />
       </div>
       <div className="flex justify-center mt-10">
