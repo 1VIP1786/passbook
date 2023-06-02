@@ -18,7 +18,7 @@ export const Bottombar = () => {
                   className={
                     pathname.includes("/home")
                       ? "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-primary"
-                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-gray-500 "
+                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-appGray "
                   }
                 >
                   <HomeIcon />
@@ -26,7 +26,7 @@ export const Bottombar = () => {
                     className={
                       pathname.includes("/home")
                         ? "text-sm text-primary"
-                        : "text-sm text-gray-500"
+                        : "text-sm text-appGray"
                     }
                   >
                     {t("home")}
@@ -41,7 +41,7 @@ export const Bottombar = () => {
                   className={
                     pathname.includes("/family")
                       ? "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-primary"
-                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-gray-500 "
+                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-appGray "
                   }
                 >
                   <FamilyIcon />
@@ -49,7 +49,7 @@ export const Bottombar = () => {
                     className={
                       pathname.includes("/family")
                         ? "text-sm text-primary"
-                        : "text-sm text-gray-500"
+                        : "text-sm text-appGray"
                     }
                   >
                     {t("family")}
@@ -64,7 +64,7 @@ export const Bottombar = () => {
                   className={
                     pathname.includes("/benefits")
                       ? "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-primary"
-                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-gray-500 "
+                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-appGray "
                   }
                 >
                   <BenefitsIcon />
@@ -72,7 +72,7 @@ export const Bottombar = () => {
                     className={
                       pathname.includes("/benefits")
                         ? "text-sm text-primary"
-                        : "text-sm text-gray-500"
+                        : "text-sm text-appGray"
                     }
                   >
                     {t("benefits")}
@@ -87,7 +87,7 @@ export const Bottombar = () => {
                   className={
                     pathname.includes("/discover")
                       ? "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-primary"
-                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-gray-500 "
+                      : "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 mt-2 group text-appGray "
                   }
                 >
                   <DiscoverIcon />
@@ -95,7 +95,7 @@ export const Bottombar = () => {
                     className={
                       pathname.includes("/discover")
                         ? "text-sm text-primary"
-                        : "text-sm text-gray-500"
+                        : "text-sm text-appGray"
                     }
                   >
                     {t("discover")}

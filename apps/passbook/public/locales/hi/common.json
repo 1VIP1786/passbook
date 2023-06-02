@@ -3,5 +3,7 @@
     "login": "लॉग इन करें",
     "please_enter_the_family_id": "कृपया आधार संख्या दर्ज करें",
     "not_valid_family_id": "मान्य आधार संख्या नहीं है",
-    "otp_sent_successfully": "ओटीपी सफलतापूर्वक भेजा गया"
+    "otp_sent_successfully": "ओटीपी सफलतापूर्वक भेजा गया",
+    "not_registered_on_family_id": "पंजीकृत नहीं हैं",
+    "click_here": "यहाँ क्लिक करें"
 }

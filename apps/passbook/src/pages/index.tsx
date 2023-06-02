@@ -63,13 +63,13 @@ export default function Index() {
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
       <div className="flex justify-between">
         <img src="./images/govtLogo.png" alt="govtLogo" />
-        <img src="./images/cm.png" alt="CM" />
+        <img src="./images/cm.svg" alt="CM" />
       </div>
       <div className="flex justify-center mt-10">
         <img src="./images/logo.png" alt="familyID Logo" />
       </div>
       <div className="flex justify-center mt-5 flex-col">
-        <h1 className="text-center text-gray-500 text-[1.5rem] font-medium">
+        <h1 className="text-center text-appGray text-[1.5rem] font-medium">
           {t("enter_family_id")}
         </h1>
         <input
@@ -86,6 +86,16 @@ export default function Index() {
           onClick={handleClick}
           text={t("login")}
         />
+      </div>
+      <div className="flex justify-center mt-5 font-regular text-appGray">
+        {t("not_registered_on_family_id")}?&nbsp;
+        <a
+          href="https://familyid.up.gov.in/"
+          target="blank"
+          className="font-demi text-primary"
+        >
+          {t("click_here")}
+        </a>
       </div>
     </div>
   );

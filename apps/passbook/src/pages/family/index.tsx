@@ -7,7 +7,6 @@ import { useStateContext } from "context";
 import Loading from "assets/icons/loading";
 import Fallback from "components/fallback";
 import { useTranslation } from "react-i18next";
-import { useSyncLanguage } from "ni18n";
 
 const Family: React.FC = () => {
   const { t } = useTranslation("family");

@@ -54,15 +54,15 @@ const FamilyMemberDocuments: React.FC = () => {
     setModaleOpen(true);
   };
 
-  const handlePullDocument = async (event: any) => {
+  const handlePullDocument = async (event: any, key: any) => {
     setModaleOpen(true);
     const res = await pullDigilockerDocument(
       {
-        doctype: ["ADHAR", "HSCER"],
+        doctype: [key],
       },
       slug
     );
-    setIssuedDocuments(res);
+    console.log(res);
   };
 
   return (
@@ -121,7 +121,9 @@ const FamilyMemberDocuments: React.FC = () => {
                               <div
                                 className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7"
                                 key={document?.doctype}
-                                onClick={handlePullDocument}
+                                onClick={(e) =>
+                                  handlePullDocument(e, document?.doctype)
+                                }
                               >
                                 <div className="col-span-1">
                                   <CasteCertiIcon />

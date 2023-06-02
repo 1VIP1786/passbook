@@ -10,7 +10,7 @@ export const Header = () => {
             <img src="/images/logo.png" alt="familyID Logo" />
           </div>
           <div className="inline-flex flex-col items-end justify-center px-5 group">
-            <img src="/images/cm.png" alt="CM" />
+            <img src="/images/cm.svg" alt="CM" />
           </div>
         </div>
       </div>
