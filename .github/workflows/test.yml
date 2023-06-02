@@ -35,8 +35,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Start the dev server
-        run: yarn dev
-
-      - name: Cypress testing
-        run: yarn e2e:test
+      - name: Start the dev server and Cypress testing
+        run: yarn dev & sleep 5 && yarn e2e:test
+      
