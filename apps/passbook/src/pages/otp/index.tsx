@@ -6,6 +6,7 @@ import { verifyOtp } from "../../api";
 import swal from "sweetalert";
 import { Timer } from "components";
 import { useTranslation } from "react-i18next";
+import { CMImage } from "assets/images/cm";
 
 const Otp: React.FC = () => {
   const router = useRouter();
@@ -39,7 +40,7 @@ const Otp: React.FC = () => {
     <div className="xl:py-16 xl:px-14 lg:py-16 lg:px-14 md:py-16 md:px-14 py-6 px-5 bg-tertiary min-h-[100vh]">
       <div className="flex justify-between">
         <img src="./images/govtLogo.png" alt="govtLogo" />
-        <img src="./images/cm.svg" alt="CM" />
+        <CMImage />
       </div>
       <div className="flex justify-center mt-10">
         <img src="./images/logo.png" alt="familyID Logo" />
