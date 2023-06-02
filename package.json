@@ -4,12 +4,14 @@
     "addPackage": "cd packages && mkdir $PACKAGE && cd $PACKAGE && npm init -y && npx -p typescript tsc --init",
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "start": "turbo run start --scope=passbook",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e:test": "cd apps/passbook && npx cypress run"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

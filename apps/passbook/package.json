@@ -2,10 +2,9 @@
   "name": "passbook",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
+  "scripts": {   
     "build": "next build",
-    "start": "next start",
+    "dev": "next start",
     "lint": "next lint"
   },
   "dependencies": {
