@@ -36,7 +36,8 @@ export default function Index() {
       authTokenVerification();
     }
   }, []);
-  const handleClick = async (event: any) => {
+
+  const handleLogin = async (event: any) => {
     if (loginId) {
       const response = await login(loginId);
       if (response?.status == 403) {
@@ -75,25 +76,27 @@ export default function Index() {
           {t("enter_family_id")}
         </h1>
         <input
-          type="text"
+          type="number"
           className="mt-5 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-regular"
           value={loginId}
           onChange={(e: any) => {
-            if (e?.target?.value?.length > 12) {
+            const MAX_LENGTH = 12;
+            if (e?.target?.value?.length > MAX_LENGTH) {
               swal({
                 text: t("not_valid_family_id"),
                 icon: "warning",
               });
+              e.target.value = e.target.value.substring(0, MAX_LENGTH); // remove characters beyond 12th position
             }
-            return setloginId(e.target.value);
+            setloginId(e.target.value);
           }}
         />
       </div>
       <div className="flex justify-center mt-10">
         <Button
           className="font-medium"
-          onClick={handleClick}
+          onClick={handleLogin}
           text={t("login")}
         />
       </div>

@@ -1,5 +1,20 @@
 import { Navbar, Header, Bottombar } from "components";
 import { BenefitsIcon, SchemesAvailed, SchemesIcon } from "assets/icons";
+import {
+  AgricultureDepartment,
+  BalVikas,
+  BasicEducation,
+  EmpowermentDisabilities,
+  FoodAndCivil,
+  RevenueDepartment,
+  SecondaryEducation,
+  SocialWelfare,
+  UrbanDevelopment,
+  UrbanEmployment,
+  VocationalEducation,
+  WomenWelfare,
+  WorkersWelfareBoard,
+} from "assets/icons/departments";
 import { RupeeIcon } from "assets/icons/rupee";
 import { useEffect, useState } from "react";
 import { getFamilyData, getFamilySchemes, getFamilyTransactions } from "api";
@@ -9,6 +24,7 @@ import Dropdown from "components/dropdown";
 import { useTranslation } from "react-i18next";
 import { useStateContext } from "context";
 import { useRouter } from "next/router";
+import { departmentLogos } from "config/departmentLogos";
 
 const Benefits: React.FC = () => {
   const router = useRouter();
@@ -18,18 +34,10 @@ const Benefits: React.FC = () => {
     router?.query?.transactions ? true : false
   );
   const [beneficiaryData, setBeneficiaryData]: any = useState();
-  const [benefitType, setBenefitType]: any = useState({
-    value: "",
-    label: "",
-  });
-  const [fy, setFy]: any = useState({
-    value: "2022-23",
-    label: "2022-23",
-  });
-  const [beneficiary, setBeneficiary]: any = useState({
-    value: "",
-    label: "",
-  });
+  const [benefitType, setBenefitType] = useState([]); // Array to store selected benefit types
+  const [fy, setFy] = useState([]); // Array to store selected fiscal years
+  const [beneficiary, setBeneficiary] = useState([]); // Array to store selected beneficiaries
+
   const { t } = useTranslation("benefits");
   const { locale } = useStateContext();
   const benefitTypeOptions = [
@@ -42,38 +50,57 @@ const Benefits: React.FC = () => {
     { value: "2022-23", label: "2022-23" },
   ];
   const handleBenefitTypeChange = (event: any) => {
-    const attributeValue = event.target.getAttribute("value");
-    setBenefitType({
-      value: attributeValue,
-      label: event?.target?.innerHTML,
-    });
+    const selectedValue = event.target.getAttribute("value");
+
+    // Check if the selected value is already in the array
+    const isSelected = benefitType.includes(selectedValue);
+
+    if (isSelected) {
+      // Remove the selected value from the array
+      setBenefitType((prevSelections) =>
+        prevSelections.filter((value) => value !== selectedValue)
+      );
+    } else {
+      // Add the selected value to the array
+      setBenefitType((prevSelections) => [...prevSelections, selectedValue]);
+    }
   };
+
   const handleFyChange = (event: any) => {
-    const attributeValue = event.target.getAttribute("value");
-    setFy({
-      value: attributeValue,
-      label: event?.target?.innerHTML,
-    });
+    const selectedValue = event.target.getAttribute("value");
+
+    const isSelected = fy.includes(selectedValue);
+
+    if (isSelected) {
+      setFy((prevSelections) =>
+        prevSelections.filter((value) => value !== selectedValue)
+      );
+    } else {
+      setFy((prevSelections) => [...prevSelections, selectedValue]);
+    }
   };
+
   const handleBeneficiaryChange = (event: any) => {
-    const attributeValue = event.target.getAttribute("value");
-    setBeneficiary({
-      value: attributeValue,
-      label: event?.target?.innerHTML,
-    });
+    const selectedValue = event.target.getAttribute("value");
+
+    const isSelected = beneficiary.includes(selectedValue);
+
+    if (isSelected) {
+      setBeneficiary((prevSelections) =>
+        prevSelections.filter((value) => value !== selectedValue)
+      );
+    } else {
+      setBeneficiary((prevSelections) => [...prevSelections, selectedValue]);
+    }
   };
 
   useEffect(() => {
     const getData = async () => {
-      const res: any = await getFamilySchemes(
-        benefitType?.value,
-        beneficiary?.value,
-        fy?.value
-      );
+      const res: any = await getFamilySchemes(benefitType, beneficiary, fy);
       const transactions: any = await getFamilyTransactions(
-        benefitType?.value,
-        beneficiary?.value,
-        fy?.value
+        benefitType,
+        beneficiary,
+        fy
       );
       setData(res);
       setTransactions(transactions);
@@ -95,6 +122,44 @@ const Benefits: React.FC = () => {
     };
     getData();
   }, [locale]);
+
+  const handleDepartmentIcons = (code: any) => {
+    switch (departmentLogos[code].DepartmentCode) {
+      case 101:
+        return <AgricultureDepartment />;
+      case 104:
+        return <SocialWelfare />;
+      case 105:
+        return <BalVikas />;
+      case 106:
+        return <BasicEducation />;
+      case 110:
+        return <SocialWelfare />;
+      case 111:
+        return <EmpowermentDisabilities />;
+      case 113:
+        return <FoodAndCivil />;
+      case 124:
+        return <SecondaryEducation />;
+      case 125:
+        return <SocialWelfare />;
+      case 126:
+        return <UrbanDevelopment />;
+      case 127:
+        return <UrbanEmployment />;
+      case 128:
+        return <WorkersWelfareBoard />;
+      case 129:
+        return <VocationalEducation />;
+      case 130:
+        return <WomenWelfare />;
+      case 131:
+        return <RevenueDepartment />;
+      default:
+        return <BenefitsIcon />;
+    }
+  };
+
   return (
     <div className="mb-20">
       <Navbar />
@@ -145,28 +210,20 @@ const Benefits: React.FC = () => {
 
                 <div className="mt-5 pb-3">
                   <Dropdown
-                    heading={
-                      benefitType && benefitType?.label
-                        ? benefitType?.label
-                        : t("benefit_type")
-                    }
+                    heading={benefitType && t("benefit_type")}
                     options={benefitTypeOptions}
                     handleChange={handleBenefitTypeChange}
                     value={benefitType}
                   />
                   <Dropdown
-                    heading={
-                      beneficiary && beneficiary?.label
-                        ? beneficiary?.label
-                        : t("beneficiary")
-                    }
+                    heading={beneficiary && t("beneficiary")}
                     options={beneficiaryData}
                     handleChange={handleBeneficiaryChange}
                     value={beneficiary}
                     className="ml-2"
                   />
                   <Dropdown
-                    heading={fy && fy?.label ? fy?.label : t("fy")}
+                    heading={fy && t("fy")}
                     options={fyOptions}
                     handleChange={handleFyChange}
                     value={fy}
@@ -178,58 +235,91 @@ const Benefits: React.FC = () => {
                   transactions &&
                   transactions?.transactions &&
                   transactions?.transactions?.length > 0 ? (
-                    transactions?.transactions?.map((transaction: any) => (
-                      <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
-                        <div className="group flex items-center text-primary">
-                          <BenefitsIcon />
-                        </div>
-                        <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                          {transaction?.schemeName}
-                        </div>
-                        <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
-                          <div className="flex items-center">
-                            <div className="text-[#23C96F] uppercase text-[11px] font-demi">
-                              {transaction?.amount}
+                    transactions?.transactions
+                      ?.filter(
+                        (e: any) =>
+                          beneficiary.length === 0 ||
+                          beneficiary.includes(e.familymemberID)
+                      )
+                      // Sorting transaciton in chronological order
+                      .sort((a: any, b: any) => {
+                        const dateA = new Date(a.transactionDate);
+                        const dateB = new Date(b.transactionDate);
+                        return dateB.getTime() - dateA.getTime();
+                      })
+                      .map((transaction: any) => (
+                        <div className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2">
+                          <div className="group flex items-center text-primary">
+                            {handleDepartmentIcons(transaction?.schemeCode)}
+                          </div>
+                          <div className="group text-[12px] text-appGray col-span-4 flex-col items-center">
+                            {transaction?.schemeName}
+                            <div>{`${new Date(
+                              transaction?.transactionDate
+                            ).getDate()} ${new Date(
+                              transaction?.transactionDate
+                            ).toLocaleString("default", {
+                              month: "short",
+                            })} ${new Date(
+                              transaction?.transactionDate
+                            ).getFullYear()}`}</div>
+                          </div>
+                          <div className="flex items-end justify-end text-appGray ml-2 flex-col col-span-2">
+                            <div className="flex items-center">
+                              <div className="text-[#23C96F] uppercase text-[11px] font-demi">
+                                {transaction?.amount}
+                              </div>
+                            </div>
+                            <div className="flex items-center">
+                              <div className="text-appGray uppercase text-[9px] font-demi">
+                                {locale == "hi"
+                                  ? transaction?.beneficiaryNameh
+                                  : transaction?.beneficiaryNamee}
+                              </div>
                             </div>
                           </div>
-                          <div className="flex items-center">
-                            <div className="text-appGray uppercase text-[9px] font-demi">
-                              {locale == "hi"
-                                ? transaction?.beneficiaryNameh
-                                : transaction?.beneficiaryNamee}
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                    ))
+                      ))
                   ) : (
                     <div className="font-medium py-5 text-primary">
                       {t("no_transactions_available")}
                     </div>
                   )
                 ) : data && data?.schemes && data?.schemes?.length > 0 ? (
-                  data?.schemes?.map((scheme: any) => (
-                    <div
-                      className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
-                      key={scheme?.code}
-                    >
-                      <div className="group flex items-center text-primary">
-                        <BenefitsIcon />
-                      </div>
-                      <div className="group text-[12px] text-appGray col-span-4 flex items-center">
-                        {scheme?.schemeName}
-                      </div>
-                      <div className="flex items-center justify-between text-[13px] text-appGray ml-2">
-                        <div className="flex items-center">
-                          {scheme?.totalBeneficiary}
+                  data?.schemes
+                    .filter((scheme: any) =>
+                      scheme.beneficariesList.some(
+                        (b: any) =>
+                          beneficiary.length === 0 ||
+                          beneficiary.includes(b.familymemberID)
+                      )
+                    )
+                    .sort(
+                      (a: any, b: any) =>
+                        b.totalBeneficiary - a.totalBeneficiary
+                    )
+                    .map((scheme: any) => (
+                      <div
+                        className="grid grid-cols-7 mt-4 border-b border-[#B4B0B0] pb-2"
+                        key={scheme?.code}
+                      >
+                        <div className="group flex items-center text-primary">
+                          {handleDepartmentIcons(scheme?.schemeCode)}
                         </div>
-                        <SchemesAvailed />
+                        <div className="group text-[12px] text-appGray col-span-4 flex items-center">
+                          {scheme?.schemeName}
+                        </div>
+                        <div className="flex items-center justify-between text-[13px] text-appGray ml-2">
+                          <div className="flex items-center">
+                            {scheme?.totalBeneficiary}
+                          </div>
+                          <SchemesAvailed />
+                        </div>
+                        <div className="flex items-center justify-end text-[12px] text-appGray">
+                          <RupeeIcon />
+                        </div>
                       </div>
-                      <div className="flex items-center justify-end text-[12px] text-appGray">
-                        <RupeeIcon />
-                      </div>
-                    </div>
-                  ))
+                    ))
                 ) : (
                   <div className="font-medium py-5 text-primary">
                     {t("no_schemes_available")}

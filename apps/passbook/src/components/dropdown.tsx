@@ -8,7 +8,7 @@ const Dropdown = ({
   className = "",
 }) => {
   const isActive = (key: any) => {
-    return key === value?.value ? "bg-primary text-white" : "";
+    return value.includes(key) ? "bg-primary text-white" : "";
   };
 
   return (
@@ -29,7 +29,9 @@ const Dropdown = ({
           {options &&
             options?.map((option: any) => (
               <li
-                className={` ${isActive(option?.value)} text-[#313144]`}
+                className={` ${isActive(option?.value)} text-[#313144] ${
+                  value.includes(option?.value) ? "selected" : ""
+                }`}
                 key={option?.value}
               >
                 {/* @ts-ignore */}

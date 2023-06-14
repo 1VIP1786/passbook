@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavbarIcon, NotificationIcon } from "assets/icons";
+import { NavbarIcon, NotificationIcon, CloseIcon } from "assets/icons";
 import { Button } from "ui";
 import Link from "next/link";
 import { useFlags } from "flagsmith/react";
@@ -14,16 +14,22 @@ const HamburgerMenu: React.FC = () => {
   const flags = useFlags(["notifications"]);
   const { t } = useTranslation("sidebar");
   const router = useRouter();
-  const clickHandler = () => {
-    setIsOpen(!isOpen);
 
-    // I'm still testing this part:
-    setTimeout(() => {
-      setHide("absolute");
-    }, 1000);
+  const drawerOpener = () => {
+    setIsOpen((prevIsOpen) => {
+      const newIsOpen = !prevIsOpen;
+      if (newIsOpen) {
+        setHide("z-[20]");
+      } else if (hide !== "") {
+        setTimeout(() => {
+          setHide("");
+        }, 600);
+      }
+      return newIsOpen;
+    });
   };
 
-  const fullPage = isOpen ? "z-20 h-screen w-full" : hide;
+  const fullPage = isOpen ? "z-[20]" : hide;
 
   const handleClick = (event: any) => {};
   const handleLogOut = () => {
@@ -40,7 +46,7 @@ const HamburgerMenu: React.FC = () => {
           <label
             htmlFor="my-drawer"
             className="drawer-button w-5 cursor-pointer"
-            onClick={clickHandler}
+            onClick={drawerOpener}
           >
             <NavbarIcon />
           </label>
@@ -65,52 +71,60 @@ const HamburgerMenu: React.FC = () => {
           <label
             htmlFor="my-drawer"
             className="drawer-overlay cursor-pointer"
-            onClick={clickHandler}
+            onClick={drawerOpener}
           ></label>
-          <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100 flex-col ">
-            <li>
-              <Link href="/about">
-                <Button
-                  className="font-demi w-full"
-                  onClick={handleClick}
-                  text={t("about_us")}
-                />
-              </Link>
+          <ul className="overflow-y-auto w-72 bg-base-100 flex-col">
+            {/* Sidebar close button */}
+            <li className="pl-3">
+              <div className="w-fit" onClick={drawerOpener}>
+                <CloseIcon />
+              </div>
             </li>
-            <li>
-              <Link href="/help">
+            <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100">
+              <li>
+                <Link href="/about">
+                  <Button
+                    className="font-demi w-full"
+                    onClick={handleClick}
+                    text={t("about_us")}
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href="/help">
+                  <Button
+                    className="font-demi w-full mt-5"
+                    onClick={handleClick}
+                    text={t("help_faqs")}
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href="/feedback">
+                  <Button
+                    className="font-demi w-full mt-5"
+                    onClick={handleClick}
+                    text={t("feedback")}
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms">
+                  <Button
+                    className="font-demi w-full mt-5"
+                    onClick={handleClick}
+                    text={t("terms_conditions")}
+                  />
+                </Link>
+              </li>
+              <li>
                 <Button
                   className="font-demi w-full mt-5"
-                  onClick={handleClick}
-                  text={t("help_faqs")}
+                  onClick={handleLogOut}
+                  text={t("log_out")}
                 />
-              </Link>
-            </li>
-            <li>
-              <Link href="/feedback">
-                <Button
-                  className="font-demi w-full mt-5"
-                  onClick={handleClick}
-                  text={t("feedback")}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms">
-                <Button
-                  className="font-demi w-full mt-5"
-                  onClick={handleClick}
-                  text={t("terms_conditions")}
-                />
-              </Link>
-            </li>
-            <li>
-              <Button
-                className="font-demi w-full mt-5"
-                onClick={handleLogOut}
-                text={t("log_out")}
-              />
-            </li>
+              </li>
+            </ul>
           </ul>
         </div>
       </div>

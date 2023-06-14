@@ -9,6 +9,7 @@ export * from "./femaleAvatar";
 export * from "./maleAvatar";
 export * from "./info";
 export * from "./cheveron";
+export * from "./closeIcon";
 export * from "./schemes";
 export * from "./schemesAvailed";
 export * from "./back";
