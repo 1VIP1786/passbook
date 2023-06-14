@@ -191,6 +191,12 @@ input {
   animation: slideIn 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 767px) {
+  .modal-content {    
+    width: 30%;    
+  }  
+}
+
 .document-preview.open {
   display: flex;
   justify-content: center;

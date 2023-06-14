@@ -75,12 +75,12 @@ const HamburgerMenu: React.FC = () => {
           ></label>
           <ul className="overflow-y-auto w-72 bg-base-100 flex-col">
             {/* Sidebar close button */}
-            <li className="pl-3">
+            <li className="pl-3 pt-3">
               <div className="w-fit" onClick={drawerOpener}>
                 <CloseIcon />
               </div>
             </li>
-            <ul className="p-6 pt-16 overflow-y-auto w-72 bg-base-100">
+            <ul className="p-6 pt-6 overflow-y-auto w-72 bg-base-100">
               <li>
                 <Link href="/about">
                   <Button
