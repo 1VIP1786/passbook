@@ -3,7 +3,7 @@ import { Navbar, Header, Bottombar } from "components";
 import {
   BackIcon,
   CasteCertiIcon,
-  IncomeCertiIcon,
+  DocNotImportedIcon,
   ProfileFemaleIcon,
   ProfileMaleIcon,
 } from "assets/icons";
@@ -20,6 +20,8 @@ import {
   pullDigilockerDocument,
 } from "api";
 import { Modal } from "components";
+import { requiredDocuments } from "config/requiredDocuments";
+import { CircularAddIcon } from "assets/icons/circularAdd";
 
 const FamilyMemberDocuments: React.FC = () => {
   const { t } = useTranslation("familyDetails");
@@ -114,54 +116,33 @@ const FamilyMemberDocuments: React.FC = () => {
                       <div className="font-demi text-appGray mt-8 mb-3 mx-3">
                         {t("my_documents")}
                       </div>
-                      {issuedDocuments && issuedDocuments?.length > 0 ? (
-                        issuedDocuments?.map(
-                          (document) =>
-                            document?.imported && (
+
+                      <>
+                        {requiredDocuments &&
+                          requiredDocuments?.map((doc: any) => (
+                            <>
                               <div
-                                className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7 cursor-pointer"
-                                key={document?.doctype}
-                                onClick={(e) =>
-                                  handlePullDocument(e, document?.doctype)
-                                }
+                                className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-2 px-3 grid grid-cols-8 cursor-pointer"
+                                key={doc?.id}
+                                onClick={() => toggleBox()}
                               >
-                                <div className="col-span-1">
+                                <div className="col-span-1 flex self-center">
+                                  <DocNotImportedIcon />
+                                </div>
+                                <div className="col-span-1 flex self-center">
                                   <CasteCertiIcon />
                                 </div>
-                                <div className="flex self-center ml-4 col-span-4">
-                                  {document?.name}
+                                <div className="flex self-center ml-4 col-span-4 text-[14px]">
+                                  {doc?.name}
                                 </div>
-                                <div className="text-[#23C96F] uppercase text-[11px] font-demi flex justify-end self-center col-span-2">
-                                  {t("issued")}
+                                <div className="col-span-2 flex self-center flex-col text-center items-end">
+                                  <CircularAddIcon />
+                                  <span className="text-[10px]">Add Now</span>
                                 </div>
                               </div>
-                            )
-                        )
-                      ) : (
-                        <>
-                          <div
-                            className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7 cursor-pointer"
-                            key={"ADHAR"}
-                            onClick={openModal}
-                          >
-                            <div className="col-span-1">
-                              <CasteCertiIcon />
-                            </div>
-                            <div className="flex self-center ml-4 col-span-4">
-                              Caste Certificate
-                            </div>
-                          </div>
-
-                          <div className="border-t-2 border-[#e3e3e3] font-medium text-appGray py-1 px-2 grid grid-cols-7">
-                            <div className="col-span-1">
-                              <IncomeCertiIcon />
-                            </div>
-                            <div className="flex self-center ml-4 col-span-4">
-                              Income Certificate
-                            </div>
-                          </div>
-                        </>
-                      )}
+                            </>
+                          ))}
+                      </>
 
                       <div className="flex justify-center mt-12 mb-5">
                         <Button

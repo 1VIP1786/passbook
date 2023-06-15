@@ -62,7 +62,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
       <div className="pt-40 sm:pt-48">
         <div className="bg-tertiary rounded-xl px-4 py-6 lg:py-10 mx-3">
           <div className="font-bold text-center text-[20px] uppercase text-appGray">
-            {t("Family Wallet")}
+            {t("family_wallet")}
           </div>
           <div className="bg-white border-[#DC6127] border-2 border-solid rounded-xl pb-1 mt-4 px-3">
             <div className="mt-6 flex justify-between">
@@ -70,7 +70,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
                 <BackIcon />
               </Link>
               <div className="font-demi text-appGray mb-4 mx-3 text-[18px]">
-                {t("Add Documents")}
+                {t("add_documents")}
               </div>
               <WalletIcon />
             </div>
@@ -83,7 +83,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
                     <label className="label cursor-pointer">
                       <input
                         type="checkbox"
-                        className="checkbox checkbox-primary cursor-pointer"
+                        className="checkbox cursor-pointer"
                         name={document?.doctype}
                         onClick={handleCheckboxClick}
                         checked={document?.imported}
@@ -92,8 +92,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
                         <div className="mr-3 ml-5 mt-2">
                           <CasteCertiIcon />
                         </div>
-                        <div className="flex self-center w-[50vw]">
-                          {" "}
+                        <div className="flex self-center w-[50vw] text-[14px]">
                           {document?.name}
                         </div>
                       </div>
@@ -106,7 +105,7 @@ const FamilyMemberAddDocuments: React.FC = () => {
               <Button
                 className="font-medium"
                 onClick={handleAddDocuments}
-                text={t("Add Documents")}
+                text={t("add_documents")}
               />
             </div>
           </div>

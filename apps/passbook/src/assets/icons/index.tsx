@@ -25,3 +25,5 @@ export * from "./profileMale";
 export * from "./cross";
 export * from "./wallet";
 export * from "./import";
+export * from "./docNotImported";
+export * from "./docImported";

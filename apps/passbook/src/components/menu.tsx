@@ -76,7 +76,11 @@ const HamburgerMenu: React.FC = () => {
           <ul className="overflow-y-auto w-72 bg-base-100 flex-col">
             {/* Sidebar close button */}
             <li className="pl-3 pt-3">
-              <div className="w-fit" onClick={drawerOpener}>
+              <div
+                className="w-fit"
+                onClick={drawerOpener}
+                style={{ cursor: "pointer" }}
+              >
                 <CloseIcon />
               </div>
             </li>
