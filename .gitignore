@@ -42,3 +42,9 @@ yarn-error.log*
 **/public/sw.js.map
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
+
+# cypress env file
+cypress.env.json
+
+# cypress videos
+cypress/videos
